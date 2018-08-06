@@ -59,7 +59,7 @@ create table Venue (
     venueId serial primary key,
     venueName varchar(300),
     venueLocation varchar(500),
-    phoneNumber va
+    phoneNumber varchar(20)
 );
 
 create table Area (
