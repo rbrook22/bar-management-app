@@ -59,14 +59,15 @@ create table Venue (
     venueId serial primary key,
     venueName varchar(300),
     venueLocation varchar(500),
-    phoneNumber int
+    phoneNumber va
 );
 
 create table Area (
     areaId serial primary key,
     venueId int,
     foreign key (venueId) references Venue(venueId)
-    on delete cascade
+    on delete cascade,
+    areaName varchar(100)
 );
 
 create table Users (
@@ -79,7 +80,7 @@ create table Users (
     Email varchar(100),
     userPassword varchar(20),
     Position varchar(50),
-    phoneNumber int 
+    phoneNumber varchar(15) 
 );
 
 create table Section (
@@ -111,5 +112,5 @@ create table Reporting (
     foreign key (AlcoholId) references Alcohol(AlcoholId)
     on delete cascade,
     fullBottles int,
-    partialBottle int
+    partialBottle float
 );
