@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "mocha": "^5.2.0",
     "mongoose": "^5.2.6",
     "nodemon": "^1.18.3",
     "react": "^16.4.2",
