@@ -17,7 +17,8 @@ class SignIn extends React.Component {
                         <input type="text" name="lastName" />
                     </label>
                     <input type="submit" value="Submit" />
-
+                    <p>Don't have an account?</p>
+                    <p>Click <Link to="/signup">here</Link> to one!</p>
                 </form>
             </div>
         );
