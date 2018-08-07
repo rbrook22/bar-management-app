@@ -13,7 +13,7 @@ create table Beer (
     VolumeSize int,
     Price int,
     Quantity int,
-    BeerImg bytea
+    BeerImg varchar(300)
 );
 
 create table Wine (
@@ -26,7 +26,7 @@ create table Wine (
     VolumeSize int,
     Price int,
     Quantity int,
-    WineImg bytea
+    WineImg varchar(300)
 );
 
 create table Liquor (
@@ -39,7 +39,7 @@ create table Liquor (
     VolumeSize int,
     Price int,
     Quantity int,
-    LiqourImg bytea
+    LiqourImg varchar(300)
 );
 
 create table Mixers (
@@ -52,7 +52,7 @@ create table Mixers (
     VolumeSize int,
     Price int,
     Quantity int,
-    MixerImg bytea
+    MixerImg varchar(300)
 );
 
 create table Venue (
