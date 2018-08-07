@@ -5,6 +5,9 @@ class AreaPage extends React.Component {
     render() {
         return (
             <div className='area'>
+                <div className='navBar'>
+                    <NavBar />
+                </div>
                 <div className='areaHeader'>
                     <h2>Area Name</h2>
                     <div className='sectCount'>
