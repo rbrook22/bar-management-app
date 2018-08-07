@@ -1,41 +1,34 @@
 -- Alcohol Table
-INSERT INTO "public"."alcohol"("alcoholtype") VALUES('Beer') RETURNING "alcoholid", "alcoholtype";
-INSERT INTO "public"."alcohol"("alcoholtype") VALUES('Wine') RETURNING "alcoholid", "alcoholtype";
-INSERT INTO "public"."alcohol"("alcoholtype") VALUES('Liquor') RETURNING "alcoholid", "alcoholtype";
-INSERT INTO "public"."alcohol"("alcoholtype") VALUES('Mixers') RETURNING "alcoholid", "alcoholtype";
+INSERT INTO "public"."alcohol"("bevtype") VALUES('Beer') RETURNING "id", "bevtype";
+INSERT INTO "public"."alcohol"("bevtype") VALUES('Wine') RETURNING "id", "bevtype";
+INSERT INTO "public"."alcohol"("bevtype") VALUES('Liquor') RETURNING "id", "bevtype";
+INSERT INTO "public"."alcohol"("bevtype") VALUES('Mixers') RETURNING "id", "bevtype";
 
 
 -- Beer Table
-INSERT INTO "public"."beer"("beertype", "beername", "alcoholid", "volumesize", "price", "quantity", "beerimg") VALUES('IPA', 'Sweetwater 420', 1, 16, 8, 2, '/public/imgs/beer.jpg') RETURNING "beerid", "beertype", "beername", "alcoholid", "volumesize", "price", "quantity", "beerimg";
-INSERT INTO "public"."beer"("beertype", "beername", "alcoholid", "volumesize", "price", "quantity", "beerimg") VALUES('Craft', 'Budlight', 1, 8, 4, 1, '/public/imgs/beer.jpg') RETURNING "beerid", "beertype", "beername", "alcoholid", "volumesize", "price", "quantity", "beerimg";
-
--- Liquor Table
-INSERT INTO "public"."liquor"("liquortype", "liquorname", "alcoholid", "volumesize", "price", "quantity", "liqourimg") VALUES('Gin', 'Seagrams', 3, 750, 35, 1, '/public/imgs/liquor.jpg') RETURNING "liquorid", "liquortype", "liquorname", "alcoholid", "volumesize", "price", "quantity", "liqourimg";
-INSERT INTO "public"."liquor"("liquortype", "liquorname", "alcoholid", "volumesize", "price", "quantity", "liqourimg") VALUES('Bourbon', 'Macallan', 3, 750, 40, 1, '/public/imgs/liquor.jpg') RETURNING "liquorid", "liquortype", "liquorname", "alcoholid", "volumesize", "price", "quantity", "liqourimg";
-
--- Mixer Table
-INSERT INTO "public"."mixers"("mixertype", "mixername", "alcoholid", "volumesize", "price", "quantity", "mixerimg") VALUES('Fruit Mix', 'Pina Colada', 4, 750, 20, 1, '/public/imgs/mixer.jpg') RETURNING "mixerid", "mixertype", "mixername", "alcoholid", "volumesize", "price", "quantity", "mixerimg";
-INSERT INTO "public"."mixers"("mixertype", "mixername", "alcoholid", "volumesize", "price", "quantity", "mixerimg") VALUES('Juice', 'Juice', 4, 20, 10, 1, '/public/imgs/mixer.jpg') RETURNING "mixerid", "mixertype", "mixername", "alcoholid", "volumesize", "price", "quantity", "mixerimg";
-
+INSERT INTO beer (bevtype, bevname, alcoholid, volumesize, price, quantity, img) VALUES ('IPA', 'Sweetwater 420', 1, 16, 8, 6, '/public/imgs/beer.jpg');
+INSERT INTO beer (bevtype, bevname, alcoholid, volumesize, price, quantity, img) VALUES ('Craft', 'Budlight', 1, 8, 4, 1, '/public/imgs/beer.jpg');
 -- Wine Table
-INSERT INTO "public"."wine"("winetype", "winename", "alcoholid", "volumesize", "price", "quantity", "wineimg") VALUES('Sparkling', 'Champagne', 2, 750, 18, 1, '/public/imgs/wine.jpg') RETURNING "wineid", "winetype", "winename", "alcoholid", "volumesize", "price", "quantity", "wineimg";
-INSERT INTO "public"."wine"("winetype", "winename", "alcoholid", "volumesize", "price", "quantity", "wineimg") VALUES('White', 'Kendall-Jackson', 2, 750, 15, 1, '/public/imgs/wine.jpg') RETURNING "wineid", "winetype", "winename", "alcoholid", "volumesize", "price", "quantity", "wineimg";
-
+INSERT INTO wine (bevtype, bevname, alcoholid, volumesize, price, quantity, img) VALUES ('White', 'Kendall Jackson', 2, 750, 20, 2, '/public/imgs/wine.jpg');
+INSERT INTO wine (bevtype, bevname, alcoholid, volumesize, price, quantity, img) VALUES ('Sparkling', 'Champagne', 2, 750, 15, 2, '/public/imgs/wine.jpg');
+-- Liquor Table
+INSERT INTO liquor (bevtype, bevname, alcoholid, volumesize, price, quantity, img) VALUES ('Gin', 'Seagrams', 3, 750, 35, 2, '/public/imgs/liquor.jpg');
+INSERT INTO liquor (bevtype, bevname, alcoholid, volumesize, price, quantity, img) VALUES ('Bourbon', 'Macallen', 3, 750, 45, 6, '/public/imgs/liquor.jpg');
+-- Mixer Table
+INSERT INTO mixers (bevtype, bevname, alcoholid, volumesize, price, quantity, img) VALUES ('Fruit Mix', 'Pina Colada', 4, 750, 20, 3, '/public/imgs/mixer.jpg');
+INSERT INTO mixers (bevtype, bevname, alcoholid, volumesize, price, quantity, img) VALUES ('Juice', 'Orange Juice', 4, 20, 8, 1, '/public/imgs/mixer.jpg');
 -- Venue Table
-INSERT INTO "public"."venue"("venuename", "venuelocation", "phonenumber") VALUES('Puzzles', '1 Main St Rockmart, GA 30153', '2346784045') RETURNING "venueid", "venuename", "venuelocation", "phonenumber";
-INSERT INTO "public"."venue"("venuename", "venuelocation", "phonenumber") VALUES('Atlanta Tech', '3423 Piedmont Rd NE', '77726333453') RETURNING "venueid", "venuename", "venuelocation", "phonenumber";
-
+INSERT INTO venue (venuename, venuelocation, phonenumber) VALUES ('Quizzicle', '2334 Piedmont rd NE, Atlanta, GA, 30305', '866-773-6426');
+INSERT INTO venue (venuename, venuelocation, phonenumber) VALUES ('Atlanta Tech', '3490 Piedmont ave NE, Atlanta, GA, 30305', '800-439-7929');
 -- Users Table
-INSERT INTO "public"."users"("firstname", "lastname", "venueid", "email", "userpassword", "position", "phonenumber") VALUES('Bhisma', 'B', 1, 'bhisma@test.com', 'test123', 'Manager', '8666636565') RETURNING "userid", "firstname", "lastname", "venueid", "email", "userpassword", "position", "phonenumber";
-INSERT INTO "public"."users"("firstname", "lastname", "venueid", "email", "userpassword", "position", "phonenumber") VALUES('Matthew', 'Freeman', 1, 'matthew@test.com', 'test123', 'Scrum Master', '8667530919') RETURNING "userid", "firstname", "lastname", "venueid", "email", "userpassword", "position", "phonenumber";
-
+INSERT INTO users (firstname, lastname, venueid, email, userpassword, position, phonenumber) VALUES ('Bhisma', 'B', 1, 'bhisma@test.com', 'test123', 'Manager', '404-810-1079');
+INSERT INTO users (firstname, lastname, venueid, email, userpassword, position, phonenumber) VALUES ('Matthew', 'Freeman', 2, 'matthew@test.com', 'test123', 'Scrum Master', '678-320-6478');
 -- Area Table
-INSERT INTO "public"."area"("venueid", "areaname") VALUES(1, 'Front Bar') RETURNING "areaid", "venueid", "areaname";
-INSERT INTO "public"."area"("venueid", "areaname") VALUES(1, 'Back Room') RETURNING "areaid", "venueid", "areaname";
-
+INSERT INTO area (venueid, areaname) VALUES (1, 'Front Bar');
+INSERT INTO area (venueid, areaname) VALUES (2, 'Main Bar');
 -- Section Table
-INSERT INTO "public"."section"("sectionname", "venueid", "areaid", "userid", "alcoholname") VALUES('Top Shelf', 1, 1, 2, 'Johnnie Walker') RETURNING "sectionid", "sectionname", "venueid", "areaid", "userid", "alcoholname";
-INSERT INTO "public"."section"("sectionname", "venueid", "areaid", "userid", "alcoholname") VALUES('Bottom Rack', 1, 2, 1, 'Sweetwater 420') RETURNING "sectionid", "sectionname", "venueid", "areaid", "userid", "alcoholname";
-
+INSERT INTO section (sectionname, venueid, areaid, userid, alcoholname) VALUES ('Top Shelf', 1, 2, 1, 'Seagrams');
+INSERT INTO section (sectionname, venueid, areaid, userid, alcoholname) VALUES ('Left Wall', 2, 1, 2, 'Pina Colada');
 -- Reporting Table
-INSERT INTO "public"."reporting"("bottlename", "userid", "venueid", "alcoholid", "fullbottles", "partialbottle") VALUES('Johnnie Walker', 2, 1, 3, 12, 0.75) RETURNING "reportingid", "bottlename", "userid", "venueid", "alcoholid", "fullbottles", "partialbottle";
+INSERT INTO reporting (bottlename, userid, venueid, alcoholid, fullbottles, partialbottle) VALUES ('Orange Juice', 2, 1, 4, 3, .5);
+INSERT INTO reporting (bottlename, userid, venueid, alcoholid, fullbottles, partialbottle) VALUES ('Kendall Jackson', 1, 2, 2, 10, .5);

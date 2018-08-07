@@ -8,25 +8,20 @@ const cn = {
 };
 const db = pgp(cn);
 
-function getAllBeer() {
-    return db.any('select * from Beer');
+function getAll(drink) {
+    return db.any(`select * from ${drink}`);
 }
 
-function getAllWine() {
-    return db.any('select * from Wine');
+function getByType(drink, drinkType) {
+    return db.any(`select * from ${drink} where beerType ilike '%$1%'`, [drinkType]);
 }
 
-function getAllLiquor() {
-    return db.any('select * from Liquor');
-}
-
-function getAllMixers() {
-    return db.any('select * from Mixers');
+function getByName(drink, name) {
+    return db.any(`select `)
 }
 
 module.exports = {
-    getAllBeer,
-    getAllWine,
-    getAllLiquor,
-    getAllMixers
+    getAll,
+    getByType,
+
 }
