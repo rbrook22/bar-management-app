@@ -1,5 +1,6 @@
 import React from 'react';
 // import {Link} from 'react-router-dom';
+import NavBar from './navBar';
 
 class AreaPage extends React.Component {
     render() {
