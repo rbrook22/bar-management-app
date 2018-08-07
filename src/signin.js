@@ -18,7 +18,7 @@ class SignIn extends React.Component {
                     </label>
                     <input type="submit" value="Submit" />
                     <p>Don't have an account?</p>
-                    <p>Click <Link to="/signup">here</Link> to one!</p>
+                    <p>Click <Link to="/signup">here</Link> to create one!</p>
                 </form>
             </div>
         );
