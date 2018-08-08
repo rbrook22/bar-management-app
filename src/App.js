@@ -9,6 +9,8 @@ import Inventory from './inventory';
 import Reports from './reports';
 import Personnel from './personnel';
 import Venue from './venue';
+import SignIn from './signin';
+import SignUp from './signup';
 
 
 class App extends Component {
@@ -22,6 +24,8 @@ class App extends Component {
         <Route path="/reporting" component={Reports} />
         <Route path="/personnel" component={Personnel} />
         <Route path="/venue" component={Venue} />
+        <Route path="/signin" component={SignIn} />
+        <Route path="/signup" component={SignUp} />
       </div>
     );
   }
