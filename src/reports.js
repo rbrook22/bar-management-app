@@ -13,7 +13,7 @@ class Reports extends React.Component {
                     <h2>Reporting</h2>
                     <p>View reports and usage</p>
                     <div className='usageReport'>
-                        <Link><p>Run Usage Report</p></Link>
+                        {/* <Link><p>Run Usage Report</p></Link> */}
                     </div>
                     <div className='reportsOverview'>
                         <p>Here will show a thing which has information</p>
