@@ -19,7 +19,7 @@ class AreaPage extends React.Component {
                     </div>
                 </div>
                 <div className='areaBody'>
-                <Link><input type="button" className="btn" value="Add Section"/></Link>
+                {/* <Link><input type="button" className="btn" value="Add Section"/></Link> */}
                 </div>
             </div>
         );

@@ -1,5 +1,5 @@
 import React from 'react';
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import NavBar from './navBar';
 
 class Personnel extends React.Component {
@@ -13,7 +13,7 @@ class Personnel extends React.Component {
                     <h2>Personnel</h2>
                     <p>Employees with access to your organization</p>
                     <div className='inviteUser'>
-                        <Link><input type="button" className="btn" value="Invite User"/></Link>
+                        {/* <Link><input type="button" className="btn" value="Invite User"/></Link> */}
                     </div>
                     <div className='personnelOverview'>
                         <p>Employee Name</p>
