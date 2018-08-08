@@ -16,17 +16,17 @@ function getByType(drink, drinkType) {
     return db.any(`select * from ${drink} where bevtype ilike '%$1#%'`, [drinkType]);
 }
 
-// function getByName(drink, drinkName) {
-//     return db.any(`select * from ${drink} where bevName ilike \'%$1#%\'`, [drinkName]);
-// }
+function getByName(drink, drinkName) {
+    return db.any(`select * from ${drink} where bevName ilike '%$1#%'`, [drinkName]);
+}
 
-// function getById(drinkId) {
-//     return db.oneOrNone(`Select * from ${drink} where id=$1`, [drinkId]);
-// }
+function getById(drink, drinkId) {
+    return db.oneOrNone(`Select * from ${drink} where id=$1`, [drinkId]);
+}
 
 module.exports = {
     getAll,
-    getByType
-    // getByName,
-    // getById
+    getByType,
+    getByName,
+    getById
 }
