@@ -1,5 +1,5 @@
 import React from 'react';
-// import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class AddPersonnel extends React.Component {
     render() {
@@ -15,7 +15,7 @@ class AddPersonnel extends React.Component {
                         Email Address:
                         <input type="text" name="areaName" />
                     </label>
-                    <input type="submit" value="Invite" />
+                    <Link><input type="submit" value="Invite" /></Link>
                 </form>
             </div>
         );
