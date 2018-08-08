@@ -1,0 +1,21 @@
+{
+  "alcohol": {
+    "attributes": {
+      "Beer": {
+        "appearance": ""
+      },
+      "Wine": {
+        "appearance": ""
+      },
+      "Liquor": {
+        "appearance": ""
+      },
+      "Mixers": {
+        "appearance": ""
+      },
+      "Liqour": {
+        "appearance": ""
+      }
+    }
+  }
+}

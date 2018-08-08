@@ -1,0 +1,76 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/alcohol",
+      "handler": "Alcohol.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/alcohol/count",
+      "handler": "Alcohol.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/alcohol/:id",
+      "handler": "Alcohol.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/alcohol",
+      "handler": "Alcohol.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/alcohol/:id",
+      "handler": "Alcohol.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/alcohol/:id",
+      "handler": "Alcohol.destroy",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/alcohol/:id/relationships/:relation",
+      "handler": "Alcohol.createRelation",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/alcohol/:id/relationships/:relation",
+      "handler": "Alcohol.updateRelation",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/alcohol/:id/relationships/:relation",
+      "handler": "Alcohol.destroyRelation",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

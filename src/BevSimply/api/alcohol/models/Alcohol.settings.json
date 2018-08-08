@@ -1,0 +1,17 @@
+{
+  "connection": "default",
+  "collectionName": "alcohol",
+  "info": {
+    "name": "alcohol",
+    "description": "Contains all types of Alcohol.
+"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    
+  }
+}
