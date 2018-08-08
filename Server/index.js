@@ -4,7 +4,7 @@ const alcohol = require('./db');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Gets all Alcohol by category.
+// Gets all Alcohol by alcoholId.
 app.get('/:alcoholId', (req, res) => {
     alcohol.getAll(req.params.alcoholId)
     .then((data) => {   
@@ -43,12 +43,13 @@ app.get('/:drink/id/:drinkId', (req, res) => {
 });
 
 // Gets all Areas
-app.get('/areas', (req, res) => {
-    alcohol.getAllAreas(req.params)
+app.get('/area', (req, res) => {
+    alcohol.getAllAreas()
     .then((data) => {
         res.json(data);
     })
-})
+    .catch((error) => { console.log(error); });
+});
 
 app.listen(3000, () => {
     console.log('Listening on port 3000...');
