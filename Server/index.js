@@ -5,8 +5,16 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Gets all Beer
-app.get('/:drink/:drinkType', (req, res) => {
+app.get('/:drink', (req, res) => {
     alcohol.getAll(req.params.drink)
+    .then((data) => {   
+        res.json(data);
+    })
+    .catch((error) => { console.log(error); });
+});
+
+app.get('/:drink/:drinktype', (req, res) => {
+    alcohol.getByType(req.params.drink.drinkType)
     .then((data) => {   
         res.json(data);
     })

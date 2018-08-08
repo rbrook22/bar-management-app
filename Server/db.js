@@ -13,15 +13,14 @@ function getAll(drink) {
 }
 
 function getByType(drink, drinkType) {
-    return db.any(`select * from ${drink} where beerType ilike '%$1%'`, [drinkType]);
+    return db.any('select * from $1# where bevtype ilike \'%$2#%\'', [drink, drinkType]);
 }
 
-function getByName(drink, name) {
-    return db.any(`select `)
-}
+// function getByName(drink, name) {
+//     return db.any(`select `)
+// }
 
 module.exports = {
     getAll,
-    getByType,
-
+    getByType
 }
