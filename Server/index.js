@@ -14,7 +14,7 @@ app.get('/:drink', (req, res) => {
 });
 
 // Gets all alcohol by BevType
-app.get('/:drink/:drinkType', (req, res) => {
+app.get('/:drink/type/:drinkType', (req, res) => {
     console.log(req.params.drink);
     console.log(req.params.drinkType);
     alcohol.getByType(req.params.drink, req.params.drinkType)
@@ -25,7 +25,7 @@ app.get('/:drink/:drinkType', (req, res) => {
 });
 
 // Gets all alcohol by Drink Name
-app.get('/:drink/:drinkName', (req, res) => {
+app.get('/:drink/name/:drinkName', (req, res) => {
     alcohol.getByType(req.params.drink, req.params.drinkName)
     .then((data) => {   
         res.json(data);
@@ -34,7 +34,7 @@ app.get('/:drink/:drinkName', (req, res) => {
 });
 
 // Gets all alcohol by id:
-app.get('/:drink/:drinkName', (req, res) => {
+app.get('/:drink/id/:drinkName', (req, res) => {
     alcohol.getByType(req.params.drink, req.params.drinkid)
     .then((data) => {   
         res.json(data);
