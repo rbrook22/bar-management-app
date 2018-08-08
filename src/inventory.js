@@ -15,7 +15,7 @@ class Inventory extends React.Component {
                 console.log(response);
                 this.setState ({
                     beers: response.data
-                })
+                });
             })
     } 
 
