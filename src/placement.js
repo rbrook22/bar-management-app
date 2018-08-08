@@ -1,5 +1,5 @@
 import React from 'react';
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class AddPlacement extends React.Component {
     render() {
@@ -12,7 +12,7 @@ class AddPlacement extends React.Component {
                         Bottle:
                         <input type="text" name="placementName" />
                     </label>
-                    <input type="submit" value="Confirm" />
+                    <Link><input type="submit" value="Confirm" /></Link>
                 </form>
             </div>
         );
