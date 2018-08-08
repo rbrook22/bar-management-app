@@ -8,19 +8,34 @@ const cn = {
 };
 const db = pgp(cn);
 
-function getAll(drink) {
-    return db.any(`select * from ${drink}`);
+// Venue Functions
+
+// Area Functions
+function getAllAreas() {
+    return db.any('Select * from area');
 }
 
+// Section Functions
+
+// Alcohol Functions
+function getAll(alcoholId) {
+    return db.any(`select * from beveragelist where alcoholId = $1`, [alcoholId]);
+}
 function getByType(drink, drinkType) {
-    return db.any('select * from $1# where bevtype ilike \'%$2#%\'', [drink, drinkType]);
+    return db.any(`select * from ${drink} where bevtype ilike '%$1#%'`, [drinkType]);
+}
+function getByName(drink, drinkName) {
+    return db.any(`select * from ${drink} where bevName ilike '%$1#%'`, [drinkName]);
+}
+function getById(drink, drinkId) {
+    return db.oneOrNone(`Select * from ${drink} where id=$1`, [drinkId]);
 }
 
-// function getByName(drink, name) {
-//     return db.any(`select `)
-// }
-
+// Exporting Functions
 module.exports = {
     getAll,
-    getByType
+    getByType,
+    getByName,
+    getById,
+    getAllAreas
 }

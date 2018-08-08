@@ -4,18 +4,48 @@ const alcohol = require('./db');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Gets all Beer
-app.get('/:drink', (req, res) => {
-    alcohol.getAll(req.params.drink)
+// Gets all Alcohol by alcoholId.
+app.get('/:alcoholId', (req, res) => {
+    alcohol.getAll(req.params.alcoholId)
     .then((data) => {   
         res.json(data);
     })
     .catch((error) => { console.log(error); });
 });
 
-app.get('/:drink/:drinktype', (req, res) => {
-    alcohol.getByType(req.params.drink.drinkType)
+// Gets all alcohol by BevType
+app.get('/:drink/type/:drinkType', (req, res) => {
+    alcohol.getByType(req.params.drink, req.params.drinkType)
     .then((data) => {   
+        res.json(data);
+    })
+    .catch((error) => { console.log(error); });
+});
+
+// Gets all alcohol by Drink Name
+app.get('/:drink/name/:drinkName', (req, res) => {
+    console.log(req.params.drink);
+    console.log(req.params.drinkName);
+    alcohol.getByName(req.params.drink, req.params.drinkName)
+    .then((data) => {   
+        res.json(data);
+    })
+    .catch((error) => { console.log(error); });
+});
+
+// Gets all alcohol by id:
+app.get('/:drink/id/:drinkId', (req, res) => {
+    alcohol.getById(req.params.drink, req.params.drinkId)
+    .then((data) => {   
+        res.json(data);
+    })
+    .catch((error) => { console.log(error); });
+});
+
+// Gets all Areas
+app.get('/area', (req, res) => {
+    alcohol.getAllAreas()
+    .then((data) => {
         res.json(data);
     })
     .catch((error) => { console.log(error); });
