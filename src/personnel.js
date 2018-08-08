@@ -13,7 +13,7 @@ class Personnel extends React.Component {
                     <h2>Personnel</h2>
                     <p>Employees with access to your organization</p>
                     <div className='inviteUser'>
-                        <input type="button" className="btn" value="Invite User"/>
+                        <Link><input type="button" className="btn" value="Invite User"/></Link>
                     </div>
                     <div className='personnelOverview'>
                         <p>Employee Name</p>
