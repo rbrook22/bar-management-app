@@ -1,5 +1,5 @@
 import React from 'react';
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import NavBar from './navBar';
 
 class AreaPage extends React.Component {
@@ -19,7 +19,7 @@ class AreaPage extends React.Component {
                     </div>
                 </div>
                 <div className='areaBody'>
-                <input type="button" className="btn" value="Add Section"/>
+                <Link><input type="button" className="btn" value="Add Section"/></Link>
                 </div>
             </div>
         );
