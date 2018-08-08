@@ -1,5 +1,5 @@
 import React from 'react';
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class SignIn extends React.Component {
     render() {
@@ -17,8 +17,7 @@ class SignIn extends React.Component {
                         <input type="text" name="lastName" />
                     </label>
                     <input type="submit" value="Submit" />
-                    <p>Don't have an account?</p>
-                    <p>Click <Link to="/signup">here</Link> to create one!</p>
+                    <p>Don't have an account? Click <Link to="/signup">here</Link> to create one!</p>
                 </form>
             </div>
         );
