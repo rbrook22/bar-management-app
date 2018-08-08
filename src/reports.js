@@ -1,5 +1,5 @@
 import React from 'react';
-// import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import NavBar from './navBar';
 
 class Reports extends React.Component {
@@ -13,7 +13,7 @@ class Reports extends React.Component {
                     <h2>Reporting</h2>
                     <p>View reports and usage</p>
                     <div className='usageReport'>
-                        <p>Run Usage Report</p>
+                        <Link><p>Run Usage Report</p></Link>
                     </div>
                     <div className='reportsOverview'>
                         <p>Here will show a thing which has information</p>
