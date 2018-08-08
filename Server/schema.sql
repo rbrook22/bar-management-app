@@ -3,43 +3,7 @@ create table Alcohol (
     bevType varchar(10)
 );
 
-create table Beer (
-    Id serial primary key,
-    bevType varchar(30),
-    bevName varchar(30),
-    AlcoholId int references Alcohol(Id)
-    on delete cascade,
-    VolumeSize int,
-    Price int,
-    Quantity int,
-    Img varchar(300)
-);
-
-create table Wine (
-    Id serial primary key,
-    bevType varchar(50),
-    bevName varchar(50),
-    AlcoholId int references Alcohol(Id)
-    on delete cascade,
-    VolumeSize int,
-    Price int,
-    Quantity int,
-    Img varchar(300)
-);
-
-create table Liquor (
-    Id serial primary key,
-    bevType varchar(30),
-    bevName varchar(30),
-    AlcoholId int references Alcohol(Id)
-    on delete cascade,
-    VolumeSize int,
-    Price int,
-    Quantity int,
-    Img varchar(300)
-);
-
-create table Mixers (
+create table BeverageList (
     Id serial primary key,
     bevType varchar(30),
     bevName varchar(30),
@@ -53,7 +17,7 @@ create table Mixers (
 
 create table Venue (
     Id serial primary key,
-    venueName varchar(300),
+    label varchar(300),
     venueLocation varchar(500),
     phoneNumber varchar(20)
 );
@@ -62,7 +26,7 @@ create table Area (
     Id serial primary key,
     venueId int references Venue(Id)
     on delete cascade,
-    areaName varchar(100)
+    label varchar(100)
 );
 
 create table Users (
@@ -79,14 +43,9 @@ create table Users (
 
 create table Section (
     Id serial primary key,
-    sectionName varchar(100),
-    venueId int references Venue(Id)
-    on delete cascade,
+    label varchar(100),
     areaId int references Area(Id)
-    on delete cascade,
-    userId int references Users(Id)
-    on delete cascade,
-    alcoholName varchar(100)
+    on delete cascade
 );
 
 
@@ -94,8 +53,6 @@ create table Reporting (
     Id serial primary key,
     BottleName varchar(50),
     userId int references Users(Id)
-    on delete cascade,
-    venueId int references Venue(Id)
     on delete cascade,
     AlcoholId int references Alcohol(Id)
     on delete cascade,
