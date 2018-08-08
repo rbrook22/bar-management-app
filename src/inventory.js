@@ -37,7 +37,7 @@ class Inventory extends React.Component {
                         <div className='beerList'>
                             <ul>
                                 {this.state.beers.map(beer => (
-                                    <li>{beer.bevname}</li>
+                                    <li key={beer.id}>{beer.bevname}</li>
                                 ))}
                             </ul>
                         </div>
