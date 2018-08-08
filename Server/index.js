@@ -4,7 +4,7 @@ const alcohol = require('./db');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Gets all Beer
+// Gets all Alcohol by category.
 app.get('/:drink', (req, res) => {
     alcohol.getAll(req.params.drink)
     .then((data) => {   
@@ -13,8 +13,29 @@ app.get('/:drink', (req, res) => {
     .catch((error) => { console.log(error); });
 });
 
-app.get('/:drink/:drinktype', (req, res) => {
-    alcohol.getByType(req.params.drink.drinkType)
+// Gets all alcohol by BevType
+app.get('/:drink/:drinkType', (req, res) => {
+    console.log(req.params.drink);
+    console.log(req.params.drinkType);
+    alcohol.getByType(req.params.drink, req.params.drinkType)
+    .then((data) => {   
+        res.json(data);
+    })
+    .catch((error) => { console.log(error); });
+});
+
+// Gets all alcohol by Drink Name
+app.get('/:drink/:drinkName', (req, res) => {
+    alcohol.getByType(req.params.drink, req.params.drinkName)
+    .then((data) => {   
+        res.json(data);
+    })
+    .catch((error) => { console.log(error); });
+});
+
+// Gets all alcohol by id:
+app.get('/:drink/:drinkName', (req, res) => {
+    alcohol.getByType(req.params.drink, req.params.drinkid)
     .then((data) => {   
         res.json(data);
     })

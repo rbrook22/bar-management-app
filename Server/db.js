@@ -13,14 +13,20 @@ function getAll(drink) {
 }
 
 function getByType(drink, drinkType) {
-    return db.any('select * from $1# where bevtype ilike \'%$2#%\'', [drink, drinkType]);
+    return db.any(`select * from ${drink} where bevtype ilike '%$1#%'`, [drinkType]);
 }
 
-// function getByName(drink, name) {
-//     return db.any(`select `)
+// function getByName(drink, drinkName) {
+//     return db.any(`select * from ${drink} where bevName ilike \'%$1#%\'`, [drinkName]);
+// }
+
+// function getById(drinkId) {
+//     return db.oneOrNone(`Select * from ${drink} where id=$1`, [drinkId]);
 // }
 
 module.exports = {
     getAll,
     getByType
+    // getByName,
+    // getById
 }
