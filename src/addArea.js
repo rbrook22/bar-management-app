@@ -1,5 +1,5 @@
 import React from 'react';
-// import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class AddArea extends React.Component {
     render() {
@@ -12,7 +12,7 @@ class AddArea extends React.Component {
                         Area:
                         <input type="text" name="areaName" />
                     </label>
-                    <input type="submit" value="Confirm" />
+                    <Link><input type="submit" value="Confirm" /></Link>
                 </form>
             </div>
         );
