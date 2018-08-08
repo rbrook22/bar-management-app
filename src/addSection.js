@@ -1,5 +1,5 @@
 import React from 'react';
-// import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class AddSection extends React.Component {
     render() {
@@ -12,7 +12,7 @@ class AddSection extends React.Component {
                         Section:
                         <input type="text" name="sectionName" />
                     </label>
-                    <input type="submit" value="Confirm" />
+                    <Link><input type="submit" value="Confirm" /></Link>
                 </form>
             </div>
         );
