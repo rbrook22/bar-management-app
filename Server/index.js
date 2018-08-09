@@ -53,14 +53,14 @@ app.get('/venue/:id/areas', (req, res) => {
 });
 
 // Get all Areas by Id
-// app.get('/venue/:id', (req, res) => {
-//     console.log('an area')
-//     alcohol.getAreasById(req.params.id)
-//     .then((data) => {
-//         res.json(data);
-//     })
-//     .catch((error) => { console.log(error); });
-// });
+app.get('/venue/:id', (req, res) => {
+    console.log('an area')
+    alcohol.getAreasById(req.params.id)
+    .then((data) => {
+        res.json(data);
+    })
+    .catch((error) => { console.log(error); });
+});
 
 // Gets all Sections
 app.get('/venue/:areaId/section', (req, res) => {

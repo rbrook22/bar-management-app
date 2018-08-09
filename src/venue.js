@@ -10,17 +10,10 @@ class Venue extends React.Component {
         this.state = { 
             areas: [],
             sections: []
-         };
+        };
     }
 
     componentDidMount(){
-        // axios.get('/venue/area')
-        //     .then( response => {
-        //         console.log(response);
-        //         this.setState ({
-        //             areas: response.data
-        //         });
-        //     })
         axios.get('/venue/2/areas')
             .then( response => {
                 console.log(response);
