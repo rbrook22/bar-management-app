@@ -2,19 +2,35 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import NavBar from './navBar';
 import AddArea from './addArea';
+import Axios from 'axios';
 
 class AreaPage extends React.Component {
+    constructor (props){
+        super(props)
+        this.state = {
+            label: ''
+        }
+    }
+    componentDidMount(){
+        console.log(this.props);
+        var areaId = this.props.match.params.area_id;
+        var areaURL = `/venue/${areaId}`;
+        Axios.get(areaURL)
+            .then((res) => {
+                console.log(res.data);
+            })
+    }
     render() {
         return (
             <div className='area'>
                 <div className='navBar'>
                     <NavBar />
                 </div>
-                <div className='addArea'>
-                    <button><Link to='/area/addarea'>Add Area</Link></button>
+                <div className='addSection'>
+                    <button><Link to='/area/addarea'>Add Section</Link></button>
                 </div>
                 <div className='areaHeader'>
-                    <h2>Area Name</h2>
+                    <h2>{this.state.label}</h2>
                     <div className='sectCount'>
                         <p>Num</p>
                     </div>

@@ -37,7 +37,7 @@ class Venue extends React.Component {
                         <div className='beerList'>
                             <ul>
                                 {this.state.areas.map(area => (
-                                    <li key={area.id}>{area.label}</li>
+                                    <li key={area.id}><Link to={`/area/${area.id}/`}>{area.label}</Link></li>
                                 ))}
                             </ul>
                         </div>
