@@ -17,7 +17,9 @@ class AreaPage extends React.Component {
         var areaURL = `/venue/${areaId}`;
         Axios.get(areaURL)
             .then((res) => {
-                console.log(res.data);
+                this.setState({
+                    label: res.data.label
+                })
             })
     }
     render() {
