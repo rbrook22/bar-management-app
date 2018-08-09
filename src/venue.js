@@ -6,17 +6,34 @@ import axios from 'axios';
 class Venue extends React.Component {
     constructor (props) {
         super(props);
-        this.state = { areas: [] };
+        this.state = { 
+            areas: [],
+            sections: []
+         };
     }
 
     componentDidMount(){
-        axios.get('/venue/area')
+        // axios.get('/venue/area')
+        //     .then( response => {
+        //         console.log(response);
+        //         this.setState ({
+        //             areas: response.data
+        //         });
+        //     })
+        axios.get('/venue/2/areas')
             .then( response => {
                 console.log(response);
                 this.setState ({
                     areas: response.data
                 });
-            })
+            })    
+        axios.get('/venue/2/section')
+            .then( response => {
+                console.log(response);
+                this.setState ({
+                    sections: response.data
+                });
+            })    
     } 
 
     render() {
@@ -34,12 +51,17 @@ class Venue extends React.Component {
                         <div className='area'>
                             <p>This is first area</p>
                         </div>
-                        <div className='beerList'>
+                        <div className='areaList'>
                             <ul>
                                 {this.state.areas.map(area => (
                                     <li key={area.id}>{area.label}</li>
                                 ))}
-                            </ul>
+                                    <ul>
+                                        {this.state.sections.map(section => (
+                                            <li key={section.id}>{section.label}</li>
+                                        ))}
+                                    </ul>
+                            </ul>   
                         </div>
                     </div>
                 </div>
