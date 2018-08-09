@@ -2,8 +2,9 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import NavBar from './navBar';
 import AddArea from './addArea';
+import axios from 'axios';
 
-class AreaPage extends React.Component {
+class AreaPage extends React.Component {   
     render() {
         return (
             <div className='area'>
@@ -14,7 +15,7 @@ class AreaPage extends React.Component {
                     <button><Link to='/area/addarea'>Add Area</Link></button>
                 </div>
                 <div className='areaHeader'>
-                    <h2>Area Name</h2>
+                    <h2>{this.state.areas.label}</h2>
                     <div className='sectCount'>
                         <p>Num</p>
                     </div>

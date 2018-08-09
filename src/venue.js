@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import NavBar from './navBar';
 import axios from 'axios';
 
+
 class Venue extends React.Component {
     constructor (props) {
         super(props);
@@ -54,7 +55,7 @@ class Venue extends React.Component {
                         <div className='areaList'>
                             <ul>
                                 {this.state.areas.map(area => (
-                                    <li key={area.id}>{area.label}</li>
+                                    <Link to=/ ><li key={area.id}>{area.label}</li>
                                 ))}
                                     <ul>
                                         {this.state.sections.map(section => (
