@@ -8,8 +8,7 @@ class Venue extends React.Component {
     constructor (props) {
         super(props);
         this.state = { 
-            areas: [],
-            sections: []
+            areas: []
         };
     }
 
@@ -20,14 +19,7 @@ class Venue extends React.Component {
                 this.setState ({
                     areas: response.data
                 });
-            })    
-        axios.get('/venue/2/section')
-            .then( response => {
-                console.log(response);
-                this.setState ({
-                    sections: response.data
-                });
-            })    
+            })       
     } 
 
     render() {
@@ -50,11 +42,6 @@ class Venue extends React.Component {
                                 {this.state.areas.map(area => (
                                     <li key={area.id}><Link to={`/area/${area.id}/`}>{area.label}</Link></li>
                                 ))}
-                                    <ul>
-                                        {this.state.sections.map(section => (
-                                            <li key={section.id}>{section.label}</li>
-                                        ))}
-                                    </ul>
                             </ul>   
                         </div>
                     </div>
