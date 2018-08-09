@@ -18,7 +18,6 @@ class App extends Component {
     return (
       <div className="App">
         <Route path="/" exact={true} component={HomePage} />
-        <Route path="/area" component={AreaPage} />
         <Route path="/dashboard" component={DashBoard} />
         <Route path="/venue" component={Venue} />
         <Route path="/reporting" component={Reports} />
@@ -26,6 +25,7 @@ class App extends Component {
         <Route path="/venueSettings" component={VenueSettings} />
         <Route path="/signin" component={SignIn} />
         <Route path="/signup" component={SignUp} />
+        <Route path="/area/:area_id" component={AreaPage} />
       </div>
     );
   }
