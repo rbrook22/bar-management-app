@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Gets all Alcohol by alcoholId.
-app.get('/:alcoholId', (req, res) => {
+app.get('/alcohol/:alcoholId', (req, res) => {
     alcohol.getAll(req.params.alcoholId)
     .then((data) => {   
         res.json(data);
@@ -50,6 +50,10 @@ app.get('/inventory/area', (req, res) => {
     })
     .catch((error) => { console.log(error); });
 });
+
+
+
+
 
 app.listen(3000, () => {
     console.log('Listening on port 3000...');
