@@ -64,7 +64,7 @@ app.get('/venue/:id', (req, res) => {
 
 // Gets all Sections
 app.get('/venue/:areaId/section', (req, res) => {
-    alcohol.getAllSections()
+    alcohol.getSectionsByAreaId(req.params.areaId)
     .then((data) => {
         res.json(data);
     })
