@@ -30,8 +30,8 @@ function deleteVenuebyId(Id) {
 
 // Area Functions
 // get
-function getAllAreas() {
-    return db.any('Select * from Area');
+function getAllAreas(venueId) {
+    return db.any('Select * from Area where venueId=$1', [venueId]);
 }
 function getAreasById(Id) {
     return db.oneOrNone(`select * from Area where Id=$1`, [Id]);

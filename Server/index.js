@@ -43,14 +43,33 @@ app.get('/:drink/id/:drinkId', (req, res) => {
 });
 
 // Gets all Areas
-app.get('/venue/area', (req, res) => {
-    alcohol.getAllAreas()
+app.get('/venue/:id/areas', (req, res) => {
+    console.log('all areas')
+    alcohol.getAllAreas(req.params.id)
     .then((data) => {
         res.json(data);
     })
     .catch((error) => { console.log(error); });
 });
 
+// Get all Areas by Id
+// app.get('/venue/:id', (req, res) => {
+//     console.log('an area')
+//     alcohol.getAreasById(req.params.id)
+//     .then((data) => {
+//         res.json(data);
+//     })
+//     .catch((error) => { console.log(error); });
+// });
+
+// Gets all Sections
+app.get('/venue/:areaId/section', (req, res) => {
+    alcohol.getAllSections()
+    .then((data) => {
+        res.json(data);
+    })
+    .catch((error) => { console.log(error); });
+});
 
 
 
