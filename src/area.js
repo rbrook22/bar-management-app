@@ -19,7 +19,8 @@ class AreaPage extends React.Component {
         axios.get(areaURL)
             .then((res) => {
                 this.setState({
-                    label: res.data.label
+                    label: res.data.label,
+                    id: res.data.id
                 })
             })
         axios.get('/venue/2/section')
@@ -36,19 +37,19 @@ class AreaPage extends React.Component {
                 <div className='navBar'>
                     <NavBar />
                 </div>
-                <div className='addSection'>
-                    <button><Link to='/area/addarea'>Add Section</Link></button>
-                </div>
                 <div className='areaHeader'>
                     <h2>{this.state.label}</h2>
                         <ul>
                             {this.state.sections.map(section => (
-                                <li key={section.id}>{section.label}</li>
+                                <li key={section.id}>{section.label}
+                                <br></br>
+                                <button><Link to={`/area/${this.state.id}/${section.id}/placement`}>Add Placement</Link></button>
+                                </li>
                             ))}
                         </ul>
                 </div>
                 <div className='areaBody'>
-                {/* <Link><input type="button" className="btn" value="Add Section"/></Link> */}
+                <Link to={`/area/${this.state.id}/addsection`}><input type="button" className="btn" value="Add Section"/></Link>
                 </div>
             </div>
         );

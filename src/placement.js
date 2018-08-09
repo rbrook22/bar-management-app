@@ -12,7 +12,7 @@ class AddPlacement extends React.Component {
                         Bottle:
                         <input type="text" name="placementName" />
                     </label>
-                    <Link><input type="submit" value="Confirm" /></Link>
+                    <input type="submit" value="Confirm" />
                 </form>
             </div>
         );
