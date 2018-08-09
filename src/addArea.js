@@ -12,7 +12,7 @@ class AddArea extends React.Component {
                         Area:
                         <input type="text" name="areaName" />
                     </label>
-                    <Link><input type="submit" value="Confirm" /></Link>
+                    <Link to='/area'><input type="submit" value="Confirm" /></Link>
                 </form>
             </div>
         );

@@ -56,7 +56,7 @@ class DashBoard extends React.Component {
                     <p>An overview of your venue</p>
                     <div className='inventoryOverview'>
                         <div className='beerOverview'>
-                             <div className='beerList'>
+                            <div className='beerList'>
                                 <h3>List of Beer</h3>
                                 <ul>
                                     {this.state.beers.map(beer => (

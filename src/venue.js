@@ -1,28 +1,46 @@
 import React from 'react';
-// import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import NavBar from './navBar';
+import axios from 'axios';
 
 class Venue extends React.Component {
+    constructor (props) {
+        super(props);
+        this.state = { areas: [] };
+    }
+
+    componentDidMount(){
+        axios.get('/venue/area')
+            .then( response => {
+                console.log(response);
+                this.setState ({
+                    areas: response.data
+                });
+            })
+    } 
+
     render() {
         return (
-            <div className='venuePage'>
+            <div className='venue'>
                 <div className='navBar'>
                     <NavBar />
                 </div>
-                <div className='overview'>
-                    <h2>Settings</h2>
-                    <div className='venueInfo'>
-                        <div className='accountInfo'>
-                            <div className='accInfo'>
-                            <p>Account information here</p>
-                            </div>
-                            <div className='establishmentInformation'>
-                            <p>Establishment information here</p>
-                            </div>
+                <div className='venueOverview'>
+                    <h2>Venue</h2>
+                    <p>Real time look at areas, sections, and bottles</p>
+                    {/* <Link><input type="button" className="btn" value="Add Area"/></Link>
+                    <Link><input type="button" className="btn" value="Run Inventory"/></Link> */}
+                    <div className='areaOverview'>
+                        <div className='area'>
+                            <p>This is first area</p>
                         </div>
-                            <div className='subscriptionInformation'>
-                            <p>Subscription information here</p>
-                            </div>
+                        <div className='beerList'>
+                            <ul>
+                                {this.state.areas.map(area => (
+                                    <li key={area.id}>{area.label}</li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

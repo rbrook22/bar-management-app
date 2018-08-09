@@ -43,7 +43,7 @@ app.get('/:drink/id/:drinkId', (req, res) => {
 });
 
 // Gets all Areas
-app.get('/inventory/area', (req, res) => {
+app.get('/venue/area', (req, res) => {
     alcohol.getAllAreas()
     .then((data) => {
         res.json(data);

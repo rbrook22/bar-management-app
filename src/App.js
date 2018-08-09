@@ -5,10 +5,10 @@ import './App.css';
 import HomePage from './homepage';
 import AreaPage from './area';
 import DashBoard from './dashboard';
-import Inventory from './inventory';
+import Venue from './venue';
 import Reports from './reports';
 import Personnel from './personnel';
-import Venue from './venue';
+import VenueSettings from './venueSettings';
 import SignIn from './signin';
 import SignUp from './signup';
 
@@ -20,10 +20,10 @@ class App extends Component {
         <Route path="/" exact={true} component={HomePage} />
         <Route path="/area" component={AreaPage} />
         <Route path="/dashboard" component={DashBoard} />
-        <Route path="/inventory" component={Inventory} />
+        <Route path="/venue" component={Venue} />
         <Route path="/reporting" component={Reports} />
         <Route path="/personnel" component={Personnel} />
-        <Route path="/venue" component={Venue} />
+        <Route path="/venueSettings" component={VenueSettings} />
         <Route path="/signin" component={SignIn} />
         <Route path="/signup" component={SignUp} />
       </div>
