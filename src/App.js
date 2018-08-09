@@ -11,6 +11,7 @@ import Personnel from './personnel';
 import VenueSettings from './venueSettings';
 import SignIn from './signin';
 import SignUp from './signup';
+import AddArea from './addArea';
 
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
         <Route path="/signin" component={SignIn} />
         <Route path="/signup" component={SignUp} />
         <Route path="/area/:area_id" component={AreaPage} />
+        <Route path="/addarea" component={AddArea} />
       </div>
     );
   }
