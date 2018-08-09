@@ -12,7 +12,7 @@ class AddSection extends React.Component {
                         Section:
                         <input type="text" name="sectionName" />
                     </label>
-                    <Link><input type="submit" value="Confirm" /></Link>
+                    <input type="submit" value="Confirm" />
                 </form>
             </div>
         );

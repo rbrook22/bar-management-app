@@ -12,6 +12,8 @@ import VenueSettings from './venueSettings';
 import SignIn from './signin';
 import SignUp from './signup';
 import AddArea from './addArea';
+import AddSection from './addSection';
+import AddPlacement from './placement';
 
 
 class App extends Component {
@@ -26,8 +28,10 @@ class App extends Component {
         <Route path="/venueSettings" component={VenueSettings} />
         <Route path="/signin" component={SignIn} />
         <Route path="/signup" component={SignUp} />
-        <Route path="/area/:area_id" component={AreaPage} />
+        <Route path="/area/:area_id" exact={true} component={AreaPage} />
         <Route path="/addarea" component={AddArea} />
+        <Route path="/area/:area_id/addsection" component={AddSection} />
+        <Route path="/area/:area_id/:section_id/placement" component={AddPlacement} />
       </div>
     );
   }
