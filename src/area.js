@@ -23,7 +23,7 @@ class AreaPage extends React.Component {
                     id: res.data.id
                 })
             })
-        axios.get('/venue/2/section')
+        axios.get(`/venue/${areaId}/section`)
         .then( response => {
             console.log(response);
             this.setState ({

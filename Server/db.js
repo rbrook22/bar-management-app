@@ -30,8 +30,8 @@ function deleteVenuebyId(Id) {
 
 // Area Functions
 // get
-function getAllAreas(venueId) {
-    return db.any('Select * from Area where venueId=$1', [venueId]);
+function getAllAreas() {
+    return db.any('Select * from Area');
 }
 function getAreasById(Id) {
     return db.oneOrNone(`select * from Area where Id=$1`, [Id]);
@@ -56,6 +56,10 @@ function getAllSections() {
 function getSectionsById(Id) {
     return db.oneOrNone(`select * from Section where Id=$1`, [Id]);
 }
+function getSectionsByAreaId(areaId) {
+    return db.any(`select * from Section where areaId=$1`, [areaId]);
+}
+
 function getSectionsByName(label) {
     return db.any(`select * from Section where label iLike '%$1%'`, [label]);
 }
@@ -141,6 +145,7 @@ module.exports = {
     deleteUsersById,
     getAllSections,
     getSectionsById,
+    getSectionsByAreaId,
     getSectionsByName,
     updateSectionById,
     deleteSectionById
