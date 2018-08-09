@@ -6,15 +6,15 @@ import axios from 'axios';
 class Inventory extends React.Component {
     constructor (props) {
         super(props);
-        this.state = { beers: [] };
+        this.state = { areas: [] };
     }
 
     componentDidMount(){
-        axios.get('/1')
+        axios.get('/inventory/area')
             .then( response => {
                 console.log(response);
                 this.setState ({
-                    beers: response.data
+                    areas: response.data
                 });
             })
     } 
@@ -32,14 +32,13 @@ class Inventory extends React.Component {
                     <Link><input type="button" className="btn" value="Run Inventory"/></Link> */}
                     <div className='areaOverview'>
                         <div className='area'>
-                            <p>This is first area</p>
-                        </div>
-                        <div className='beerList'>
-                            <ul>
-                                {this.state.beers.map(beer => (
-                                    <li key={beer.id}>{beer.bevname}</li>
-                                ))}
-                            </ul>
+                            <div className='areaList'>
+                                <ul>
+                                    {this.state.areas.map(area => (
+                                        <li key={area.id}>{area.label}</li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
