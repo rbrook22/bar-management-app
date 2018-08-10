@@ -48,6 +48,15 @@ create table Section (
     on delete cascade
 );
 
+create table Placement (
+    Id serial primary key,
+    label varchar(100),
+    sectionId int references Section(Id)
+    on delete cascade,
+    beverageId int references BeverageList(Id)
+    on delete cascade
+);
+
 
 create table Reporting (
     Id serial primary key,

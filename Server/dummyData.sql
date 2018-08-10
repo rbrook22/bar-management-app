@@ -26,6 +26,9 @@ INSERT INTO area (venueid, label) VALUES (2, 'Main Bar');
 -- Section Table
 INSERT INTO section (label, areaid) VALUES ('Top Shelf', 1);
 INSERT INTO section (label, areaid) VALUES ('Left Wall', 2);
+-- Placement Table
+INSERT INTO placement (label, sectionid, beverageid) VALUES ('Test', 1, 2);
+INSERT INTO placement (label, sectionid, beverageid) VALUES ('Test', 2, 1);
 -- Reporting Table
 INSERT INTO reporting (bottlename, userid, alcoholid, fullbottles, partialbottle) VALUES ('Orange Juice', 2, 4, 3, .5);
 INSERT INTO reporting (bottlename, userid, alcoholid, fullbottles, partialbottle) VALUES ('Kendall Jackson', 1,2, 10, .5);
