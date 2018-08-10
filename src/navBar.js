@@ -10,7 +10,7 @@ const NavBar = (props) => {
             <Link to="/reporting"><input type="button" className="btn" value="Reporting"/></Link>
             <Link to="/personnel"><input type="button" className="btn" value="Personnel"/></Link>
             <Link to="/venueSettings"><input type="button" className="btn" value="Settings"/></Link>
-            <Link to="/logout"><input type="button" className="btn" value="Log Out"/></Link>
+            <Link to="/"><input type="button" className="btn" value="Log Out"/></Link>
         </div>
     );
 }
