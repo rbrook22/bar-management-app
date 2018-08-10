@@ -29,6 +29,10 @@ function deleteVenuebyId(Id) {
 }
 
 // Area Functions
+// Create
+function insertArea(label, venue = 1) {
+    return db.result(`insert into area (venueid, label) values ($1, '$2#') returning id`, [venue, label]);
+} 
 // get
 function getAllAreas() {
     return db.any('Select * from Area');
@@ -148,6 +152,7 @@ module.exports = {
     getSectionsByAreaId,
     getSectionsByName,
     updateSectionById,
-    deleteSectionById
+    deleteSectionById,
+    insertArea  
     
 }

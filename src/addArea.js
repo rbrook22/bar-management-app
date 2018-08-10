@@ -11,13 +11,8 @@ class AddArea extends React.Component {
             }
         }
     }
-    componentDidMount(){
-        this.setState({
-            baseForm: this.state.form
-        })
-    }
 
-    handleareaName=(event) => {
+    handleLabel=(event) => {
         this.setState({
             form:{
                 ...this.state.form,
@@ -26,29 +21,29 @@ class AddArea extends React.Component {
         })
     }
 
-    handleEntry(event){
+    handleEntry = (event) => {
         event.preventDefault();
         let newArea = {
             label: this.state.form.label
         }
 
-        axios.post('http://localhost:3000')
+        axios.post('/venue', newArea)
             .then(res => {
                 console.log(res);
+                this.props.history.push('/venue')
             })
-
     }
     render() {
         return (
             <div className='addArea'>
                 <h3>Add Area</h3>
                 <p>Enter Name of Area</p>
-                <form>
+                <form onSubmit={this.handleEntry}>
                     <label>
                         Area:
-                        <input type="text" name="areaName" />
+                        <input type="text" name="areaName" onChange={this.handleLabel} />
                     </label>
-                    <Link to='/venue'><input type="submit" value="Confirm" /></Link>
+                    <input type="submit" value="Confirm" />
                 </form>
             </div>
         );

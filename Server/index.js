@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const alcohol = require('./db');
 const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Gets all Alcohol by alcoholId.
@@ -51,8 +52,17 @@ app.get('/venue/:id/areas', (req, res) => {
     })
     .catch((error) => { console.log(error); });
 });
+// Post Area
+app.post('/venue', (req, res) => {
+    console.log(req.body);
+    alcohol.insertArea(req.body.label)
+    .then((data) => {
+        res.json(data);
+    })
+    .catch((error) => { console.log(error); });
+})
 
-// Get all Areas by Id
+// Get 1 Area by Id
 app.get('/venue/:id', (req, res) => {
     console.log('an area')
     alcohol.getAreasById(req.params.id)
