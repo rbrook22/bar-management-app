@@ -73,11 +73,46 @@ function getSectionsByName(label) {
 }
 // update
 function updateSectionById(getSectionsByName, Id) {
-    return db.result(`update Section set sectionName='$1#' where Id=$2 `, [getSectionsByName, Id]);
+    return db.result(`update Section set label='$1#' where Id=$2 `, [getSectionsByName, Id]);
 }
 // delete
 function deleteSectionById(Id) {
     return db.result(`delete from Section where Id=$1`, [Id]);
+}
+
+// Placement Functions
+// Create
+function insertPlacement(label, sectionId, beverageID) {
+    return db.result(`insert into placement (label, areaId, beverageID) values ($1, '$2#', '$2#') returning id`, [label, areaId, beverageID]);
+}
+// get
+function getAllPlacements() {
+    return db.any(`select * from placement`);
+}
+
+function getPlacementsById(Id) {
+    return db.oneOrNone(`select * from placement where Id=$1`, [Id]);
+}
+
+function getPlacementbySectionsId(areaId) {
+    return db.any(`select * from placement where sectionId=$1`, [sectionId]);
+}
+
+function getPlacementbyBeverageId(beverageId) {
+    return db.any(`select * from placement where beverageId=$1`, [beverageId]);
+}
+
+function getPlacementByName(label) {
+    return db.any(`select * from placement where label iLike '%$1%'`, [label]);
+}
+// update
+function updatePlacementById(getPlacementByName, Id) {
+    return db.result(`update placement set label='$1#' where Id=$2 `, [getPlacementByName, Id]);
+}
+
+// delete
+function deletePlacementById(Id) {
+    return db.result(`delete from placement where Id=$1`, [Id]);
 }
 
 // Alcohol Functions
