@@ -28,7 +28,7 @@ class SignUp extends React.Component {
                         Password:
                         <input type="text" name="password" />
                     </label>
-                    {/* <Link><input type="submit" value="Next" /></Link> */}
+                    <Link to><input type="submit" value="Next" /></Link>
 
                 </form>
             </div>
