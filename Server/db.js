@@ -193,6 +193,13 @@ module.exports = {
     updateSectionById,
     deleteSectionById,
     insertArea,
-    insertSection
-    
+    insertSection,
+    insertPlacement,
+    getAllPlacements,
+    getPlacementsById,
+    getPlacementbySectionsId,
+    getPlacementbyBeverageId,
+    getPlacementByName,
+    updatePlacementById,
+    deletePlacementById
 }
