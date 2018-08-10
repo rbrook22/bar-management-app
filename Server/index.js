@@ -68,7 +68,6 @@ app.post('/venue', (req, res) => {
     .then((data) => {
         res.json(data);
     })
-    .catch((error) => { console.log(error); });
 })
 
 // Get 1 Area by Id
@@ -80,6 +79,18 @@ app.get('/venue/:id', (req, res) => {
     })
     .catch((error) => { console.log(error); });
 });
+
+// Delet Areay by Id
+app.delete('/venue/:id', (req, res) => {
+    console.log('about to delete area');
+    alcohol.deleteAreaById(req.params.id)
+    .then((data) => {
+        console.log(data);
+        res.json(data);
+    })
+    .catch((error) => { console.log(error); });
+})
+
 
 // Gets all Sections
 app.get('/venue/:areaId/section', (req, res) => {

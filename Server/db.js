@@ -49,7 +49,7 @@ function updateAreaById(label, Id) {
 }
 // delete
 function deleteAreaById(Id) {
-    return db.result(`delete Area where Id=$1`, [Id]);
+    return db.result(`delete from Area where Id=$1`, [Id]);
 }
 
 // Section Functions

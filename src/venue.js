@@ -13,14 +13,27 @@ class Venue extends React.Component {
     }
 
     componentDidMount(){
+        this.getAreas()
+
+    }
+
+    getAreas = () => {
         axios.get('/venue/2/areas')
-            .then( response => {
-                console.log(response);
-                this.setState ({
-                    areas: response.data
-                });
-            })       
-    } 
+        .then( response => {
+            console.log(response);
+            this.setState ({
+                areas: response.data
+            });
+        })
+    }
+
+    deleteArea = (event) => {
+        axios.delete(`/venue/${event.target.value}`)
+        .then(response => {
+            console.log(response);
+            this.getAreas()
+        })
+    }
 
     render() {
         return (
@@ -40,7 +53,11 @@ class Venue extends React.Component {
                         <div className='areaList'>
                             <ul>
                                 {this.state.areas.map(area => (
-                                    <li key={area.id}><Link to={`/area/${area.id}/`}>{area.label}</Link></li>
+                                    <li key={area.id}><Link to={`/area/${area.id}/`}>{area.label}</Link>
+                                    <br></br>
+                                    <input type="button" value={area.id} onClick={this.deleteArea} />
+                                    </li>
+                                    
                                 ))}
                             </ul>   
                         </div>
