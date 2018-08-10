@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const alcohol = require('./db');
 const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Gets all Alcohol by alcoholId.
@@ -42,6 +43,15 @@ app.get('/:drink/id/:drinkId', (req, res) => {
     .catch((error) => { console.log(error); });
 });
 
+// Get Venue By id
+app.get('/venueSettings/:id', (req, res) => {
+    alcohol.getVenuesById(req.params.id)
+    .then((data) => {   
+        res.json(data);
+    })
+    .catch((error) => { console.log(error); });
+});
+
 // Gets all Areas
 app.get('/venue/:id/areas', (req, res) => {
     console.log('all areas')
@@ -51,8 +61,17 @@ app.get('/venue/:id/areas', (req, res) => {
     })
     .catch((error) => { console.log(error); });
 });
+// Post Area
+app.post('/venue', (req, res) => {
+    console.log(req.body);
+    alcohol.insertArea(req.body.label)
+    .then((data) => {
+        res.json(data);
+    })
+    .catch((error) => { console.log(error); });
+})
 
-// Get all Areas by Id
+// Get 1 Area by Id
 app.get('/venue/:id', (req, res) => {
     console.log('an area')
     alcohol.getAreasById(req.params.id)
@@ -71,6 +90,14 @@ app.get('/venue/:areaId/section', (req, res) => {
     .catch((error) => { console.log(error); });
 });
 
+// Gets all Users
+app.get('/personnel/:id', (req, res) => {
+    alcohol.getAllUsersById(req.params.id)
+    .then((data) => {
+        res.json(data);
+    })
+    .catch((error) => { console.log(error); });
+});
 
 
 
