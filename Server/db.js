@@ -67,11 +67,11 @@ function getSectionsById(Id) {
 function getSectionsByAreaId(areaId) {
     return db.any(`select * from Section where areaId=$1`, [areaId]);
 }
-
+// doesn't work
 function getSectionsByName(label) {
     return db.any(`select * from Section where label iLike '%$1%'`, [label]);
 }
-// update
+// update-doesn't work
 function updateSectionById(getSectionsByName, Id) {
     return db.result(`update Section set label='$1#' where Id=$2 `, [getSectionsByName, Id]);
 }
@@ -83,7 +83,7 @@ function deleteSectionById(Id) {
 // Placement Functions
 // Create
 function insertPlacement(label, sectionId, beverageID) {
-    return db.result(`insert into placement (label, areaId, beverageID) values ($1, '$2#', '$2#') returning id`, [label, areaId, beverageID]);
+    return db.result(`insert into placement (label, sectionId, beverageID) values ($1, '$2#', '$2#') returning id`, [label, sectionId, beverageID]);
 }
 // get
 function getAllPlacements() {
@@ -94,18 +94,18 @@ function getPlacementsById(Id) {
     return db.oneOrNone(`select * from placement where Id=$1`, [Id]);
 }
 
-function getPlacementbySectionsId(areaId) {
+function getPlacementBySectionsId(sectionId) {
     return db.any(`select * from placement where sectionId=$1`, [sectionId]);
 }
 
-function getPlacementbyBeverageId(beverageId) {
+function getPlacementByBeverageId(beverageId) {
     return db.any(`select * from placement where beverageId=$1`, [beverageId]);
 }
-
+// doesn't work
 function getPlacementByName(label) {
     return db.any(`select * from placement where label iLike '%$1%'`, [label]);
 }
-// update
+// update-doesn't work
 function updatePlacementById(getPlacementByName, Id) {
     return db.result(`update placement set label='$1#' where Id=$2 `, [getPlacementByName, Id]);
 }
