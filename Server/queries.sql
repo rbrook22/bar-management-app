@@ -83,6 +83,15 @@ where Id = 1;
 Select * from Section
 where label iLike '%Left%';
 
+-- Select all Placements
+Select * from placement;
+-- Select Placement by PlacementID
+Select * from placement
+where Id = 1;
+-- Select Placement by label
+Select * from placement
+where label iLike '%test%';
+
 
 -- Select all users
 Select * from Users;
@@ -148,7 +157,12 @@ Where Id = 1;
 
 -- Update Section Table
 Update Section
-Set sectionName = 'Top Area',
+Set label = 'Top Area'
+Where Id = 1;
+
+-- Update Placement Table
+Update placement
+Set label = 'Top'
 Where Id = 1;
 
 -- Update User Table
@@ -197,6 +211,10 @@ where Id = 2;
 
 -- Delete Section by ID
 Delete from Section
+where Id = 2;
+
+-- Delete Placement by ID
+Delete from placement
 where Id = 2;
 
 -- Delete User by ID
