@@ -101,21 +101,21 @@ function getAllUsers() {
     return db.any(`select * from Users`);
 }
 function getAllUsersById(Id) {
-    return db.oneOrNone(`select * from Users where Id=$1`[Id]);
+    return db.oneOrNone(`select * from Users where Id=$1`, [Id]);
 }
 function getUserByFirstName(firstname) {
-    return db.any(`select * from Users where firstname iLike '%$1%'`[firstname]);
+    return db.any(`select * from Users where firstname iLike '%$1%'`, [firstname]);
 }
 function getUserByEmail(email) {
-    return db.any(`select * from Users where email=$1`[email]);
+    return db.any(`select * from Users where email=$1`, [email]);
 }
 // update
 function updateUsersById(firstName, lastName, email, userPassword, position, phoneNumber, Id) {
-    return db.result(`update Users set firstName='$1#', lastName='$2#', email='$3#', userPassword='$4#', position='$5#', phoneNumber='$6#' where Id=$7`[firstName, lastName, email, userPassword, position, phoneNumber, Id])
+    return db.result(`update Users set firstName='$1#', lastName='$2#', email='$3#', userPassword='$4#', position='$5#', phoneNumber='$6#' where Id=$7`, [firstName, lastName, email, userPassword, position, phoneNumber, Id])
 }
 // delete
 function deleteUsersById(Id) {
-    return db.result(`delete from Users where Id=$1`[Id]);
+    return db.result(`delete from Users where Id=$1`, [Id]);
 }
 
 

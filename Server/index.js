@@ -71,6 +71,14 @@ app.get('/venue/:areaId/section', (req, res) => {
     .catch((error) => { console.log(error); });
 });
 
+// Gets all Users
+app.get('/personnel/:id', (req, res) => {
+    alcohol.getAllUsersById(req.params.id)
+    .then((data) => {
+        res.json(data);
+    })
+    .catch((error) => { console.log(error); });
+});
 
 
 
