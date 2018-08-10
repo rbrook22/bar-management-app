@@ -197,8 +197,8 @@ module.exports = {
     insertPlacement,
     getAllPlacements,
     getPlacementsById,
-    getPlacementbySectionsId,
-    getPlacementbyBeverageId,
+    getPlacementBySectionsId,
+    getPlacementByBeverageId,
     getPlacementByName,
     updatePlacementById,
     deletePlacementById
