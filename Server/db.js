@@ -53,6 +53,10 @@ function deleteAreaById(Id) {
 }
 
 // Section Functions
+// Create
+function insertSection(label, areaId) {
+    return db.result(`insert into section (label, areaId) values ($1, '$2#') returning id`, [label, areaId]);
+}
 // get
 function getAllSections() {
     return db.any(`select * from Section`);
@@ -153,6 +157,7 @@ module.exports = {
     getSectionsByName,
     updateSectionById,
     deleteSectionById,
-    insertArea  
+    insertArea,
+    insertSection
     
 }
