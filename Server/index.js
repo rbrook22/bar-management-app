@@ -112,6 +112,18 @@ app.post('/venue/:areaId/section', (req,res) => {
         console.log(error);
     });
 });
+// Delete Section by ID
+app.delete('/venue/:areaId/section/:sectionid', (req, res) => {
+    console.log(req.body);
+    console.log("deleting section soon");
+    alcohol.deleteSectionById(req.params.sectionid)
+    .then((data) => {
+        res.json(data);
+    })
+    .catch ((error) => {
+        console.log(error);
+    })
+})
 
 
 // Gets all Users

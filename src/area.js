@@ -13,6 +13,10 @@ class AreaPage extends React.Component {
         }
     }
     componentDidMount(){
+        this.getSections()
+    }
+
+    getSections = () => {
         console.log(this.props);
         var areaId = this.props.match.params.area_id;
         var areaURL = `/venue/${areaId}`;
@@ -31,6 +35,14 @@ class AreaPage extends React.Component {
             });
         }) 
     }
+    deleteSection = (event) => {
+        var areaId = this.props.match.params.area_id;
+        axios.delete(`/venue/${areaId}/section/${event.target.value}`)
+        .then(response => {
+            console.log(response);
+            this.getSections()
+        })
+    }
     render() {
         return (
             <div className='area'>
@@ -42,6 +54,7 @@ class AreaPage extends React.Component {
                         <ul>
                             {this.state.sections.map(section => (
                                 <li key={section.id}>{section.label}
+                                <input type="button" onClick={this.deleteSection} value={section.id}/>
                                 <br></br>
                                 <button><Link to={`/area/${this.state.id}/${section.id}/placement`}>Add Placement</Link></button>
                                 </li>
