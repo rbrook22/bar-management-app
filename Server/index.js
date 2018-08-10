@@ -43,6 +43,15 @@ app.get('/:drink/id/:drinkId', (req, res) => {
     .catch((error) => { console.log(error); });
 });
 
+// Get Venue By id
+app.get('/venueSettings/:id', (req, res) => {
+    alcohol.getVenuesById(req.params.id)
+    .then((data) => {   
+        res.json(data);
+    })
+    .catch((error) => { console.log(error); });
+});
+
 // Gets all Areas
 app.get('/venue/:id/areas', (req, res) => {
     console.log('all areas')
@@ -81,6 +90,14 @@ app.get('/venue/:areaId/section', (req, res) => {
     .catch((error) => { console.log(error); });
 });
 
+// Gets all Users
+app.get('/personnel/:id', (req, res) => {
+    alcohol.getAllUsersById(req.params.id)
+    .then((data) => {
+        res.json(data);
+    })
+    .catch((error) => { console.log(error); });
+});
 
 
 
