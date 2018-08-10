@@ -67,17 +67,52 @@ function getSectionsById(Id) {
 function getSectionsByAreaId(areaId) {
     return db.any(`select * from Section where areaId=$1`, [areaId]);
 }
-
+// doesn't work
 function getSectionsByName(label) {
     return db.any(`select * from Section where label iLike '%$1%'`, [label]);
 }
-// update
+// update-doesn't work
 function updateSectionById(getSectionsByName, Id) {
-    return db.result(`update Section set sectionName='$1#' where Id=$2 `, [getSectionsByName, Id]);
+    return db.result(`update Section set label='$1#' where Id=$2 `, [getSectionsByName, Id]);
 }
 // delete
 function deleteSectionById(Id) {
     return db.result(`delete from Section where Id=$1`, [Id]);
+}
+
+// Placement Functions
+// Create
+function insertPlacement(label, sectionId, beverageID) {
+    return db.result(`insert into placement (label, sectionId, beverageID) values ($1, '$2#', '$2#') returning id`, [label, sectionId, beverageID]);
+}
+// get
+function getAllPlacements() {
+    return db.any(`select * from placement`);
+}
+
+function getPlacementsById(Id) {
+    return db.oneOrNone(`select * from placement where Id=$1`, [Id]);
+}
+
+function getPlacementBySectionsId(sectionId) {
+    return db.any(`select * from placement where sectionId=$1`, [sectionId]);
+}
+
+function getPlacementByBeverageId(beverageId) {
+    return db.any(`select * from placement where beverageId=$1`, [beverageId]);
+}
+// doesn't work
+function getPlacementByName(label) {
+    return db.any(`select * from placement where label iLike '%$1%'`, [label]);
+}
+// update-doesn't work
+function updatePlacementById(getPlacementByName, Id) {
+    return db.result(`update placement set label='$1#' where Id=$2 `, [getPlacementByName, Id]);
+}
+
+// delete
+function deletePlacementById(Id) {
+    return db.result(`delete from placement where Id=$1`, [Id]);
 }
 
 // Alcohol Functions
@@ -158,6 +193,13 @@ module.exports = {
     updateSectionById,
     deleteSectionById,
     insertArea,
-    insertSection
-    
+    insertSection,
+    insertPlacement,
+    getAllPlacements,
+    getPlacementsById,
+    getPlacementBySectionsId,
+    getPlacementByBeverageId,
+    getPlacementByName,
+    updatePlacementById,
+    deletePlacementById
 }
