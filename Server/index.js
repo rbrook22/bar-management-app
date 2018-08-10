@@ -89,6 +89,19 @@ app.get('/venue/:areaId/section', (req, res) => {
     })
     .catch((error) => { console.log(error); });
 });
+// POST Section
+app.post('/venue/:areaId/section', (req,res) => {
+    console.log(req.body);
+    console.log('inserting section soon');
+    alcohol.insertSection(req.body.label, req.params.areaId)
+    .then((data) => {
+        res.json(data);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+});
+
 
 // Gets all Users
 app.get('/personnel/:id', (req, res) => {
