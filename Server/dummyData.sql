@@ -6,14 +6,11 @@ INSERT INTO "public"."alcohol"("bevtype") VALUES('Mixers') RETURNING "id", "bevt
 
 
 -- BeverageList Table
-INSERT INTO beveragelist (bevtype, bevname, alcoholid, volumesize, price, quantity, img) VALUES ('IPA', 'Sweetwater 420', 1, 16, 8, 6, '/public/imgs/beer.jpg');
-INSERT INTO beveragelist (bevtype, bevname, alcoholid, volumesize, price, quantity, img) VALUES ('Craft', 'Budlight', 1, 8, 4, 1, '/public/imgs/beer.jpg');
-INSERT INTO beveragelist (bevtype, bevname, alcoholid, volumesize, price, quantity, img) VALUES ('White', 'Kendall Jackson', 2, 750, 20, 2, '/public/imgs/wine.jpg');
-INSERT INTO beveragelist (bevtype, bevname, alcoholid, volumesize, price, quantity, img) VALUES ('Sparkling', 'Champagne', 2, 750, 15, 2, '/public/imgs/wine.jpg');
-INSERT INTO beveragelist (bevtype, bevname, alcoholid, volumesize, price, quantity, img) VALUES ('Gin', 'Seagrams', 3, 750, 35, 2, '/public/imgs/liquor.jpg');
-INSERT INTO beveragelist (bevtype, bevname, alcoholid, volumesize, price, quantity, img) VALUES ('Bourbon', 'Macallen', 3, 750, 45, 6, '/public/imgs/liquor.jpg');
-INSERT INTO beveragelist (bevtype, bevname, alcoholid, volumesize, price, quantity, img) VALUES ('Fruit Mix', 'Pina Colada', 4, 750, 20, 3, '/public/imgs/mixer.jpg');
-INSERT INTO beveragelist (bevtype, bevname, alcoholid, volumesize, price, quantity, img) VALUES ('Juice', 'Orange Juice', 4, 20, 8, 1, '/public/imgs/mixer.jpg');
+COPY beveragelist (bevtype, bevname, alcoholid, volumesize, price, quantity, img) 
+    FROM '/Users/richardbrooks/Documents/projects/bar-app/server/beverageListTable.csv' 
+    DELIMITER ',' 
+    CSV HEADER
+;
 -- Venue Table
 INSERT INTO venue (label, venuelocation, phonenumber) VALUES ('Quizzicle', '2334 Piedmont rd NE, Atlanta, GA, 30305', '866-773-6426');
 INSERT INTO venue (label, venuelocation, phonenumber) VALUES ('Atlanta Tech', '3490 Piedmont ave NE, Atlanta, GA, 30305', '800-439-7929');

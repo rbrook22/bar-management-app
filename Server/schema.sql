@@ -6,11 +6,11 @@ create table Alcohol (
 create table BeverageList (
     Id serial primary key,
     bevType varchar(30),
-    bevName varchar(30),
+    bevName varchar(100),
     AlcoholId int references Alcohol(Id)
     on delete cascade,
-    VolumeSize int,
-    Price int,
+    VolumeSize varchar(100),
+    Price numeric(8, 2),
     Quantity int,
     Img varchar(300)
 );
