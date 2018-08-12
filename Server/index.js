@@ -141,3 +141,15 @@ app.listen(3000, () => {
     console.log('Listening on port 3000...');
 });
 
+// Placements
+// Get all Placements
+app.get('/venue/:areaId/section/:sectionId/placement', (req,res) => {
+    alcohol.getAllPlacements()
+    .then((data) => {
+        res.json(data);
+    })
+    .catch((error) => {
+        console.log(error);
+    })
+})
+
