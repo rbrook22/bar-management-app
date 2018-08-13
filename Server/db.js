@@ -80,10 +80,22 @@ function deleteSectionById(Id) {
     return db.result(`delete from Section where Id=$1`, [Id]);
 }
 
+// beverageList Functions
+// getbeverage by name
+function getBeverageListByName(bevname) {
+    return db.any(`select * from beveragelist where bevname iLike '%$1%'`, [bevname]);
+}
+// Get all beverages
+function getAllBeverages() {
+    return db.any(`select * from beveragelist`);
+}
+
+
+
 // Placement Functions
 // Create
 function insertPlacement(label, sectionId, beverageID) {
-    return db.result(`insert into placement (label, sectionId, beverageID) values ($1, '$2#', '$2#') returning id`, [label, sectionId, beverageID]);
+    return db.result(`insert into placement (label, sectionId, beverageID) values ($1, '$2#', '$3#') returning id`, [label, sectionId, beverageID]);
 }
 // get
 function getAllPlacements() {
@@ -201,5 +213,7 @@ module.exports = {
     getPlacementByBeverageId,
     getPlacementByName,
     updatePlacementById,
-    deletePlacementById
+    deletePlacementById,
+    getBeverageListByName,
+    getAllBeverages
 }
