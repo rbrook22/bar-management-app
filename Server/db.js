@@ -90,10 +90,12 @@ function getAllBeverages() {
     return db.any(`select * from beveragelist`);
 }
 
+
+
 // Placement Functions
 // Create
 function insertPlacement(label, sectionId, beverageID) {
-    return db.result(`insert into placement (label, sectionId, beverageID) values ($1, '$2#', '$2#') returning id`, [label, sectionId, beverageID]);
+    return db.result(`insert into placement (label, sectionId, beverageID) values ($1, '$2#', '$3#') returning id`, [label, sectionId, beverageID]);
 }
 // get
 function getAllPlacements() {

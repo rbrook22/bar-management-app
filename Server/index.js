@@ -146,6 +146,21 @@ app.get('/beverages', (req, res) => {
     })
 })
 
+// PLacements
+// inserting placement
+app.post('/venue/:areaId/section/:sectionId/', (req, res) => {
+    console.log(req.body.label)
+    console.log(req.body.sectionid)
+    console.log(req.body.beverageid)
+
+    alcohol.insertPlacement(req.body.label, req.body.sectionid, req.body.beverageid)
+    .then((data) => {
+        res.json(data);
+    }).catch((error) => {
+        console.log(error);
+    })
+})
+
 // Gets all Users
 app.get('/personnel/:id', (req, res) => {
     alcohol.getAllUsersById(req.params.id)
