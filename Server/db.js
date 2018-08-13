@@ -106,7 +106,7 @@ function getPlacementsById(Id) {
     return db.oneOrNone(`select * from placement where Id=$1`, [Id]);
 }
 
-function getPlacementBySectionsId(sectionId) {
+function getPlacementBySectionId(sectionId) {
     return db.any(`select * from placement where sectionId=$1`, [sectionId]);
 }
 
@@ -209,7 +209,7 @@ module.exports = {
     insertPlacement,
     getAllPlacements,
     getPlacementsById,
-    getPlacementBySectionsId,
+    getPlacementBySectionId,
     getPlacementByBeverageId,
     getPlacementByName,
     updatePlacementById,

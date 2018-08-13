@@ -40,7 +40,7 @@ class AddPlacement extends React.Component {
         })
         .then(res => {
             console.log(res);
-            this.props.history.push(`/area/${this.props.match.params.area_id}/section/${this.props.match.params.section_id}`)
+            this.props.history.push(`/area/${this.props.match.params.area_id}/`)
         })
     }
     render() {
