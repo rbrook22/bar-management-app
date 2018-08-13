@@ -175,7 +175,7 @@ app.get('/venue/:areaId/section/placements',(req,res) => {
 app.delete('/venue/:areaId/section/placements/:placementid', (req, res) => {
     console.log(req.body);
     console.log('Deleting Placements Soon');
-    alcohol.deletePlacementById(req.params.id)
+    alcohol.deletePlacementById(req.params.placementid)
     .then((data) => {
         res.json(data);
     }).catch((error) => {
