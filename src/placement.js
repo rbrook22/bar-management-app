@@ -6,21 +6,23 @@ class AddPlacement extends React.Component {
     constructor() {
         super();
         this.state = {
-            beverages: []
+            allBevs: [],
+            filteredBevs: []
         }
     }
     componentDidMount() {
-        this.handleChange()
+        axios.get('/beverages')
+            .then((res) => {
+                this.setState({
+                    allBevs: res.data
+                })
+            })
     }
 
-    handleChange= () => {
-        axios.get(`/section/placement`)
-        .then( response => {
-            console.log(response);
-            this.setState ({
-                beverages: response.data
-            });
-        })
+    handleChange=(e) => {
+        this.setState({
+            filteredBevs: this.state.allBevs.filter(b => b.bevname.includes(e.target.value))
+        }) 
     }
     render() {
         return (
@@ -34,6 +36,9 @@ class AddPlacement extends React.Component {
                     </label>
                     <input type="submit" value="Confirm" />
                 </form>
+                <div>
+                    {this.state.filteredBevs.map(b => (<p>{b.bevname}</p>))}
+                </div>
             </div>
         );
     }

@@ -125,14 +125,23 @@ app.delete('/venue/:areaId/section/:sectionid', (req, res) => {
     })
 })
 
-// Placements
-// Get all Placements
+// Beverages
+// Get beverages by name
 app.get('/venue/:areaId/section/:sectionId/placement', (req,res) => {
-    alcohol.getAllPlacements()
+    alcohol.getBeverageListByName(req.params.bevname)
     .then((data) => {
         res.json(data);
     })
     .catch((error) => {
+        console.log(error);
+    })
+})
+
+app.get('/beverages', (req, res) => {
+    alcohol.getAllBeverages()
+    .then((data) => {
+        res.json(data);
+    }).catch((error) => {
         console.log(error);
     })
 })
