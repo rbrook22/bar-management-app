@@ -161,6 +161,16 @@ app.post('/venue/:areaId/section/:sectionId/', (req, res) => {
     })
 })
 
+// Get placement by Section Id
+app.get('venue/:areaId/section/:sectionId',(req,res) => {
+    alcohol.getPlacementBySectionId(req.body.sectionid)
+    .then((data) => {
+        res.json(data);
+    }).catch((error) => {
+        console.log(error)
+    })
+})
+
 // Gets all Users
 app.get('/personnel/:id', (req, res) => {
     alcohol.getAllUsersById(req.params.id)
