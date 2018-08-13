@@ -3,6 +3,25 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 
 class AddPlacement extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            beverages: []
+        }
+    }
+    componentDidMount() {
+        this.handleChange()
+    }
+
+    handleChange= () => {
+        axios.get(`/section/placement`)
+        .then( response => {
+            console.log(response);
+            this.setState ({
+                beverages: response.data
+            });
+        })
+    }
     render() {
         return (
             <div className='addPlacement'>
@@ -11,7 +30,7 @@ class AddPlacement extends React.Component {
                 <form>
                     <label>
                         Bottle:
-                        <input type="text" name="placementName" />
+                        <input type="text" name="placementName" onChange={this.handleChange}/>
                     </label>
                     <input type="submit" value="Confirm" />
                 </form>
