@@ -161,13 +161,25 @@ app.post('/venue/:areaId/section/:sectionId/', (req, res) => {
     })
 })
 
-// Get placement by Section Id
-app.get('venue/:areaId/section/:sectionId',(req,res) => {
-    alcohol.getPlacementBySectionId(req.body.sectionid)
+// Get all placements
+app.get('/venue/:areaId/section/placements',(req,res) => {
+    alcohol.getAllPlacements()
     .then((data) => {
         res.json(data);
     }).catch((error) => {
-        console.log(error)
+        console.log(error);
+    })
+})
+
+// Delete placement by Id
+app.delete('/venue/:areaId/section/placements/:placementid', (req, res) => {
+    console.log(req.body);
+    console.log('Deleting Placements Soon');
+    alcohol.deletePlacementById(req.params.id)
+    .then((data) => {
+        res.json(data);
+    }).catch((error) => {
+        console.log(error);
     })
 })
 
