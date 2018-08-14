@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const alcohol = require('./db');
+const static = express.static;
+app.use(static("public"));
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 const bodyParser = require('body-parser');

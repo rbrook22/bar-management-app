@@ -28,8 +28,12 @@ constructor(){
         event.preventDefault();
         axios.post('/login', this.state)
         .then(res => {
-            console.log(res);
-            this.props.history.push('/dashboard')
+			// res = JSON.parse(res);
+            if (res.status === "Ok") {
+				this.props.history.push('/dashboard')
+			} else {
+				this.props.history.push('/')
+				}
         })
     }
 
