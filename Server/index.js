@@ -248,7 +248,7 @@ app.post('/venue/:areaId/section/:sectionId/', (req, res) => {
     console.log(req.body.sectionid)
     console.log(req.body.beverageid)
 
-    alcohol.insertPlacement(req.body.label, req.body.sectionid, req.body.beverageid)
+    alcohol.insertPlacement(req.body.label, req.body.sectionid, req.body.beverageid, req.body.quantity)
     .then((data) => {
         res.json(data);
     }).catch((error) => {

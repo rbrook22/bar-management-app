@@ -22,6 +22,7 @@ class AreaPage extends React.Component {
         var areaId = this.props.match.params.area_id;
         axios.get(`/venue/${areaId}/section/placements`)
         .then((res) => {
+            console.log(res.data)//I can see the beverage id here
             this.setState({
                 placements: res.data
             })
@@ -86,6 +87,7 @@ class AreaPage extends React.Component {
                                     return (
                                         <div key={placement.id}>
                                             {placement.label}
+                                            <Link to='/beverages'><input type="button" className="btn" value="Update Inventory"/></Link>
                                             <input type="button" onClick={this.deletePlacement} value={placement.id}/>
                                         </div>)
                                     }else {

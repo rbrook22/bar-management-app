@@ -7,42 +7,43 @@ class DashBoard extends React.Component {
     constructor (props) {
         super(props);
         this.state = { 
-            beers: [], 
-            wines: [],
-            liquors: [],
-            mixers: []
+            placements: []
+            // beers: [], 
+            // wines: [],
+            // liquors: [],
+            // mixers: []
         };
     }
 
     componentDidMount(){
-        axios.get('/alcohol/1')
-            .then( response => {
-                console.log(response);
-                this.setState ({
-                    beers: response.data
-                });
+        var areaId = this.props.match.params.area_id;
+        axios.get(`/venue/${areaId}/section/placements`)
+        .then((res) => {
+            this.setState({
+                placements: res.data
             })
-        axios.get('/alcohol/2')
-            .then( response => {
-                console.log(response);
-                this.setState ({
-                    wines: response.data
-                });
-            })
-        axios.get('/alcohol/3')
-        .then( response => {
-            console.log(response);
-            this.setState ({
-                liquors: response.data
-            });
         })
-        axios.get('/alcohol/4')
-        .then( response => {
-            console.log(response);
-            this.setState ({
-                mixers: response.data
-            });
-        })
+        // axios.get('/alcohol/2')
+        //     .then( response => {
+        //         console.log(response);
+        //         this.setState ({
+        //             wines: response.data
+        //         });
+        //     })
+        // axios.get('/alcohol/3')
+        // .then( response => {
+        //     console.log(response);
+        //     this.setState ({
+        //         liquors: response.data
+        //     });
+        // })
+        // axios.get('/alcohol/4')
+        // .then( response => {
+        //     console.log(response);
+        //     this.setState ({
+        //         mixers: response.data
+        //     });
+        // })
     } 
 
     render() {
@@ -57,14 +58,14 @@ class DashBoard extends React.Component {
                     <div className='inventoryOverview'>
                         <div className='beerOverview'>
                             <div className='beerList'>
-                                <h3>List of Beer</h3>
+                                <h3>List of Current Stock</h3>
                                 <ul>
-                                    {this.state.beers.map(beer => (
-                                        <li key={beer.id}>{beer.bevname}</li>
+                                    {this.state.placements.map(placements => (
+                                        <li key={placements.id}>{placements.label}</li>
                                     ))}
                                 </ul>
                             </div>
-                        </div>
+                        {/* </div>
                             <div className='wineOverview'>
                                 <div className='wineList'>
                                     <h3>List of Wine</h3>
@@ -94,15 +95,14 @@ class DashBoard extends React.Component {
                                             ))}
                                         </ul>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                         <div className='snapShots'>
-                            <p>Recent Snapshots</p>
-                            <Link to="/reporting"><p>View All</p></Link>
-                            <p>Here is a recent snapshot</p>
+                            <Link to="/reporting"><p>View detailed report</p></Link>
                         </div>
                     </div>
             </div>
+        </div>
         );
     }
 }

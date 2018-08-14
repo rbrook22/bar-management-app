@@ -95,8 +95,8 @@ function getAllBeverages() {
 
 // Placement Functions
 // Create
-function insertPlacement(label, sectionId, beverageID) {
-    return db.result(`insert into placement (label, sectionId, beverageID) values ($1, '$2#', '$3#') returning id`, [label, sectionId, beverageID]);
+function insertPlacement(label, sectionId, beverageID, quantity) {
+    return db.result(`insert into placement (label, sectionId, beverageID, quantity) values ($1, '$2#', '$3#', $4) returning id`, [label, sectionId, beverageID, quantity]);
 }
 // get
 function getAllPlacements() {

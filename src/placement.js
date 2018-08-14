@@ -7,7 +7,8 @@ class AddPlacement extends React.Component {
         this.state = {
             allBevs: [],
             filteredBevs: [],
-            bevId:0
+            bevId:0,
+            quantity: 0
         }
     }
     componentDidMount() {
@@ -27,15 +28,28 @@ class AddPlacement extends React.Component {
         })
     }
     handleChange=(e) => {
+        let filteredBevs = this.state.allBevs.filter(b => b.bevname.includes(e.target.value));//This filters the full list of beverages down to the matches, allowing for a smaller selection to choose from
+        let bevId = this.state.bevId;
+        if(filteredBevs.length === 1) {
+            bevId = filteredBevs[0].id//This is used to grab the id off the filtered arrays 1st beverage name when only one beverage is returned
+        }
         this.setState({
-            filteredBevs: this.state.allBevs.filter(b => b.bevname.includes(e.target.value))
+            filteredBevs,
+            bevId
+        }) 
+    }
+    handleQuantity=(e) => {
+        this.setState({
+            quantity: e.target.value
         }) 
     }
     handleClick=(event) => {
+        let beverage = this.state.allBevs.find((b) => b.id == this.state.bevId) || {}
         axios.post(`/venue/${this.props.match.params.area_id}/section/${this.props.match.params.section_id}`, {
-            label: this.state.allBevs.find((b) => b.id == this.state.bevId).bevname,
+            label: beverage.bevname,
             sectionid: this.props.match.params.section_id,
-            beverageid: this.state.bevId
+            beverageid: this.state.bevId,
+            quantity: this.state.quantity
         })
         .then(res => {
             console.log(res);
@@ -51,6 +65,10 @@ class AddPlacement extends React.Component {
                     <label>
                         Bottle:
                         <input type="text" name="placementName" onChange={this.handleChange}/>
+                    </label>
+                    <label>
+                        Quantity:
+                        <input type="text" name="placementQuantity" onChange={this.handleQuantity} value={this.state.quantity}/>
                     </label>
                     <input type="submit" value="Confirm" onClick={this.handleClick}/>
                 </form>
