@@ -17,6 +17,14 @@ app.use(session({
     }
 }));
 
+// This is middleware that will clear the cookie for stale user sessions
+app.use((req, res, next) => {
+    if (req.cookies.user_sid && !req.session.user) {
+        res.clearCookie('user_sid');
+    }
+    next();
+});
+
 // Gets all Alcohol by alcoholId.
 app.get('/alcohol/:alcoholId', (req, res) => {
     alcohol.getAll(req.params.alcoholId)
