@@ -6,6 +6,16 @@ app.use(cookieParser());
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+const session = require('express-session');
+app.use(session({
+    key: 'user_sid',
+    secret: 'ldfhgosdhgoushdfglahdflajsd',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        expires: 600000
+    }
+}));
 
 // Gets all Alcohol by alcoholId.
 app.get('/alcohol/:alcoholId', (req, res) => {
