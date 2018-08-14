@@ -25,6 +25,15 @@ app.use((req, res, next) => {
     next();
 });
 
+// helper middleware function to check for logged-in users
+var ensureLoggedIn = (req, res, next) => {
+    if (req.session.user && req.cookies.user_sid) {
+        next();
+    } else {
+        res.redirect('/login');
+    }
+};
+
 // Gets all Alcohol by alcoholId.
 app.get('/alcohol/:alcoholId', (req, res) => {
     alcohol.getAll(req.params.alcoholId)
