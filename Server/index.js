@@ -34,6 +34,57 @@ var ensureLoggedIn = (req, res, next) => {
     }
 };
 
+// Logging User In
+app.post('/', (req, res) => {
+    let username = req.body.email;
+    let password = req.body.password;
+    db.authenticateUser(username, password)
+        .then(isValid => {
+        if (isValid) {
+            db.getUser(username)
+            .then(u => {
+                req.session.db = u.id;
+                console.log(`Your user id is ${u.id}`);
+                res.json({status:'Ok'})
+            })
+        } else {
+            console.log('your credentials no good!');
+            res.json({status:'Not Ok!'})
+        }
+        })
+    // res.send('yeah, you logged in');
+});
+
+// Sign Up
+app.post('/', (req, res) => {
+    let username = req.body.email;
+    let password = req.body.password;
+    let password2 = req.body.password2;
+
+    // console.log(username);
+    // console.log(password);
+    // console.log(password2);
+    User.getUserByEmail(email)
+        .then(user => {
+        if (user) {
+            console.log('found that punk!');
+            res.json({status:'Taken!'})
+        } else if (password === password2) {
+            User.createUser(username, password)
+            .then(u => {
+                req.session.user = u.id;
+                console.log(`Your user id is ${u.id}`);
+                res.json({status:'Ok'})
+                // res.send(`Your user id is ${u.id}`);
+            })
+            .catch(err => {
+                res.send(err);
+            })
+        } else {
+            res.json({status:'Not Ok!'})
+        }
+    })
+});
 // Gets all Alcohol by alcoholId.
 app.get('/alcohol/:alcoholId', (req, res) => {
     alcohol.getAll(req.params.alcoholId)
@@ -228,6 +279,3 @@ app.get('/personnel/:id', (req, res) => {
 app.listen(3000, () => {
     console.log('Listening on port 3000...');
 });
-
-
-

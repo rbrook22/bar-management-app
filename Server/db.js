@@ -155,14 +155,14 @@ function deleteAlcoholById(alcoholId, Id) {
 // Create User
 function createUser(firstname, lastname, email, userpassword, position, phonenumber) {
     let hash = bcrypt.hashSync(userpassword, 10);
-    return db.one("insert into users (firstname, lastname, email, userpassword, position, phonenumber) values ('$1#', '$2#', '$3#', '$4#', '$5#', '$6#') returning id", [firstname, lastname, email, userpassword, position, phonenumber]);
+    return db.one("insert into users (firstname, lastname, email, userpassword, position, phonenumber) values ('$1#', '$2#', '$3#', '$4#', '$5#', '$6#') returning id", [firstname, lastname, email, hash, position, phonenumber]);
     }
 
 // Authenticate User
 function authenticateUser(email, userpassword) {
     return getUserByEmail(email)
             .then((user) => {
-                return bcrypt.compareSync(userpassword, user.password_hash)
+                return bcrypt.compareSync(userpassword, user.userpassword)
             })
             .catch((error) => false);
     }

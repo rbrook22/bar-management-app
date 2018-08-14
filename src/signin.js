@@ -10,11 +10,11 @@ class SignIn extends React.Component {
                 <form>
                     <label>
                         Username:
-                        <input type="text" name="firstName" />
+                        <input type="text" name="Email" />
                     </label>
                     <label>
                         Password:
-                        <input type="text" name="lastName" />
+                        <input type="text" name="Password" />
                     </label>
                     <input type="submit" value="Submit" />
                     <p>Don't have an account? Click <Link to="/signup">here</Link> to create one!</p>
