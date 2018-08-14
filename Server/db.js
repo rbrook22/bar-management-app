@@ -7,6 +7,7 @@ const cn = {
     password: ''
 };
 const db = pgp(cn);
+const bcrypt = require ('bcrypt');
 
 // Venue Functions
 // get/create
