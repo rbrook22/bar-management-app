@@ -1,20 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LocationSearchInput from './locationSearchInput';
+import axios from 'axios';
 
 
 class SignUp extends React.Component {
     constructor(){
         super()
         this.state = {
-            firstname: '',
-            lastname: '',
-            phonenumber: '',
-            email: '',
-            password: '',
-            password2: '',
+            firstname: 'ryan',
+            lastname: 'miller',
+            phonenumber: '888-567-7891',
+            email: 'ryan@test.com',
+            password: 'ryantest',
+            password2: 'ryantest',
             venue: '',
-            position: ''
+            position: 'student'
         }
     }
 
@@ -62,12 +63,21 @@ class SignUp extends React.Component {
         })
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault();
+        axios.post('/signup', this.state)
+        .then(res => {
+            console.log(res);
+            this.props.history.push('/dashboard')
+        })
+    }
+
     render() {
         return (
             <div className='signUpForm'>
                 <h1>BevSimply</h1>
                 <p>Sign-Up</p>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label>
                         First Name:
                         <input type="text" name="firstName" onChange={this.handleFirstName} value={this.state.firstname}/>
@@ -100,7 +110,7 @@ class SignUp extends React.Component {
                         Position/Title:
                         <input type="text" onChange={this.handlePosition} value={this.state.position}/>
                     </label>
-                    <Link to="#"><input type="submit" value="Next" /></Link>
+                    <input type="submit" value="Next" />
                 </form>
             </div>
         );

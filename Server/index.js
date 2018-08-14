@@ -35,13 +35,13 @@ var ensureLoggedIn = (req, res, next) => {
 };
 
 // Logging User In
-app.post('/', (req, res) => {
+app.post('/login', (req, res) => {
     let username = req.body.email;
     let password = req.body.password;
-    db.authenticateUser(username, password)
+    alcohol.authenticateUser(username, password)
         .then(isValid => {
         if (isValid) {
-            db.getUser(username)
+            alcohol.getUser(username)
             .then(u => {
                 req.session.db = u.id;
                 console.log(`Your user id is ${u.id}`);
@@ -56,29 +56,36 @@ app.post('/', (req, res) => {
 });
 
 // Sign Up
-app.post('/', (req, res) => {
+app.post('/signup', (req, res) => {
     let username = req.body.email;
     let password = req.body.password;
     let password2 = req.body.password2;
+    let firstname = req.body.firstname;
+    let lastname = req.body.lastname;
+    let phonenumber = req.body.phonenumber;
+    let position = req.body.position;
 
     // console.log(username);
     // console.log(password);
     // console.log(password2);
-    User.getUserByEmail(email)
+    alcohol.getUserByEmail(username)
         .then(user => {
+            console.log(user);
         if (user) {
             console.log('found that punk!');
             res.json({status:'Taken!'})
         } else if (password === password2) {
-            User.createUser(username, password)
+            alcohol.createUser(username, password, firstname, lastname, position, phonenumber)
             .then(u => {
+                console.log(u);
                 req.session.user = u.id;
                 console.log(`Your user id is ${u.id}`);
                 res.json({status:'Ok'})
                 // res.send(`Your user id is ${u.id}`);
             })
             .catch(err => {
-                res.send(err);
+                console.log(err)
+                res.json({status: 'err'})
             })
         } else {
             res.json({status:'Not Ok!'})
