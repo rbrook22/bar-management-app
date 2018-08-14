@@ -34,6 +34,72 @@ var ensureLoggedIn = (req, res, next) => {
     }
 };
 
+// Logging User In
+app.post('/login', (req, res) => {
+    let username = req.body.email;
+    let password = req.body.password;
+    alcohol.authenticateUser(username, password)
+        .then(isValid => {
+        if (isValid) {
+            alcohol.getUserByEmail(username)
+            .then(u => {
+                req.session.db = u.id;
+                console.log(`Your user id is ${u.id}`);
+                res.json({status:'Ok'})
+            })
+        } else {
+            console.log('your credentials no good!');
+            res.json({status:'Not Ok!'})
+        }
+        })
+    // res.send('yeah, you logged in');
+});
+
+// Sign Up
+app.post('/signup', (req, res) => {
+    let username = req.body.email;
+    let password = req.body.password;
+    let password2 = req.body.password2;
+    let firstname = req.body.firstname;
+    let lastname = req.body.lastname;
+    let phonenumber = req.body.phonenumber;
+    let position = req.body.position;
+
+    // console.log(username);
+    // console.log(password);
+    // console.log(password2);
+    alcohol.getUserByEmail(username)
+        .then(user => {
+            console.log(user);
+        if (user) {
+            console.log('found that punk!');
+            res.json({status:'Taken!'})
+        } else if (password === password2) {
+            alcohol.createUser(username, password, firstname, lastname, position, phonenumber)
+            .then(u => {
+                console.log(u);
+                req.session.user = u.id;
+                console.log(`Your user id is ${u.id}`);
+                res.json({status:'Ok'})
+                // res.send(`Your user id is ${u.id}`);
+            })
+            .catch(err => {
+                console.log(err)
+                res.json({status: 'err'})
+            })
+        } else {
+            res.json({status:'Not Ok!'})
+        }
+    })
+});
+
+// Killing a Session
+app.post('/logout', (req, res) => {
+    req.session.destroy
+    res.json('Logged out')
+
+})
+
 // Gets all Alcohol by alcoholId.
 app.get('/alcohol/:alcoholId', (req, res) => {
     alcohol.getAll(req.params.alcoholId)
@@ -228,6 +294,3 @@ app.get('/personnel/:id', (req, res) => {
 app.listen(3000, () => {
     console.log('Listening on port 3000...');
 });
-
-
-

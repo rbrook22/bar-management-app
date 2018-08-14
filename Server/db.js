@@ -153,28 +153,28 @@ function deleteAlcoholById(alcoholId, Id) {
 
 // User Functions
 // Create User
-function createUser(firstname, lastname, email, userpassword, position, phonenumber) {
+function createUser(email, userpassword, firstname, lastname, position, phonenumber) {
     let hash = bcrypt.hashSync(userpassword, 10);
-    return db.one("insert into users (firstname, lastname, email, userpassword, position, phonenumber) values ('$1#', '$2#', '$3#', '$4#', '$5#', '$6#') returning id", [firstname, lastname, email, userpassword, position, phonenumber]);
+    return db.one("insert into users (firstname, lastname, email, userpassword, position, phonenumber) values ('$1#', '$2#', '$3#', '$4#', '$5#', '$6#') returning id", [firstname, lastname, email, hash, position, phonenumber]);
     }
 
 // Authenticate User
 function authenticateUser(email, userpassword) {
     return getUserByEmail(email)
             .then((user) => {
-                return bcrypt.compareSync(userpassword, user.password_hash)
+                return bcrypt.compareSync(userpassword, user.userpassword)
             })
             .catch((error) => false);
     }
 // get
 // Get by Email
 function getUserByEmail(email) {
-    return db.any(`select * from Users where email=$1`, [email]);
+    return db.oneOrNone(`select * from Users where email=$1`, [email]);
 }
 function getAllUsers() {
     return db.any(`select * from Users`);
 }
-function getAllUsersById(Id) {
+function getUserById(Id) {
     return db.oneOrNone(`select * from Users where Id=$1`, [Id]);
 }
 function getUserByFirstName(firstname) {
@@ -211,7 +211,7 @@ module.exports = {
     deleteVenuebyId,
     createUser,
     getAllUsers,
-    getAllUsersById,
+    getUserById,
     getUserByFirstName,
     getUserByEmail,
     updateUsersById,

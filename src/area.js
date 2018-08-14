@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link,Route} from 'react-router-dom';
 import NavBar from './navBar';
 // import AddArea from './addArea';
 import axios from 'axios';
@@ -70,7 +70,7 @@ class AreaPage extends React.Component {
         return (
             <div className='area'>
                 <div className='navBar'>
-                    <NavBar />
+                    <Route path="/" component={NavBar} />
                 </div>
                 <div className='areaHeader'>
                     <h2>{this.state.label}</h2>

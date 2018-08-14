@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Route} from 'react-router-dom';
 import NavBar from './navBar';
 import axios from 'axios';
 
@@ -49,7 +49,7 @@ class DashBoard extends React.Component {
         return (
             <div className='dashBoard'>
                 <div className='navBar'>
-                    <NavBar />
+                    <Route path="/" component={NavBar} />
                 </div>
                 <div className='overview'>
                     <h2>Dashboard</h2>

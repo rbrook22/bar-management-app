@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import NavBar from './navBar';
 import axios from 'axios';
 
@@ -39,7 +39,7 @@ class Venue extends React.Component {
         return (
             <div className='venue'>
                 <div className='navBar'>
-                    <NavBar />
+                    <Route path="/" component={NavBar} />
                 </div>
                 <div className='venueOverview'>
                     <h2>Venue</h2>
