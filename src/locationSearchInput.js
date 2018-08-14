@@ -1,7 +1,6 @@
 import React from 'react';
 import PlacesAutocomplete, {
     geocodeByAddress,
-    geocodeByPlaceId,
     getLatLng,
 } from 'react-places-autocomplete';
 
@@ -21,6 +20,7 @@ handleSelect = address => {
         .then(latLng => console.log('Success', latLng))
         .catch(error => console.error('Error', error));
     };
+
 
 render() {
     return (

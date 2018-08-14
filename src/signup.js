@@ -71,6 +71,13 @@ class SignUp extends React.Component {
             this.props.history.push('/dashboard')
         })
     }
+    handleSearch = (event) => {
+        const value = event.target.value
+        console.log(value);
+        this.setState({
+            venue: value
+        })
+    }
 
     render() {
         return (
@@ -104,7 +111,7 @@ class SignUp extends React.Component {
                     </label>
                     <label>
                         Venue Search:
-                        <LocationSearchInput />
+                        <LocationSearchInput onChange={this.handleSearch} value={this.state.venue}/>
                     </label>
                     <label>
                         Position/Title:

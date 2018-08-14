@@ -92,6 +92,14 @@ app.post('/signup', (req, res) => {
         }
     })
 });
+
+// Killing a Session
+app.post('/logout', (req, res) => {
+    req.session.destroy
+    res.json('Logged out')
+
+})
+
 // Gets all Alcohol by alcoholId.
 app.get('/alcohol/:alcoholId', (req, res) => {
     alcohol.getAll(req.params.alcoholId)
