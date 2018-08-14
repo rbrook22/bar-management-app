@@ -38,8 +38,7 @@ class SignUp extends React.Component {
                         Position/Title:
                         <input type="text"/>
                     </label>
-                    <Link to><input type="submit" value="Next" /></Link>
-
+                    <Link to="#"><input type="submit" value="Next" /></Link>
                 </form>
             </div>
         );

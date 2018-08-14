@@ -174,7 +174,7 @@ function getUserByEmail(email) {
 function getAllUsers() {
     return db.any(`select * from Users`);
 }
-function getAllUsersById(Id) {
+function getUserById(Id) {
     return db.oneOrNone(`select * from Users where Id=$1`, [Id]);
 }
 function getUserByFirstName(firstname) {
@@ -211,7 +211,7 @@ module.exports = {
     deleteVenuebyId,
     createUser,
     getAllUsers,
-    getAllUsersById,
+    getUserById,
     getUserByFirstName,
     getUserByEmail,
     updateUsersById,
