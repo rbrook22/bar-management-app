@@ -28,10 +28,10 @@ class AddPlacement extends React.Component {
         })
     }
     handleChange=(e) => {
-        let filteredBevs = this.state.allBevs.filter(b => b.bevname.includes(e.target.value));
+        let filteredBevs = this.state.allBevs.filter(b => b.bevname.includes(e.target.value));//This filters the full list of beverages down to the matches, allowing for a smaller selection to choose from
         let bevId = this.state.bevId;
         if(filteredBevs.length === 1) {
-            bevId = filteredBevs[0].id
+            bevId = filteredBevs[0].id//This is used to grab the id off the filtered arrays 1st beverage name when only one beverage is returned
         }
         this.setState({
             filteredBevs,
