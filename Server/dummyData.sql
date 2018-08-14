@@ -7,7 +7,7 @@ INSERT INTO "public"."alcohol"("bevtype") VALUES('Mixers') RETURNING "id", "bevt
 
 -- BeverageList Table
 COPY beveragelist (bevtype, bevname, alcoholid, volumesize, price, quantity, img) 
-    FROM '/Users/matthewfreeman/DigitalCrafts-2018-04/bevSimply/bar-management-app/Server/beverageListTable.csv' 
+    FROM '/tmp/beverageListTable.csv' 
     DELIMITER ',' 
     CSV HEADER
 ;

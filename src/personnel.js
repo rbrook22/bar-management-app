@@ -1,5 +1,5 @@
 import React from 'react';
-// import {Link} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import NavBar from './navBar';
 import axios from 'axios';
 
@@ -24,7 +24,7 @@ class Personnel extends React.Component {
         return (
             <div className='personnelPage'>
                 <div className='navBar'>
-                    <NavBar />
+                    <Route path="/" component={NavBar} />
                 </div>
                 <div className='overview'>
                     <h2>Personnel</h2>

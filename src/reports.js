@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import NavBar from './navBar';
 
 class Reports extends React.Component {
@@ -7,7 +7,7 @@ class Reports extends React.Component {
         return (
             <div className='reportsPage'>
                 <div className='navBar'>
-                    <NavBar />
+                    <Route path="/" component={NavBar} />
                 </div>
                 <div className='overview'>
                     <h2>Reporting</h2>
