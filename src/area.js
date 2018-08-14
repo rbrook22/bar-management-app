@@ -84,7 +84,7 @@ class AreaPage extends React.Component {
                                 {this.state.placements.map(placement => {
                                     if(placement.sectionid == section.id) {
                                     return (
-                                        <div>
+                                        <div key={placement.id}>
                                             {placement.label}
                                             <input type="button" onClick={this.deletePlacement} value={placement.id}/>
                                         </div>)
