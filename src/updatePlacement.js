@@ -15,7 +15,6 @@ class UpdatePlacement extends React.Component {
 
     getAllBeverages = () => {//same function as in index.js, works in node on server side
         axios.get('/beverages')//same file path as line 169 in server index.js
-        console.log('about to get beverages')
         .then((res) => {
             console.log(res.data)
             this.setState ( {
@@ -28,8 +27,8 @@ class UpdatePlacement extends React.Component {
         return (
             <div className='updatePlacement'>
                 <h3>Update Placement</h3>
-                <p>Enter new amounts:</p>
-                {this.state.bevname.map(beverage => {
+                <p>Enter new amount:</p>
+                {this.state.allBeverages.map(beverage => {
                     <form onSubmit={(event) => {event.preventDefault()}}>
                         <label>
                             Amount Available:
