@@ -45,5 +45,4 @@ class SignUp extends React.Component {
         );
     }
 }
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjdRMVQV_zyck-PvktB1kVUU1ZIQBCjlY&libraries=places"></script>
 export default SignUp;
