@@ -41,7 +41,7 @@ app.post('/login', (req, res) => {
     alcohol.authenticateUser(username, password)
         .then(isValid => {
         if (isValid) {
-            alcohol.getUser(username)
+            alcohol.getUserByEmail(username)
             .then(u => {
                 req.session.db = u.id;
                 console.log(`Your user id is ${u.id}`);

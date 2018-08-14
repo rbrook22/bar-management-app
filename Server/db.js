@@ -154,8 +154,6 @@ function deleteAlcoholById(alcoholId, Id) {
 // User Functions
 // Create User
 function createUser(email, userpassword, firstname, lastname, position, phonenumber) {
-    console.log(email)
-    console.log(userpassword)
     let hash = bcrypt.hashSync(userpassword, 10);
     return db.one("insert into users (firstname, lastname, email, userpassword, position, phonenumber) values ('$1#', '$2#', '$3#', '$4#', '$5#', '$6#') returning id", [firstname, lastname, email, hash, position, phonenumber]);
     }

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 class SignIn extends React.Component {
 constructor(){
@@ -23,12 +24,21 @@ constructor(){
         })
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault();
+        axios.post('/login', this.state)
+        .then(res => {
+            console.log(res);
+            this.props.history.push('/dashboard')
+        })
+    }
+
     render() {
         return (
             <div className='signInForm'>
                 <h1>BevSimply</h1>
                 <p>Sign-In</p>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label>
                         Username:
                         <input type="text" name="Email" onChange={this.handleEmail} value={this.state.email}/>
