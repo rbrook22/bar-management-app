@@ -86,9 +86,8 @@ class AreaPage extends React.Component {
                                     if(placement.sectionid == section.id) {
                                     return (
                                         <div key={placement.id}>
-                                            {placement.label}, {placement.beverageid}
-                                            <input type="number" placeholder="Full Bottles" step="1" />
-                                            <input type="number" placeholder="Partial Amount" step=".1" />
+                                            {placement.label}
+                                            <Link to='/beverages'><input type="button" className="btn" value="Update Inventory"/></Link>
                                             <input type="button" onClick={this.deletePlacement} value={placement.id}/>
                                         </div>)
                                     }else {
