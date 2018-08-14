@@ -96,11 +96,11 @@ class DashBoard extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className='snapShots'>
+                        {/* <div className='snapShots'>
                             <p>Recent Snapshots</p>
                             <Link to="/reporting"><p>View All</p></Link>
                             <p>Here is a recent snapshot</p>
-                        </div>
+                        </div> */}
                     </div>
             </div>
         );
