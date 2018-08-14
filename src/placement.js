@@ -7,7 +7,8 @@ class AddPlacement extends React.Component {
         this.state = {
             allBevs: [],
             filteredBevs: [],
-            bevId:0
+            bevId:0,
+            quantity: 0
         }
     }
     componentDidMount() {
@@ -51,6 +52,10 @@ class AddPlacement extends React.Component {
                     <label>
                         Bottle:
                         <input type="text" name="placementName" onChange={this.handleChange}/>
+                    </label>
+                    <label>
+                        Quantity:
+                        <input type="text" name="placementQuantity" onChange={this.handleQuantity}/>
                     </label>
                     <input type="submit" value="Confirm" onClick={this.handleClick}/>
                 </form>

@@ -51,6 +51,7 @@ create table Section (
 create table Placement (
     Id serial primary key,
     label varchar(100),
+    Quantity float,
     sectionId int references Section(Id)
     on delete cascade,
     beverageId int references BeverageList(Id)

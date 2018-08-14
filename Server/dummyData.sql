@@ -7,7 +7,7 @@ INSERT INTO "public"."alcohol"("bevtype") VALUES('Mixers') RETURNING "id", "bevt
 
 -- BeverageList Table
 COPY beveragelist (bevtype, bevname, alcoholid, volumesize, price, quantity, img) 
-    FROM '/Users/richardbrooks/Documents/projects/bar-app/server/beverageListTable.csv' 
+    FROM '/Users/matthewfreeman/DigitalCrafts-2018-04/bevSimply/bar-management-app/Server/beverageListTable.csv' 
     DELIMITER ',' 
     CSV HEADER
 ;
@@ -24,8 +24,8 @@ INSERT INTO area (venueid, label) VALUES (2, 'Main Bar');
 INSERT INTO section (label, areaid) VALUES ('Top Shelf', 1);
 INSERT INTO section (label, areaid) VALUES ('Left Wall', 2);
 -- Placement Table
-INSERT INTO placement (label, sectionid, beverageid) VALUES ('Test', 1, 2);
-INSERT INTO placement (label, sectionid, beverageid) VALUES ('Test2', 2, 1);
+INSERT INTO placement (label, sectionid, beverageid, quantity) VALUES ('Test', 1, 2, 3.4);
+INSERT INTO placement (label, sectionid, beverageid, quantity) VALUES ('Test2', 2, 1, 6);
 -- Reporting Table
 INSERT INTO reporting (bottlename, userid, alcoholid, fullbottles, partialbottle) VALUES ('Orange Juice', 2, 4, 3, .5);
 INSERT INTO reporting (bottlename, userid, alcoholid, fullbottles, partialbottle) VALUES ('Kendall Jackson', 1,2, 10, .5);
