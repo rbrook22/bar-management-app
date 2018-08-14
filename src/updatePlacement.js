@@ -2,48 +2,15 @@ import React from 'react';
 import axios from 'axios';
 
 class UpdatePlacement extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props)
         this.state = {
-            allBevs: [],
+            allBeverages: []
         }
     }
-    componentDidMount() {
-        this.getAlcohol()
-    }
 
-    getAlcohol = () => {
-        app.get('/alcohol/:alcoholId', (req, res) => {
-            alcohol.getAll(req.params.alcoholId)
-            .then((data) => {   
-                res.json(data);
-            })
-            .catch((error) => { console.log(error); });
-        });
-    }
-
-    handleOption=(event) => {
-        console.log(event);
-        this.setState({
-            bevId: event.target.value
-        })
-    }
-    handleChange=(e) => {
-        this.setState({
-            filteredBevs: this.state.allBevs.filter(b => b.bevname.includes(e.target.value))
-        }) 
-    }
-    handleClick=(event) => {
-        axios.post(`/venue/${this.props.match.params.area_id}/section/${this.props.match.params.section_id}`, {
-            label: this.state.allBevs.find((b) => b.id == this.state.bevId).bevname,
-            sectionid: this.props.match.params.section_id,
-            beverageid: this.state.bevId
-        })
-        .then(res => {
-            console.log(res);
-            this.props.history.push(`/area/${this.props.match.params.area_id}/`)
-        })
-    }
+    
+    
     render() {
         return (
             <div className='updatePlacement'>
