@@ -148,7 +148,7 @@ app.get('/beverages', (req, res) => {
     })
 })
 
-// PLacements
+// Placements
 // inserting placement
 app.post('/venue/:areaId/section/:sectionId/', (req, res) => {
     console.log(req.body.label)
@@ -184,6 +184,8 @@ app.delete('/venue/:areaId/section/placements/:placementid', (req, res) => {
         console.log(error);
     })
 })
+
+
 
 // Gets all Users
 app.get('/personnel/:id', (req, res) => {

@@ -152,6 +152,11 @@ function deleteAlcoholById(alcoholId, Id) {
 }
 
 // User Functions
+// Create User
+function createUser(firstname, lastname, email, userpassword, position, phonenumber) {
+    let hash = bcrypt.hashSync(userpassword, 10);
+    return db.one("insert into users (firstname, lastname, email, userpassword, position, phonenumber) values ('$1#', '$2#', '$3#', '$4#', '$5#', '$6#') returning id", [firstname, lastname, email, userpassword, position, phonenumber]);
+    }
 // get
 function getAllUsers() {
     return db.any(`select * from Users`);
@@ -193,6 +198,7 @@ module.exports = {
     getVenuesByName,
     updateVenuesById,
     deleteVenuebyId,
+    createUser,
     getAllUsers,
     getAllUsersById,
     getUserByFirstName,
