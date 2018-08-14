@@ -1,9 +1,29 @@
 const express = require('express');
 const app = express();
 const alcohol = require('./db');
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+const session = require('express-session');
+app.use(session({
+    key: 'user_sid',
+    secret: 'ldfhgosdhgoushdfglahdflajsd',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        expires: 600000
+    }
+}));
+
+// This is middleware that will clear the cookie for stale user sessions
+app.use((req, res, next) => {
+    if (req.cookies.user_sid && !req.session.user) {
+        res.clearCookie('user_sid');
+    }
+    next();
+});
 
 // Gets all Alcohol by alcoholId.
 app.get('/alcohol/:alcoholId', (req, res) => {
@@ -146,7 +166,7 @@ app.get('/beverages', (req, res) => {
     })
 })
 
-// PLacements
+// Placements
 // inserting placement
 app.post('/venue/:areaId/section/:sectionId/', (req, res) => {
     console.log(req.body.label)
@@ -182,6 +202,8 @@ app.delete('/venue/:areaId/section/placements/:placementid', (req, res) => {
         console.log(error);
     })
 })
+
+
 
 // Gets all Users
 app.get('/personnel/:id', (req, res) => {

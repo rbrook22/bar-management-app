@@ -7,6 +7,7 @@ const cn = {
     password: ''
 };
 const db = pgp(cn);
+const bcrypt = require ('bcrypt');
 
 // Venue Functions
 // get/create
@@ -151,7 +152,25 @@ function deleteAlcoholById(alcoholId, Id) {
 }
 
 // User Functions
+// Create User
+function createUser(firstname, lastname, email, userpassword, position, phonenumber) {
+    let hash = bcrypt.hashSync(userpassword, 10);
+    return db.one("insert into users (firstname, lastname, email, userpassword, position, phonenumber) values ('$1#', '$2#', '$3#', '$4#', '$5#', '$6#') returning id", [firstname, lastname, email, userpassword, position, phonenumber]);
+    }
+
+// Authenticate User
+function authenticateUser(email, userpassword) {
+    return getUserByEmail(email)
+            .then((user) => {
+                return bcrypt.compareSync(userpassword, user.password_hash)
+            })
+            .catch((error) => false);
+    }
 // get
+// Get by Email
+function getUserByEmail(email) {
+    return db.any(`select * from Users where email=$1`, [email]);
+}
 function getAllUsers() {
     return db.any(`select * from Users`);
 }
@@ -161,9 +180,7 @@ function getAllUsersById(Id) {
 function getUserByFirstName(firstname) {
     return db.any(`select * from Users where firstname iLike '%$1%'`, [firstname]);
 }
-function getUserByEmail(email) {
-    return db.any(`select * from Users where email=$1`, [email]);
-}
+
 // update
 function updateUsersById(firstName, lastName, email, userPassword, position, phoneNumber, Id) {
     return db.result(`update Users set firstName='$1#', lastName='$2#', email='$3#', userPassword='$4#', position='$5#', phoneNumber='$6#' where Id=$7`, [firstName, lastName, email, userPassword, position, phoneNumber, Id])
@@ -192,12 +209,14 @@ module.exports = {
     getVenuesByName,
     updateVenuesById,
     deleteVenuebyId,
+    createUser,
     getAllUsers,
     getAllUsersById,
     getUserByFirstName,
     getUserByEmail,
     updateUsersById,
     deleteUsersById,
+    authenticateUser,
     getAllSections,
     getSectionsById,
     getSectionsByAreaId,
