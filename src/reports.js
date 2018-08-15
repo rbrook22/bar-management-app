@@ -11,18 +11,18 @@ class Reports extends React.Component {
         }
     }
 
-    componentDidMount(){
-        handleReporting
-    }
+    // componentDidMount(){
+    //     handleReporting()
+    // }
 
-    handleReporting = () => {
-        axios.get('/reporting')
-        .then((res) => {
-            this.setState({
-                allPlacements: res.data
-            })
-        })
-    }
+    // handleReporting = () => {
+    //     axios.get('/reporting')
+    //     .then((res) => {
+    //         this.setState({
+    //             allPlacements: res.data
+    //         })
+    //     })
+    // }
     render() {
         return (
             <div className='reportsPage'>
