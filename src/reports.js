@@ -27,9 +27,10 @@ class Reports extends React.Component {
         return (
             <div className='reportsPage'>
                 <div className='navBar'>
-                    <Route path="/" component={NavBar} />
+                    < NavBar barClickHandler={this.props.barClickHandler} />
                 </div>
                 <div className='overview'>
+                <div className='cardD'>
                     <h2>Reporting</h2>
                     <p>View reports and usage</p>
                     <div className='usageReport'>
@@ -54,6 +55,7 @@ class Reports extends React.Component {
                                 </div>
                             )}
                         </table>
+                    </div>
                     </div>
                 </div>
             </div>

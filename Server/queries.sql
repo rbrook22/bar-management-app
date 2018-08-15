@@ -165,6 +165,11 @@ Update placement
 Set label = 'Top'
 Where Id = 1;
 
+--Update Quantity in Placement Table by Id
+Update placement
+Set quantity = 4.6
+Where Id = 1;
+
 -- Update User Table
 Update Users
 set firstName = 'Bhissy',
