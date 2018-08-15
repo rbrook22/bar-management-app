@@ -20,12 +20,16 @@ class NavBar extends React.Component {
         // Below renders buttons which link to route paths identified in app.js
         <header className='navbar'>
             <nav className='navbar_navigation'>
-                <div>
+                <div className='navbar_toggle-button'>
                     <ToggleButton click={this.props.barClickHandler}/>
                 </div>
                 <div className='navbar_logo'><a>The Logo</a></div>
                 <div className='spacer'></div>
                 <div className='navbar_navigation-items'>
+                    <Link to="/dashboard"><input type="button" className="btn" value="Dashboard"/></Link>
+                    <Link to="/venue"><input type="button" className="btn" value="Venue"/></Link>
+                    <Link to="/reporting"><input type="button" className="btn" value="Reporting"/></Link>
+                    <Link to="/personnel"><input type="button" className="btn" value="Personnel"/></Link>
                     <Link to="/venueSettings"><input type="button" className="btn" value="Settings"/></Link>
                     <input type="button" className="btn" value="Log Out" onClick={this.handleLogOut}/>
                 </div>

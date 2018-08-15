@@ -37,26 +37,29 @@ class App extends Component {
     });
   };
 
+  backdropClickHandler = () => {
+    this.setState({sideBarOpen: false})
+  };
+
   render() {
     let sideBar;
     let backdrop;
 
     if (this.state.sideBarOpen) {
       <NavBar barClickHandler={this.toggleButtonClickHandler}/>
-      sideBar = <SideBar />;
-      backdrop = <Backdrop />;
+      backdrop = <Backdrop click={this.backdropClickHandler} />;
     }
     return (
       <div style={{ height: '100%' }}>
-        {sideBar}
+        <SideBar show={this.state.sideBarOpen} />
         {backdrop}
         <main style={{marginTop: '64px'}}>
           <Route path="/" exact={true} component={HomePage} />
-          <Route path="/dashboard" render={(props) => <DashBoard {...props} barClickHandler={this.toggleButtonClickHandler} /> } />
-          <Route path="/venue" render={(props) => <Venue {...props} barClickHandler={this.toggleButtonClickHandler} /> } />
-          <Route path="/reporting" render={(props) => <Reports {...props} barClickHandler={this.toggleButtonClickHandler} /> } />
-          <Route path="/personnel" render={(props) => <Personnel {...props} barClickHandler={this.toggleButtonClickHandler} /> } />
-          <Route path="/venueSettings" render={(props) => <VenueSettings {...props} barClickHandler={this.toggleButtonClickHandler} /> } />
+          <Route path="/dashboard" render={(props) => <DashBoard {...props} barClickHandler={this.toggleButtonClickHandler} click={this.backdropClickHandler} /> } />
+          <Route path="/venue" render={(props) => <Venue {...props} barClickHandler={this.toggleButtonClickHandler} click={this.backdropClickHandler} /> } />
+          <Route path="/reporting" render={(props) => <Reports {...props} barClickHandler={this.toggleButtonClickHandler} click={this.backdropClickHandler} /> } />
+          <Route path="/personnel" render={(props) => <Personnel {...props} barClickHandler={this.toggleButtonClickHandler} click={this.backdropClickHandler} /> } />
+          <Route path="/venueSettings" render={(props) => <VenueSettings {...props} barClickHandler={this.toggleButtonClickHandler} click={this.backdropClickHandler} /> } />
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={SignUp} />
           <Route path="/area/:area_id" exact={true} component={AreaPage} />

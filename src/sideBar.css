@@ -1,13 +1,19 @@
 .side-bar {
     height: 100%;
     background: white;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    box-shadow: 1px 0 7px rgba(0,0,0,0.5);
     position: fixed;
     top: 0;
     left: 0;
     width: 70%;
     max-width: 400px;
     z-index: 200;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+}
+
+.side-bar.open {
+    transform: translateX(0);
 }
 
 .side-bar ul {
@@ -31,4 +37,10 @@
     color: rgb(218, 160, 35);
     text-decoration: none;
     font-size: 1.2rem;
+}
+
+@media (min-width: 769px) {
+    .side-bar {
+        display: none;
+    }
 }

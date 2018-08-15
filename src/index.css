@@ -61,3 +61,19 @@ body {
 .overview, .venue {
   margin-top: 64px;
 }
+
+@media (max-width: 768px) {
+ .navbar_navigation-items {
+   display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar_toggle-button {
+    display: none; 
+  }
+
+  .navbar_logo {
+    margin-left: 0;
+  }
+}
