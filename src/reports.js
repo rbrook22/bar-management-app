@@ -1,14 +1,27 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import NavBar from './navBar';
+import axios from 'axios';
 
 class Reports extends React.Component {
     constructor() {
         super()
         this.state = {
-            label: '',
-            quantity: 0
+            allPlacements: []
         }
+    }
+
+    componentDidMount(){
+        handleReporting
+    }
+
+    handleReporting = () => {
+        axios.get('/reporting')
+        .then((res) => {
+            this.setState({
+                allPlacements: res.data
+            })
+        })
     }
     render() {
         return (
@@ -24,6 +37,23 @@ class Reports extends React.Component {
                     </div>
                     <div className='reportsOverview'>
                         <p>Here will show a thing which has information</p>
+                        <table>
+                            <tr>
+                                <th>Beverage Name</th>
+                                <th>Quantity</th>
+                            </tr>
+
+                            {this.state.allPlacements.map(placement => 
+                                <div>
+                                    <tr>
+                                        <td>{placement.label}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>{placement.quantity}</td>
+                                    </tr>
+                                </div>
+                            )}
+                        </table>
                     </div>
                 </div>
             </div>

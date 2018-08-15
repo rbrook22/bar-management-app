@@ -269,6 +269,16 @@ app.get('/venue/:areaId/section/placements',(req,res) => {
     })
 })
 
+// Getll all placements for Reporting
+app.get('/reporting',(req,res) => {
+    alcohol.getAllPlacements()
+    .then((data) => {
+        res.json(data);
+        // res.send(data);
+    }).catch((error) => {
+        console.log(error);
+    })
+})
 // Delete placement by Id
 app.delete('/venue/:areaId/section/placements/:placementid', (req, res) => {
     console.log(req.body);
