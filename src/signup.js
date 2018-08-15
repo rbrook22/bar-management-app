@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import LocationSearchInput from './locationSearchInput';
 import axios from 'axios';
 

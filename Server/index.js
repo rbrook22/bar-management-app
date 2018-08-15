@@ -281,14 +281,15 @@ app.delete('/venue/:areaId/section/placements/:placementid', (req, res) => {
 })
 
 
-
 // Gets all Users
 app.get('/personnel', (req, res) => {
     alcohol.getAllUsers()
     .then((data) => {
         res.json(data);
-    })
-    .catch((error) => { console.log(error); });
+        console.log(data);
+    }).catch((error) => { 
+        console.log(error); 
+    });
 });
 
 

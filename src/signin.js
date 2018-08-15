@@ -26,7 +26,6 @@ constructor(){
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log("Testing");
         axios.post('/login', this.state)
         .then(res => {
             if (res.data.status === "Ok") {

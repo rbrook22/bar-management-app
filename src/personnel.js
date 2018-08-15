@@ -7,7 +7,7 @@ class Personnel extends React.Component {
     constructor (props) {
         super(props);
         this.state = { 
-            user: []
+            users: []
         };
     }
 
@@ -16,7 +16,7 @@ class Personnel extends React.Component {
             .then( response => {
                 console.log(response);
                 this.setState ({
-                    user: response.data
+                    users: response.data
                 });
             })       
     }
@@ -32,9 +32,13 @@ class Personnel extends React.Component {
                         {/* <Link><input type="button" className="btn" value="Invite User"/></Link> */}
                     </div>
                     <div className='personnelOverview'>
-                        {this.state.user.firstname}  {this.state.user.lastname}
-                        <br/>
-                        {this.state.user.email}
+                        {this.state.users.map(user => 
+                            <div key={user.id}>
+                                {user.firstname}  {user.lastname}
+                                <br/>
+                                {user.email}
+                            </div>
+                        )};
                     </div>
                 </div>
             </div>
