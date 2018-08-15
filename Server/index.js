@@ -276,7 +276,12 @@ app.get('/reporting',(req,res) => {
     .then((data) => {
         res.json(data);
         // res.send(data);
-      
+    })
+    .catch((error) => {
+        console.log(error);
+    })
+});
+
 // Update Quantity in Placement
 app.get('/section/placement/:placementId', (req, res) => {
     alcohol.getPlacementsById(req.params.placementId)
@@ -285,7 +290,9 @@ app.get('/section/placement/:placementId', (req, res) => {
     }).catch((error) => {
         console.log(error);
     })
-})
+    }
+);
+
 
 
 app.post('/section/placement/:placementId', (req, res) => {
@@ -295,7 +302,7 @@ app.post('/section/placement/:placementId', (req, res) => {
     }).catch((error) => {
         console.log(error);
     })
-})
+});
 
 // Delete placement by Id
 app.delete('/venue/:areaId/section/placements/:placementid', (req, res) => {
@@ -307,7 +314,7 @@ app.delete('/venue/:areaId/section/placements/:placementid', (req, res) => {
     }).catch((error) => {
         console.log(error);
     })
-})
+});
 
 
 // Gets all Users
