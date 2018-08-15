@@ -34,7 +34,7 @@ class AddArea extends React.Component {
     }
     render() {
         return (
-            <div className='addArea'>
+            <div className='addArea cardD'>
                 <h3>Add Area</h3>
                 <p>Enter Name of Area</p>
                 <form onSubmit={this.handleEntry}>

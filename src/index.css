@@ -7,6 +7,113 @@ body {
   padding: 0;
   height: 100%;
   font-family: 'Jura', sans-serif;
+  background-image: url(https://images.pexels.com/photos/301692/pexels-photo-301692.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  margin: auto;
+  margin-top: 17rem;
+  padding: 5px;
+  width: 65%;
+  height: 75%;
+  box-shadow: 0 0 20px 0 rgba(7, 6, 6, 0.363);
+  border-radius: 5px;
+  background-color: rgba(242, 242, 242, 0.795);
+}
+
+.Home {
+  display: flex;
+  justify-content: center;  
+}
+
+.areaDel{
+  margin-left: 5px;
+}
+
+.cardP {
+  margin: auto;
+  margin-top: 35px;
+  padding: 5px;
+  width: 65%;
+  height: 75%;
+  box-shadow: 0 0 20px 0 rgba(7, 6, 6, 0.363);
+  border-radius: 5px;
+  background-color: rgba(242, 242, 242, 0.795);
+}
+
+.cardP h2,p,h3,form,select {
+  display: flex;
+  justify-content: center;
+}
+
+.cardP select {
+  display: flex;
+  justify-content: center;
+  margin-left: 19rem;
+}
+
+.cardH {
+  margin: auto;
+  margin-top: 35px;
+  padding: 5px;
+  width: 65%;
+  height: 75%;
+  box-shadow: 0 0 20px 0 rgba(7, 6, 6, 0.363);
+  border-radius: 5px;
+  background-color: rgba(242, 242, 242, 0.795);
+}
+
+.sub {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.sub .button {
+  position: absolute;
+  background-color: #f1f1f1;
+  color: black;
+  font-size: 16px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.sub .button:hover {
+  background-color: black;
+  color: white;
+}
+
+.cardS {
+  margin: auto;
+  margin-top: 35px;
+  padding: 5rem;
+  width: 65%;
+  height: 75%;
+  box-shadow: 0 0 20px 0 rgba(7, 6, 6, 0.363);
+  border-radius: 5px;
+  background-color: rgba(242, 242, 242, 0.795);
+  background-size: contain;
+}
+
+.cardS h1,p,h3,form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardH h2,p,h3,form {
+  display: flex;
+  justify-content: center;
+} 
+
+.sec-div {
+  display: flex;
+  flex-direction: column;
 }
 
 .cardD {
@@ -17,7 +124,7 @@ body {
   height: 75%;
   box-shadow: 0 0 20px 0 rgba(7, 6, 6, 0.363);
   border-radius: 5px;
-  background-color: rgba(242, 242, 242, 0.466);
+  background-color: rgba(242, 242, 242, 0.795);
 }
 .cardV {
   margin: auto;
@@ -27,18 +134,50 @@ body {
   height: 75%;
   box-shadow: 0 0 20px 0 rgba(7, 6, 6, 0.363);
   border-radius: 5px;
-  background-color: rgba(242, 242, 242, 0.466);
+  background-color: rgba(242, 242, 242, 0.795);
 }
 
-.cardD h2,p,h3 {
+.cardD h2,p,h3,form {
   display: flex;
   justify-content: center;
-  
 }
+
+li{
+  display: flex;
+  justify-content: center;
+  margin-right: 37px; 
+}
+
 
 .cardV h2,p,h3 {
   display: flex;
   justify-content: center;
+}
+
+.pcard {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: auto;
+  padding: 10px;
+  width: 20%;
+  height: 60%;
+  box-shadow: 0 0 20px 0 rgba(7, 6, 6, 0.363);
+  border-radius: 5px;
+  background-color: rgba(242, 242, 242, 0.466); 
+}
+
+.reportsOverview {
+  display: flex;
+  justify-content: center;
+}
+
+.personnelOverview {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  margin: 5px;
+  height: 100%;
 }
 
 .navbar {
@@ -85,9 +224,7 @@ body {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  margin: 0.5rem;
-  background-color: rgba(248, 248, 248, 0.712);
-  border: 1px solid white;
+  margin: 0.3rem;
   border-radius: 5px;
   text-transform: uppercase;
   text-decoration: none;
@@ -103,6 +240,7 @@ ul .btn {
 .btn li {
   text-decoration: none;
   margin: 0.5rem;
+  color: white;
 }
 
 /* ^^^Button Styles */

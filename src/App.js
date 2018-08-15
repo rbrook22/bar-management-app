@@ -62,7 +62,7 @@ class App extends Component {
           <Route path="/venueSettings" render={(props) => <VenueSettings {...props} barClickHandler={this.toggleButtonClickHandler} click={this.backdropClickHandler} /> } />
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={SignUp} />
-          <Route path="/area/:area_id" exact={true} component={AreaPage} />
+          <Route path="/area/:area_id" exact={true} render={(props) => <AreaPage {...props} barClickHandler={this.toggleButtonClickHandler} click={this.backdropClickHandler} /> } />
           <Route path="/addarea" component={AddArea} />
           <Route path="/area/:area_id/addsection" component={AddSection} />
           <Route path="/area/:area_id/:section_id/placement" component={AddPlacement} />

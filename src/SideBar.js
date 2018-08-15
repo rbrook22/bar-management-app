@@ -12,13 +12,13 @@ const sideBar = props => {
     return (
         <nav className={barClasses}>
             <ul>
-                <Link to="/dashboard"><input type="button" className="btn" value="Dashboard"/></Link>
-                <Link to="/venue"><input type="button" className="btn" value="Venue"/></Link>
-                <Link to="/reporting"><input type="button" className="btn" value="Reporting"/></Link>
-                <Link to="/personnel"><input type="button" className="btn" value="Personnel"/></Link>
-                <Link to="/venueSettings"><input type="button" className="btn" value="Settings"/></Link>
-                <input type="button" className="btn" value="Log Out" onClick={this.handleLogOut}/>
-            </ul>
+                <Link to="/dashboard" style={{ textDecoration: 'none' }}><li>Dashboard</li></Link>
+                <Link to="/venue" style={{ textDecoration: 'none' }}><li>Venue</li></Link>
+                <Link to="/reporting" style={{ textDecoration: 'none' }}><li>Reporting</li></Link>
+                <Link to="/personnel" style={{ textDecoration: 'none' }}><li>Personnel</li></Link>
+                <Link to="/venueSettings" style={{ textDecoration: 'none' }}><li>Settings</li></Link>
+                <li onClick={this.handleLogOut}>Log Out</li>
+        </ul>
         </nav>
     )
 };

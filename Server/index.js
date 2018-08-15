@@ -66,18 +66,21 @@ app.post('/signup', (req, res) => {
     let lastname = req.body.lastname;
     let phonenumber = req.body.phonenumber;
     let position = req.body.position;
+    let address = req.body.venueAddress;
 
     // console.log(username);
     // console.log(password);
     // console.log(password2);
-    alcohol.getUserByEmail(username)
+    alcohol.createVenue(address)
+    .then(venueId => {
+        alcohol.getUserByEmail(username)
         .then(user => {
             console.log(user);
         if (user) {
             console.log('found that punk!');
             res.json({status:'Taken!'})
         } else if (password === password2) {
-            alcohol.createUser(username, password, firstname, lastname, position, phonenumber)
+            alcohol.createUser(username, password, firstname, lastname, position, phonenumber, venueId)
             .then(u => {
                 console.log(u);
                 req.session.user = u.id;
@@ -91,9 +94,11 @@ app.post('/signup', (req, res) => {
             })
         } else {
             res.json({status:'Not Ok!'})
-        }
-    })
-});
+            }
+        })
+    });
+})
+
 
 // Killing a Session
 app.post('/logout', (req, res) => {
