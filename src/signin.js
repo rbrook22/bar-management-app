@@ -38,7 +38,7 @@ constructor(){
 
     render() {
         return (
-            <div className='signInForm'>
+            <div className='signInForm cardS'>
                 <h1>BevSimply</h1>
                 <p>Sign-In</p>
                 <form onSubmit={this.handleSubmit}>
@@ -51,8 +51,8 @@ constructor(){
                         <input type="text" name="Password" onChange={this.handlePassword} value={this.state.password}/>
                     </label>
                     <input type="submit" value="Submit" />
-                    <p>Don't have an account? Click <Link to="/signup">here</Link> to create one!</p>
                 </form>
+                <p>Don't have an account? Click <Link to="/signup">here</Link> to create one!</p>
             </div>
         );
     }

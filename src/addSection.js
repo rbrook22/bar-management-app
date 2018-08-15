@@ -34,7 +34,7 @@ class AddSection extends React.Component {
     }
     render() {
         return (
-            <div className='addSection'>
+            <div className='addSection cardD'>
                 <h3>Create Section</h3>
                 <p>Enter new Section name</p>
                 <form onSubmit={this.handleEntry}>

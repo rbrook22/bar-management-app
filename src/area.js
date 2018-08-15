@@ -71,7 +71,7 @@ class AreaPage extends React.Component {
         return (
             <div className='area'>
                 <div className='navBar'>
-                    <Route path="/" component={NavBar} />
+                < NavBar barClickHandler={this.props.barClickHandler} />
                 </div>
                 <div className='areaHeader cardH'>
                     <h2>{this.state.label}</h2>
@@ -80,7 +80,7 @@ class AreaPage extends React.Component {
                                 <li key={section.id}>{section.label}>
                                 <input type="button" onClick={this.deleteSection} value={section.id}/>
                                 <br></br>
-                                <Link to={`/area/${this.state.id}/${section.id}/placement`}>Add Placement</Link>
+                                <Link to={`/area/${this.state.id}/${section.id}/placement`} style={{ textDecoration: 'none' }}>Add Placement</Link>
                                 <br></br>
                                 {this.state.placements.map(placement => {
                                     if(placement.sectionid == section.id) {
@@ -88,7 +88,7 @@ class AreaPage extends React.Component {
                                         <div key={placement.id}>
                                             <img src={placement.img} alt=""/>
                                             {placement.label}
-                                            <Link to={`/section/placement/${placement.id}`}><p>Update Inventory</p></Link>
+                                            <Link to={`/section/placement/${placement.id}`} style={{ textDecoration: 'none' }}><p>Update Inventory</p></Link>
                                             <input type="button" onClick={this.deletePlacement} value={placement.id}/>
                                         </div>)
                                     }else {
@@ -98,7 +98,7 @@ class AreaPage extends React.Component {
                                 </li>
                             ))}
                         </ul>
-                        <Link to={`/area/${this.state.id}/addsection`}><p>Add Sections</p></Link>
+                        <Link to={`/area/${this.state.id}/addsection`} style={{ textDecoration: 'none' }}><p>Add Sections</p></Link>
                 </div>
             </div>
         );

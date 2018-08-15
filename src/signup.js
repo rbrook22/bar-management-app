@@ -79,9 +79,10 @@ class SignUp extends React.Component {
 
     render() {
         return (
-            <div className='signUpForm'>
+            <div className='signUpForm cardS'>
                 <h1>BevSimply</h1>
                 <p>Sign-Up</p>
+                
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         First Name:
@@ -115,8 +116,10 @@ class SignUp extends React.Component {
                         Position/Title:
                         <input type="text" onChange={this.handlePosition} value={this.state.position}/>
                     </label>
-                    <input type="submit" value="Next" />
                 </form>
+                <div className='sub'>
+                    <input className='button' type="submit" value="Submit" />
+                </div>
             </div>
         );
     }

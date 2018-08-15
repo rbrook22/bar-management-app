@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class AddPersonnel extends React.Component {
     render() {
         return (
-            <div className='addPersonnel'>
+            <div className='addPersonnel cardD'>
                 <h3>Invite User</h3>
                 <form>
                     <label>
