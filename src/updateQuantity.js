@@ -5,12 +5,31 @@ class UpdateQuantity extends React.Component {
     constructor() {
         super();
         this.state = {
-            bevId: 0
+            bevId: 0,
+            quantity: 0
         }
     }
+
+    componentDidMount() {
+        axios.get('/section/placement/2')
+            .then((res) => {
+                this.setState({
+                    bevId: res.data,
+                    quantity: res.data.quantity
+                })
+            })
+    }
+
+    handleQuantity = (event) => {
+        const value = event.target.value
+        this.setState({
+            quantity: value
+        })
+    }
+
     render() {
         return (
-            <div className='addPlacement'>
+            <div className='updateQuantity'>
                 <h3>Update Quantity</h3>
                 <p>Enter new amount</p>
                 <form onSubmit={(event) => {event.preventDefault()}}>
@@ -20,11 +39,6 @@ class UpdateQuantity extends React.Component {
                     </label>
                     <input type="submit" value="Confirm" onClick={this.handleClick}/>
                 </form>
-                {/* <div>
-                <select name="" id="" onChange={this.handleOption}>
-                    {this.state.filteredBevs.map(b => (<option value={b.id}>{b.bevname}</option>))}
-                </select>
-                </div> */}
             </div>
         );
     }
