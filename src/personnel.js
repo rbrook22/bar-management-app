@@ -12,7 +12,7 @@ class Personnel extends React.Component {
     }
 
     componentDidMount(){
-        axios.get('/personnel/2')
+        axios.get('/personnel')
             .then( response => {
                 console.log(response);
                 this.setState ({

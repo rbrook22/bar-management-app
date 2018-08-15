@@ -26,14 +26,14 @@ constructor(){
 
     handleSubmit = (event) => {
         event.preventDefault();
+        console.log("Testing");
         axios.post('/login', this.state)
         .then(res => {
-			// res = JSON.parse(res);
-            if (res.status === "Ok") {
-				this.props.history.push('/dashboard')
-			} else {
-				this.props.history.push('/')
-				}
+            if (res.data.status === "Ok") {
+                this.props.history.push('/dashboard')
+            } else {
+                this.props.history.push('/')
+            }
         })
     }
 

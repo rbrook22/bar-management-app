@@ -39,13 +39,13 @@ var ensureLoggedIn = (req, res, next) => {
 // Logging User In
 app.post('/login', (req, res) => {
     let username = req.body.email;
-    let password = req.body.password;
+    let password = req.body.userpassword;
     alcohol.authenticateUser(username, password)
         .then(isValid => {
         if (isValid) {
             alcohol.getUserByEmail(username)
             .then(u => {
-                req.session.db = u.id;
+                req.session.alcohol = u.id;
                 console.log(`Your user id is ${u.id}`);
                 res.json({status:'Ok'})
             })
@@ -283,8 +283,8 @@ app.delete('/venue/:areaId/section/placements/:placementid', (req, res) => {
 
 
 // Gets all Users
-app.get('/personnel/:id', (req, res) => {
-    alcohol.getAllUsersById(req.params.id)
+app.get('/personnel', (req, res) => {
+    alcohol.getAllUsers()
     .then((data) => {
         res.json(data);
     })
