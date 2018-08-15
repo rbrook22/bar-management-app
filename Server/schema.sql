@@ -36,7 +36,7 @@ create table Users (
     venueId int references Venue(Id)
     on delete cascade,
     Email varchar(100),
-    userPassword varchar(300),
+    userPassword varchar(500),
     Position varchar(50),
     phoneNumber varchar(20) 
 );
