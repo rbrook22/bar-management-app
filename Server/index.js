@@ -263,6 +263,7 @@ app.get('/venue/:areaId/section/placements',(req,res) => {
     alcohol.getAllPlacements()
     .then((data) => {
         res.json(data);
+        // res.send(data);
     }).catch((error) => {
         console.log(error);
     })

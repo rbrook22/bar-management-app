@@ -3,6 +3,13 @@ import { Route } from 'react-router-dom';
 import NavBar from './navBar';
 
 class Reports extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            label: '',
+            quantity: 0
+        }
+    }
     render() {
         return (
             <div className='reportsPage'>

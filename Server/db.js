@@ -100,8 +100,9 @@ function insertPlacement(label, sectionId, beverageID, quantity) {
 }
 // get
 function getAllPlacements() {
-    return db.any(`select * from placement`);
+    return db.any(`select p.*, b.img from placement p left join beveragelist b on p.beverageid = b.id;`);
 }
+
 
 function getPlacementsById(Id) {
     return db.oneOrNone(`select * from placement where Id=$1`, [Id]);
