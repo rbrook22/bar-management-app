@@ -2,8 +2,8 @@ import React from 'react';
 import axios from 'axios';
 
 class UpdateQuantity extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props)
         this.state = {
             bevId: 0,
             quantity: 0
@@ -11,19 +11,28 @@ class UpdateQuantity extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('/section/placement/2')
+        axios.get(`/section/placement/${this.props.match.params.placementId}`)
             .then((res) => {
+                console.log(res);
                 this.setState({
-                    bevId: res.data,
+                    bevId: res.data.id,
                     quantity: res.data.quantity
                 })
             })
     }
 
-    handleQuantity = (event) => {
-        const value = event.target.value
+    handleQuantity = (e) => {
         this.setState({
-            quantity: value
+            quantity: e.target.value
+        })
+    }
+    handleClick=(event) => {
+        axios.post(`/section/placement/${this.props.match.params.placementId}`, {
+            quantity: this.state.quantity
+        })
+        .then(res => {
+            console.log(res);
+            this.props.history.push(`/venue`)
         })
     }
 

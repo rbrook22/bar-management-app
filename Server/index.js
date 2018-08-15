@@ -277,7 +277,7 @@ app.get('/section/placement/:placementId', (req, res) => {
 })
 
 app.post('/section/placement/:placementId', (req, res) => {
-    alcohol.updateQuantityById(req.body.label, req.params.placementId)
+    alcohol.updateQuantityById(req.body.quantity, req.params.placementId)
     .then((data) => {
         res.json(data);
     }).catch((error) => {
