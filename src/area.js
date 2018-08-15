@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link,Route} from 'react-router-dom';
 import NavBar from './navBar';
-// import AddArea from './addArea';
 import axios from 'axios';
 
 class AreaPage extends React.Component {
@@ -10,7 +9,8 @@ class AreaPage extends React.Component {
         this.state = {
             label: '',
             sections: [],
-            placements: []
+            placements: [],
+            images: []
         }
     }
     componentDidMount(){
@@ -86,6 +86,7 @@ class AreaPage extends React.Component {
                                     if(placement.sectionid == section.id) {
                                     return (
                                         <div key={placement.id}>
+                                            <img src={placement.img} alt=""/>
                                             {placement.label}
                                             <Link to={`/section/placement/${placement.id}`}><input type="button" className="btn" value="Update Inventory"/></Link>
                                             <input type="button" onClick={this.deletePlacement} value={placement.id}/>

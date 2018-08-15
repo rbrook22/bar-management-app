@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import LocationSearchInput from './locationSearchInput';
 import axios from 'axios';
 
@@ -18,7 +17,6 @@ class SignUp extends React.Component {
             position: ''
         }
     }
-
 
     handleFirstName = (event) => {
         const value = event.target.value

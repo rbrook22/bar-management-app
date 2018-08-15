@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const alcohol = require('./db');
+const static = express.static;
+app.use(static("public"));
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 const bodyParser = require('body-parser');
@@ -37,13 +39,13 @@ var ensureLoggedIn = (req, res, next) => {
 // Logging User In
 app.post('/login', (req, res) => {
     let username = req.body.email;
-    let password = req.body.password;
+    let password = req.body.userpassword;
     alcohol.authenticateUser(username, password)
         .then(isValid => {
         if (isValid) {
             alcohol.getUserByEmail(username)
             .then(u => {
-                req.session.db = u.id;
+                req.session.alcohol = u.id;
                 console.log(`Your user id is ${u.id}`);
                 res.json({status:'Ok'})
             })
@@ -261,11 +263,20 @@ app.get('/venue/:areaId/section/placements',(req,res) => {
     alcohol.getAllPlacements()
     .then((data) => {
         res.json(data);
+        // res.send(data);
     }).catch((error) => {
         console.log(error);
     })
 })
 
+
+// Getll all placements for Reporting
+app.get('/reporting',(req,res) => {
+    alcohol.getAllPlacements()
+    .then((data) => {
+        res.json(data);
+        // res.send(data);
+      
 // Update Quantity in Placement
 app.get('/section/placement/:placementId', (req, res) => {
     alcohol.getPlacementsById(req.params.placementId)
@@ -275,6 +286,7 @@ app.get('/section/placement/:placementId', (req, res) => {
         console.log(error);
     })
 })
+
 
 app.post('/section/placement/:placementId', (req, res) => {
     alcohol.updateQuantityById(req.body.quantity, req.params.placementId)
@@ -298,14 +310,15 @@ app.delete('/venue/:areaId/section/placements/:placementid', (req, res) => {
 })
 
 
-
 // Gets all Users
-app.get('/personnel/:id', (req, res) => {
-    alcohol.getAllUsersById(req.params.id)
+app.get('/personnel', (req, res) => {
+    alcohol.getAllUsers()
     .then((data) => {
         res.json(data);
-    })
-    .catch((error) => { console.log(error); });
+        console.log(data);
+    }).catch((error) => { 
+        console.log(error); 
+    });
 });
 
 
