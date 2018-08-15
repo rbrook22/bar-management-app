@@ -27,6 +27,7 @@ class VenueSettings extends React.Component {
                     < NavBar barClickHandler={this.props.barClickHandler} />
                 </div>
                 <div className='overview'>
+                <div className='cardD'>
                     <h2>Settings</h2>
                     <div className='venueInfo'>
                         <div className='accountInfo'>
@@ -37,6 +38,7 @@ class VenueSettings extends React.Component {
                                 <p>{this.state.venue.phonenumber}</p>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>

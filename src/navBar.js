@@ -26,12 +26,14 @@ class NavBar extends React.Component {
                 <div className='navbar_logo'><a>The Logo</a></div>
                 <div className='spacer'></div>
                 <div className='navbar_navigation-items'>
-                    <Link to="/dashboard"><input type="button" className="btn" value="Dashboard"/></Link>
-                    <Link to="/venue"><input type="button" className="btn" value="Venue"/></Link>
-                    <Link to="/reporting"><input type="button" className="btn" value="Reporting"/></Link>
-                    <Link to="/personnel"><input type="button" className="btn" value="Personnel"/></Link>
-                    <Link to="/venueSettings"><input type="button" className="btn" value="Settings"/></Link>
+                    <ul className='btn'>
+                    <Link to="/dashboard" style={{ textDecoration: 'none' }}><li>Dashboard</li></Link>
+                    <Link to="/venue" style={{ textDecoration: 'none' }}><li>Venue</li></Link>
+                    <Link to="/reporting" style={{ textDecoration: 'none' }}><li>Reporting</li></Link>
+                    <Link to="/personnel" style={{ textDecoration: 'none' }}><li>Personnel</li></Link>
+                    <Link to="/venueSettings" style={{ textDecoration: 'none' }}><li>Settings</li></Link>
                     <input type="button" className="btn" value="Log Out" onClick={this.handleLogOut}/>
+                    </ul>
                 </div>
             </nav>
         </header>

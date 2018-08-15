@@ -42,9 +42,10 @@ class Venue extends React.Component {
                     < NavBar barClickHandler={this.props.barClickHandler} />
                 </div>
                 <div className='venueOverview'>
+                    <div className='cardV'>
                     <h2>Venue</h2>
                     <p>Real time look at areas, sections, and bottles</p>
-                    <Link to={`/addarea`}><input type="button" className="btn" value="Add Area"/></Link>
+                    <Link to={`/addarea`} style={{ textDecoration: 'none' }}><p>Add Area</p></Link>
                     {/* <Link><input type="button" className="btn" value="Run Inventory"/></Link>  */}
                     <div className='areaOverview'>
                         <div className='area'>
@@ -61,6 +62,7 @@ class Venue extends React.Component {
                                 ))}
                             </ul>   
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>

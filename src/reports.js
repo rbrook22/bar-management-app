@@ -10,6 +10,7 @@ class Reports extends React.Component {
                     < NavBar barClickHandler={this.props.barClickHandler} />
                 </div>
                 <div className='overview'>
+                <div className='cardD'>
                     <h2>Reporting</h2>
                     <p>View reports and usage</p>
                     <div className='usageReport'>
@@ -17,6 +18,7 @@ class Reports extends React.Component {
                     </div>
                     <div className='reportsOverview'>
                         <p>Here will show a thing which has information</p>
+                    </div>
                     </div>
                 </div>
             </div>
