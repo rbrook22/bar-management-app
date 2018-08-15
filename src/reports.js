@@ -11,18 +11,18 @@ class Reports extends React.Component {
         }
     }
 
-    // componentDidMount(){
-    //     handleReporting()
-    // }
+    componentDidMount() {
+        this.handleReporting()
+    }
 
-    // handleReporting = () => {
-    //     axios.get('/reporting')
-    //     .then((res) => {
-    //         this.setState({
-    //             allPlacements: res.data
-    //         })
-    //     })
-    // }
+    handleReporting = () => {
+        axios.get('/reporting')
+        .then((res) => {
+            this.setState({
+                allPlacements: res.data
+            })
+        })
+    }
     render() {
         return (
             <div className='reportsPage'>
@@ -44,15 +44,12 @@ class Reports extends React.Component {
                                 <th>Quantity</th>
                             </tr>
 
-                            {this.state.allPlacements.map(placement => 
-                                <div>
+                            {this.state.allPlacements.map(placement => (
                                     <tr>
                                         <td>{placement.label}</td>
-                                    </tr>
-                                    <tr>
                                         <td>{placement.quantity}</td>
                                     </tr>
-                                </div>
+                                )
                             )}
                         </table>
                     </div>
