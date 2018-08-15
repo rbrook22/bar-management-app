@@ -118,6 +118,7 @@ body {
 
 .place {
   flex-direction: column;
+  text-align: center;
 }
 
 .cardD {
