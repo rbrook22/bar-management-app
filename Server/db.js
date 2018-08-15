@@ -18,7 +18,7 @@ function getVenuesById(Id) {
     return db.oneOrNone(`select * from Venue where Id=$1`, [Id]);
 }
 function getVenuesByName(label) {
-    return db.any(`select * from Venue where label ilike '%$1%'`, [label]);
+    return db.any(`select * from Venue where label ilike '%$1#%'`, [label]);
 }
 // update
 function updateVenuesById(label, venueLocation, phoneNumber, Id) {
@@ -42,7 +42,7 @@ function getAreasById(Id) {
     return db.oneOrNone(`select * from Area where Id=$1`, [Id]);
 }
 function getAreaByName(label) {
-    return db.any(`select * from Area where label iLike '%$1%'`, [label]);
+    return db.any(`select * from Area where label iLike '%$1#%'`, [label]);
 }
 // update
 function updateAreaById(label, Id) {
@@ -175,7 +175,7 @@ function authenticateUser(email, userpassword) {
 // get
 // Get by Email
 function getUserByEmail(email) {
-    return db.oneOrNone(`select * from Users where email=$1`, [email]);
+    return db.oneOrNone(`select * from Users where email='$1#'`, [email]);
 }
 function getAllUsers() {
     return db.any(`select * from Users`);
