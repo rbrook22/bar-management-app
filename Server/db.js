@@ -189,6 +189,10 @@ function createUser(email, userpassword, firstname, lastname, position, phonenum
 function authenticateUser(email, userpassword) {
     return getUserByEmail(email)
             .then((user) => {
+                console.log(user);
+                let hash = bcrypt.hashSync(userpassword, 10);
+                console.log(hash);
+                console.log('That was the hash');
                 return bcrypt.compareSync(userpassword, user.userpassword)
             })
             .catch((error) => false);
