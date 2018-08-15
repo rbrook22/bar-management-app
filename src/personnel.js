@@ -24,7 +24,7 @@ class Personnel extends React.Component {
         return (
             <div className='personnelPage'>
                 <div className='navBar'>
-                    <Route path="/" component={NavBar} />
+                    < NavBar barClickHandler={this.props.barClickHandler} />
                 </div>
                 <div className='overview'>
                     <h2>Personnel</h2>

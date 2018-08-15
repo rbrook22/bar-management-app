@@ -39,7 +39,7 @@ class Venue extends React.Component {
         return (
             <div className='venue'>
                 <div className='navBar'>
-                    <Route path="/" component={NavBar} />
+                    < NavBar barClickHandler={this.props.barClickHandler} />
                 </div>
                 <div className='venueOverview'>
                     <h2>Venue</h2>

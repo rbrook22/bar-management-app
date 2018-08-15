@@ -1,5 +1,63 @@
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
   font-family: 'Jura', sans-serif;
+}
+
+.navbar {
+  width: 100%;
+  background: rgb(26, 25, 25);
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 56px;
+}
+
+.navbar_navigation {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.navbar_logo {
+  margin: .5rem;
+  margin-left: 1rem;
+}
+
+.navbar_logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-right: 2rem;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.navbar_navigation-items {
+  color: white;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.btn {
+  margin: 0.5rem;
+}
+
+.navbar_navigation-items .btn:hover,
+.navbar_navigation-items .btn:active {
+  color: rgb(231, 132, 52);
+}
+
+.overview, .venue {
+  margin-top: 64px;
 }
