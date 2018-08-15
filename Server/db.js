@@ -10,6 +10,24 @@ const db = pgp(cn);
 const bcrypt = require ('bcrypt');
 
 // Venue Functions
+// Create Venue Functions
+function insertVenue(venueLocation) {
+    console.log('Inserting new venue');
+    return db.one(`insert into venue (venueLocation) values ('$1#') returning id`, [venueLocation]).catch(console.log)
+    r
+} 
+
+function createVenue(venueLocation){
+    console.log(venueLocation)
+    return getVenuesByLocation(venueLocation)
+        .then(venue => {
+            if(venue){
+                return venue.id
+            }else {
+                return insertVenue(venueLocation).then(v => v.id)
+            }
+        })
+}
 // get/create
 function getAllVenues() {
     return db.any(`select * from Venue`);
@@ -17,8 +35,10 @@ function getAllVenues() {
 function getVenuesById(Id) {
     return db.oneOrNone(`select * from Venue where Id=$1`, [Id]);
 }
-function getVenuesByName(label) {
-    return db.any(`select * from Venue where label ilike '%$1%'`, [label]);
+function getVenuesByLocation(location) {
+    console.log('getting venues by location');
+    console.log(location);
+    return db.oneOrNone(`select * from Venue where venuelocation ilike '%$1#%'`, [location]);
 }
 // update
 function updateVenuesById(label, venueLocation, phoneNumber, Id) {
@@ -159,9 +179,9 @@ function deleteAlcoholById(alcoholId, Id) {
 
 // User Functions
 // Create User
-function createUser(email, userpassword, firstname, lastname, position, phonenumber) {
+function createUser(email, userpassword, firstname, lastname, position, phonenumber, venueid) {
     let hash = bcrypt.hashSync(userpassword, 10);
-    return db.one("insert into users (firstname, lastname, email, userpassword, position, phonenumber) values ('$1#', '$2#', '$3#', '$4#', '$5#', '$6#') returning id", [firstname, lastname, email, hash, position, phonenumber]);
+    return db.one("insert into users (firstname, lastname, email, userpassword, position, phonenumber, venueid) values ('$1#', '$2#', '$3#', '$4#', '$5#', '$6#', $7) returning id", [firstname, lastname, email, hash, position, phonenumber, venueid]);
     }
 
 // Authenticate User
@@ -210,9 +230,11 @@ module.exports = {
     getAreaByName,
     updateAreaById,
     deleteAreaById,
+    createVenue,
+    insertVenue,
     getAllVenues,
     getVenuesById,
-    getVenuesByName,
+    getVenuesByLocation,
     updateVenuesById,
     deleteVenuebyId,
     createUser,
