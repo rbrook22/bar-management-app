@@ -116,6 +116,10 @@ body {
   flex-direction: column;
 }
 
+.place {
+  flex-direction: column;
+}
+
 .cardD {
   margin: auto;
   margin-top: auto;
