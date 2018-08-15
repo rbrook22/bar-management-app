@@ -60,11 +60,13 @@ class DashBoard extends React.Component {
                         <div className='beerOverview'>
                             <div className='beerList'> */}
                                 <h3>List of Current Stock</h3>
+                                <div>
                                 <ul>
                                     {this.state.placements.map(placements => (
                                         <li key={placements.id}>{placements.label}</li>
                                     ))}
                                 </ul>
+                                </div>
                             {/* </div> */}
                         {/* </div>
                             <div className='wineOverview'>
@@ -100,7 +102,7 @@ class DashBoard extends React.Component {
                         {/* </div> */}
                         
                         <div className='snapShots'>
-                            <Link to="/reporting"><p>View detailed report</p></Link>
+                            <Link to="/reporting" style={{ textDecoration: 'none' }}><p>View detailed report</p></Link>
                         </div>
                         </div>
                     {/* </div> */}

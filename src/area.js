@@ -73,14 +73,14 @@ class AreaPage extends React.Component {
                 <div className='navBar'>
                     <Route path="/" component={NavBar} />
                 </div>
-                <div className='areaHeader'>
+                <div className='areaHeader cardH'>
                     <h2>{this.state.label}</h2>
                         <ul>
                             {this.state.sections.map(section => (
-                                <li key={section.id}>{section.label}
+                                <li key={section.id}>{section.label}>
                                 <input type="button" onClick={this.deleteSection} value={section.id}/>
                                 <br></br>
-                                <button><Link to={`/area/${this.state.id}/${section.id}/placement`}>Add Placement</Link></button>
+                                <Link to={`/area/${this.state.id}/${section.id}/placement`}>Add Placement</Link>
                                 <br></br>
                                 {this.state.placements.map(placement => {
                                     if(placement.sectionid == section.id) {
@@ -88,7 +88,7 @@ class AreaPage extends React.Component {
                                         <div key={placement.id}>
                                             <img src={placement.img} alt=""/>
                                             {placement.label}
-                                            <Link to={`/section/placement/${placement.id}`}><input type="button" className="btn" value="Update Inventory"/></Link>
+                                            <Link to={`/section/placement/${placement.id}`}><p>Update Inventory</p></Link>
                                             <input type="button" onClick={this.deletePlacement} value={placement.id}/>
                                         </div>)
                                     }else {
@@ -98,9 +98,7 @@ class AreaPage extends React.Component {
                                 </li>
                             ))}
                         </ul>
-                </div>
-                <div className='areaBody'>
-                <Link to={`/area/${this.state.id}/addsection`}><input type="button" className="btn" value="Add Section"/></Link>
+                        <Link to={`/area/${this.state.id}/addsection`}><p>Add Sections</p></Link>
                 </div>
             </div>
         );

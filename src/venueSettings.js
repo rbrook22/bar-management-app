@@ -32,7 +32,7 @@ class VenueSettings extends React.Component {
                     <div className='venueInfo'>
                         <div className='accountInfo'>
                             <div className='accInfo'>
-                                <h3>Account Information</h3>
+                                <h3>Venue Information</h3>
                                 <p>{this.state.venue.label}</p>
                                 <p>{this.state.venue.venuelocation}</p>
                                 <p>{this.state.venue.phonenumber}</p>
