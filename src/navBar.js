@@ -32,7 +32,7 @@ class NavBar extends React.Component {
                     <Link to="/reporting" style={{ textDecoration: 'none' }}><li>Reporting</li></Link>
                     <Link to="/personnel" style={{ textDecoration: 'none' }}><li>Personnel</li></Link>
                     <Link to="/venueSettings" style={{ textDecoration: 'none' }}><li>Settings</li></Link>
-                    <li onClick={this.handleLogOut}>Log Out</li>
+                    <Link to="/" onClick={this.handleLogOut}><li>Log Out</li></Link>
                     </ul>
                 </div>
             </nav>
