@@ -13,8 +13,8 @@ class SignUp extends React.Component {
             email: '',
             password: '',
             password2: '',
-            venue: '',
-            position: ''
+            position: '',
+            venueAddress: ''
         }
     }
 
@@ -69,14 +69,13 @@ class SignUp extends React.Component {
             this.props.history.push('/dashboard')
         })
     }
-    handleSearch = (event) => {
-        const value = event.target.value
-        console.log(value);
+    
+    handleAddressChoice = (address) => {
+        console.log(address);
         this.setState({
-            venue: value
+            venueAddress: address
         })
     }
-
     render() {
         return (
             <div className='signUpForm'>
@@ -109,7 +108,7 @@ class SignUp extends React.Component {
                     </label>
                     <label>
                         Venue Search:
-                        <LocationSearchInput onChange={this.handleSearch} value={this.state.venue}/>
+                        <LocationSearchInput onChange={this.handleSearch} value={this.state.venue} handleChoice={this.handleAddressChoice}/>
                     </label>
                     <label>
                         Position/Title:
