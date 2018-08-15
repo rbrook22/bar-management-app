@@ -74,7 +74,7 @@ class AddPlacement extends React.Component {
                 </form>
                 <div>
                 <select name="" id="" onChange={this.handleOption}>
-                    {this.state.filteredBevs.map(b => (<option value={b.id}>{b.bevname}</option>))}
+                    {this.state.filteredBevs.map(b => (<option key={b.id} value={b.id}>{b.bevname}</option>))}
                 </select>
                 </div>
             </div>
