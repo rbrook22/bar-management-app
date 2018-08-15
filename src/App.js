@@ -34,7 +34,7 @@ class App extends Component {
         <Route path="/addarea" component={AddArea} />
         <Route path="/area/:area_id/addsection" component={AddSection} />
         <Route path="/area/:area_id/:section_id/placement" component={AddPlacement} />
-        <Route path="/venue/:areaId/section/placement/:placementId" component={UpdateQuantity} />
+        <Route path="/section/placement/:placementId" component={UpdateQuantity} />
       </div>
     );
   }

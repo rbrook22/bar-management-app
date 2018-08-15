@@ -267,7 +267,7 @@ app.get('/venue/:areaId/section/placements',(req,res) => {
 })
 
 // Update Quantity in Placement
-app.get('/venue/:areaId/section/placement/:placementId', (req, res) => {
+app.get('/section/placement/:placementId', (req, res) => {
     alcohol.getPlacementsById(req.params.placementId)
     .then((data) => {
         res.json(data);
@@ -276,7 +276,7 @@ app.get('/venue/:areaId/section/placement/:placementId', (req, res) => {
     })
 })
 
-app.post('/venue/:areaId/section/placement/:placementId', (req, res) => {
+app.post('/section/placement/:placementId', (req, res) => {
     alcohol.updateQuantityById(req.body.label, req.params.placementId)
     .then((data) => {
         res.json(data);

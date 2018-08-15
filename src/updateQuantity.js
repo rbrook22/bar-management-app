@@ -5,7 +5,7 @@ class UpdateQuantity extends React.Component {
     constructor() {
         super();
         this.state = {
-            bevId: this.params.id,
+            bevId: 0
         }
     }
     render() {
@@ -20,11 +20,11 @@ class UpdateQuantity extends React.Component {
                     </label>
                     <input type="submit" value="Confirm" onClick={this.handleClick}/>
                 </form>
-                <div>
+                {/* <div>
                 <select name="" id="" onChange={this.handleOption}>
                     {this.state.filteredBevs.map(b => (<option value={b.id}>{b.bevname}</option>))}
                 </select>
-                </div>
+                </div> */}
             </div>
         );
     }
