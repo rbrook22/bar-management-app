@@ -266,6 +266,25 @@ app.get('/venue/:areaId/section/placements',(req,res) => {
     })
 })
 
+// Update Quantity in Placement
+app.get('/section/placement/:placementId', (req, res) => {
+    alcohol.getPlacementsById(req.params.placementId)
+    .then((data) => {
+        res.json(data);
+    }).catch((error) => {
+        console.log(error);
+    })
+})
+
+app.post('/section/placement/:placementId', (req, res) => {
+    alcohol.updateQuantityById(req.body.quantity, req.params.placementId)
+    .then((data) => {
+        res.json(data);
+    }).catch((error) => {
+        console.log(error);
+    })
+})
+
 // Delete placement by Id
 app.delete('/venue/:areaId/section/placements/:placementid', (req, res) => {
     console.log(req.body);

@@ -123,6 +123,11 @@ function updatePlacementById(getPlacementByName, Id) {
     return db.result(`update placement set label='$1#' where Id=$2 `, [getPlacementByName, Id]);
 }
 
+// Update quantity
+function updateQuantityById(quantity, Id) {
+    return db.result(`update placement set quantity=$1 where Id=$2`, [quantity, Id]);
+}
+
 // delete
 function deletePlacementById(Id) {
     return db.result(`delete from placement where Id=$1`, [Id]);
@@ -234,5 +239,6 @@ module.exports = {
     updatePlacementById,
     deletePlacementById,
     getBeverageListByName,
-    getAllBeverages
+    getAllBeverages,
+    updateQuantityById
 }
