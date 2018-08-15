@@ -87,7 +87,7 @@ class AreaPage extends React.Component {
                                     return (
                                         <div key={placement.id}>
                                             {placement.label}
-                                            <Link to='/beverages'><input type="button" className="btn" value="Update Inventory"/></Link>
+                                            <Link to={`/section/placement/${placement.id}`}><input type="button" className="btn" value="Update Inventory"/></Link>
                                             <input type="button" onClick={this.deletePlacement} value={placement.id}/>
                                         </div>)
                                     }else {
