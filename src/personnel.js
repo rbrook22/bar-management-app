@@ -29,17 +29,17 @@ class Personnel extends React.Component {
                 <div className='overview'>
                     <div className='cardD'>
                     <h2>Personnel</h2>
-                    <div className='inviteUser'>
+                    {/* <div className='inviteUser'> */}
                         {/* <Link><input type="button" className="btn" value="Invite User"/></Link> */}
-                    </div>
+                    {/* </div> */}
                     <div className='personnelOverview'>
                         {this.state.users.map(user => 
-                            <div key={user.id}>
+                            <div key={user.id} className='pcard'>
                                 {user.firstname}  {user.lastname}
                                 <br/>
                                 {user.email}
                             </div>
-                        )};
+                        )}
                     </div>
                     </div>
                 </div>

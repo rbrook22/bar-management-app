@@ -58,7 +58,7 @@ class AddPlacement extends React.Component {
     }
     render() {
         return (
-            <div className='addPlacement'>
+            <div className='addPlacement cardP'>
                 <h3>Add Placement</h3>
                 <p>Enter new bottle</p>
                 <form onSubmit={(event) => {event.preventDefault()}}>

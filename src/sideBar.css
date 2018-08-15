@@ -22,21 +22,37 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background: rgba(26, 25, 25, 0.932);
+
 }
 
 .side-bar .btn {
     margin: 0.5rem 0;
 }
 
-.side-bar .btn:hover, 
-.side-bar .btn:active {
+.side-bar a:hover, 
+.side-bar a:active {
     color: rgb(231, 132, 52);
 }
 
 .side-bar a {
-    color: rgb(218, 160, 35);
+    color: rgb(243, 242, 239);
     text-decoration: none;
     font-size: 1.2rem;
+}
+
+.side-bar ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.side-bar li {
+    color: rgb(243, 242, 239);
+}
+
+.side-bar li:hover, 
+.side-bar li:active {
+    color: rgb(231, 132, 52);
 }
 
 @media (min-width: 769px) {

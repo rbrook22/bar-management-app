@@ -37,16 +37,17 @@ class Reports extends React.Component {
                         {/* <Link><p>Run Usage Report</p></Link> */}
                     </div>
                     <div className='reportsOverview'>
-                        <p>Here will show a thing which has information</p>
                         <table>
                             <tr>
                                 <th>Beverage Name</th>
+                                <br></br>
                                 <th>Quantity</th>
                             </tr>
 
                             {this.state.allPlacements.map(placement => (
                                     <tr>
                                         <td>{placement.label}</td>
+                                        <br></br>
                                         <td>{placement.quantity}</td>
                                     </tr>
                                 )
