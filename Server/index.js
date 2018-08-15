@@ -39,9 +39,12 @@ var ensureLoggedIn = (req, res, next) => {
 // Logging User In
 app.post('/login', (req, res) => {
     let username = req.body.email;
-    let password = req.body.userpassword;
+    let password = req.body.password;
+    console.log(username);
+    console.log(password);
     alcohol.authenticateUser(username, password)
         .then(isValid => {
+            console.log(isValid);
         if (isValid) {
             alcohol.getUserByEmail(username)
             .then(u => {
