@@ -24,9 +24,10 @@ class Personnel extends React.Component {
         return (
             <div className='personnelPage'>
                 <div className='navBar'>
-                    <Route path="/" component={NavBar} />
+                    < NavBar barClickHandler={this.props.barClickHandler} />
                 </div>
                 <div className='overview'>
+                    <div className='cardD'>
                     <h2>Personnel</h2>
                     <div className='inviteUser'>
                         {/* <Link><input type="button" className="btn" value="Invite User"/></Link> */}
@@ -35,6 +36,7 @@ class Personnel extends React.Component {
                         {this.state.user.firstname}  {this.state.user.lastname}
                         <br/>
                         {this.state.user.email}
+                    </div>
                     </div>
                 </div>
             </div>

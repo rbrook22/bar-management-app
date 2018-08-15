@@ -1,5 +1,134 @@
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
   font-family: 'Jura', sans-serif;
+}
+
+.cardD {
+  margin: auto;
+  margin-top: auto;
+  padding: 5px;
+  width: 65%;
+  height: 75%;
+  box-shadow: 0 0 20px 0 rgba(7, 6, 6, 0.363);
+  border-radius: 5px;
+  background-color: rgba(242, 242, 242, 0.466);
+}
+.cardV {
+  margin: auto;
+  margin-top: auto;
+  padding: 5px;
+  width: 65%;
+  height: 75%;
+  box-shadow: 0 0 20px 0 rgba(7, 6, 6, 0.363);
+  border-radius: 5px;
+  background-color: rgba(242, 242, 242, 0.466);
+}
+
+.cardD h2,p,h3 {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.cardV h2,p,h3 {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  width: 100%;
+  background: rgb(26, 25, 25);
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 56px;
+}
+
+.navbar_navigation {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.navbar_logo {
+  margin: .5rem;
+  margin-left: 1rem;
+}
+
+.navbar_logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-right: 2rem;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.navbar_navigation-items {
+  color: white;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+/* Button Styles */
+.btn {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 0.5rem;
+  background-color: rgba(248, 248, 248, 0.712);
+  border: 1px solid white;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  list-style-type: none;
+  
+}
+
+ul .btn {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.btn li {
+  text-decoration: none;
+  margin: 0.5rem;
+}
+
+/* ^^^Button Styles */
+.navbar_navigation-items .btn li:hover,
+.navbar_navigation-items .btn li:active {
+  color: rgb(231, 132, 52);
+}
+
+.overview, .venue {
+  margin-top: 100px;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+ .navbar_navigation-items {
+   display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar_toggle-button {
+    display: none; 
+  }
+
+  .navbar_logo {
+    margin-left: 0;
+  }
 }

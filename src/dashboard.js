@@ -50,21 +50,22 @@ class DashBoard extends React.Component {
         return (
             <div className='dashBoard'>
                 <div className='navBar'>
-                    <Route path="/" component={NavBar} />
+                     < NavBar barClickHandler={this.props.barClickHandler} />
                 </div>
                 <div className='overview'>
+                    <div className='cardD'>
                     <h2>Dashboard</h2>
                     <p>An overview of your venue</p>
-                    <div className='inventoryOverview'>
+                    {/* <div className='inventoryOverview'>
                         <div className='beerOverview'>
-                            <div className='beerList'>
+                            <div className='beerList'> */}
                                 <h3>List of Current Stock</h3>
                                 <ul>
                                     {this.state.placements.map(placements => (
                                         <li key={placements.id}>{placements.label}</li>
                                     ))}
                                 </ul>
-                            </div>
+                            {/* </div> */}
                         {/* </div>
                             <div className='wineOverview'>
                                 <div className='wineList'>
@@ -96,11 +97,13 @@ class DashBoard extends React.Component {
                                         </ul>
                                 </div>
                             </div> */}
-                        </div>
+                        {/* </div> */}
+                        
                         <div className='snapShots'>
                             <Link to="/reporting"><p>View detailed report</p></Link>
                         </div>
-                    </div>
+                        </div>
+                    {/* </div> */}
             </div>
         </div>
         );
