@@ -81,16 +81,17 @@ class AreaPage extends React.Component {
                         <div className='Card'>
                         <ul>
                             {this.state.sections.map(section => (
-                                <li className='place' key={section.id}>{section.label}>
-                                <input  className='areaDel' type="button" onClick={this.deleteSection} value={section.id}/>
+                                <li className='place' key={section.id}>{section.label}
+                                <input  className='delArea' type="button" onClick={this.deleteSection} value={section.id}/>
                                 <br></br>
                                 <Link to={`/area/${this.state.id}/${section.id}/placement`} style={{ textDecoration: 'none' }}>Add Placement</Link>
                                 <br></br>
+                                <li className='boozeList'>
                                 {this.state.placements.map(placement => {
                                     if(placement.sectionid == section.id) {
                                     return (
-                                        <div key={placement.id}>
-                                            <img src={placement.img} alt=""/>
+                                        <div className='image' key={placement.id}>
+                                            <img src='http://tame-curve.surge.sh/imgs/beer.jpg' alt=""/>
                                             {placement.label}
                                             <Link to={`/section/placement/${placement.id}`} style={{ textDecoration: 'none' }}><p>Update Inventory</p></Link>
                                             <button class="deleteInventoryButton areaDel" type="button" onClick={this.deletePlacement} value={placement.id} name="Delete">Delete</button>
@@ -99,6 +100,7 @@ class AreaPage extends React.Component {
                                         return null;
                                     }
                                 })}
+                                </li>
                                 </li>
                             ))}
                         </ul>

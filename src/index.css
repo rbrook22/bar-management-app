@@ -12,6 +12,13 @@ body {
   background-repeat: no-repeat;
 }
 
+.Card .boozeList {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  margin: 5px;
+}
+
 .Grid {
   display: grid;
 }
@@ -21,10 +28,26 @@ body {
 }
 
 .Card li {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   background-color: rgba(242, 242, 242, 0.616);
   border-radius: 5px;
   margin-top: 2rem;
+  width: auto;
+}
+
+.Card img {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  width: 120px;
+  margin: auto;
+}
+
+.Card .delArea {
+  width: 20%;
+  margin: auto;
+  padding: auto;
 }
 
 table {
@@ -64,6 +87,16 @@ table, th, td {
 }
 
 .areaDel {
+  background-color: rgb(5, 7, 5);
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 10px;
+  border-radius: 12px;
+}
+
+.delArea {
   background-color: rgb(5, 7, 5);
   border: none;
   color: white;
@@ -186,6 +219,15 @@ table, th, td {
 .place {
   flex-direction: column;
   text-align: center;
+  flex-flow: row;
+  /* font-size: 25px; */
+}
+
+.image {
+  display: grid;
+  padding: 5px;
+  margin: 5px;
+  
 }
 
 .cardD {
