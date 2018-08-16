@@ -15,7 +15,7 @@
 
 ## Built By
 ### <a href="https://github.com/rbrook22"> Rick Brooks </a>
-<p>Contributions</p>
+<p><b>Contributions</b></p>
 <p>Styling | PostgreSQL Database Management | Querying User Preferences | AWS Deployment/Management | README.md |Trello Project Tracker | Walkthrough Video | Express Routing | UI/UX Design | React Components
 
 ### <a href="https://github.com/matthewfreeman821"> Matthew Freeman </a>
@@ -29,13 +29,16 @@
 
 ## Technologies Used
 * React
-* CSS 3
+* HTML5
+* CSS3
 * Bootstrap
 * JavaScript / JSX
 * API: Google Places
 * Node.js
 * Express
 * PostgreSQL
+* Postico
+* Postman
 
 
 
