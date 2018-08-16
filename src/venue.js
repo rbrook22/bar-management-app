@@ -48,9 +48,6 @@ class Venue extends React.Component {
                     <Link to={`/addarea`} style={{ textDecoration: 'none' }}><p>Add Area</p></Link>
                     {/* <Link><input type="button" className="btn" value="Run Inventory"/></Link>  */}
                     <div className='areaOverview'>
-                        <div className='area'>
-                            <p>This is first area</p>
-                        </div>
                         <div className='areaList'>
                             <ul>
                                 {this.state.areas.map(area => (
