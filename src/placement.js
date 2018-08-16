@@ -58,8 +58,12 @@ class AddPlacement extends React.Component {
     }
     render() {
         return (
-            <div className='addPlacement cardP'>
-                <h3>Add Placement</h3>
+            <div className='container'>
+            <div className='wrapper'>
+                    <div className="company-info">
+                        <h1 className="foundTitle"><span>Bev</span>Simply</h1>
+                        <h3>Add Placement</h3>
+                    </div>
                 <p>Enter new bottle</p>
                 <form onSubmit={(event) => {event.preventDefault()}}>
                     <label>
@@ -70,13 +74,13 @@ class AddPlacement extends React.Component {
                         Quantity:
                         <input type="text" name="placementQuantity" onChange={this.handleQuantity} value={this.state.quantity}/>
                     </label>
-                    <input type="submit" value="Confirm" onClick={this.handleClick}/>
-                </form>
-                <div>
                     <select name="" id="" onChange={this.handleOption}>
                         {this.state.filteredBevs.map(b => (<option key={b.id} value={b.id}>{b.bevname}</option>))}
                     </select>
-                </div>
+                    <input type="submit" value="Confirm" onClick={this.handleClick}/>
+                </form>
+                    
+            </div>
             </div>
         );
     }

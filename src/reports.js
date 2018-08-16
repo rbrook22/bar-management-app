@@ -24,13 +24,15 @@ class Reports extends React.Component {
     }
     render() {
         return (
-            <div className='reportsPage'>
+            <div className='container'>
                 <div className='navBar'>
                     < NavBar barClickHandler={this.props.barClickHandler} />
                 </div>
-                <div className='overview'>
-                <div className='cardD'>
-                    <h2>Reporting</h2>
+                <div className='wrapper'>
+                <div className="company-info">
+                        <h1 className="foundTitle"><span>Bev</span>Simply</h1>
+                        <h3>Reporting</h3>
+                    </div>
                     <p>View reports and usage</p>
                     <div className='usageReport'>
                         {/* <Link><p>Run Usage Report</p></Link> */}
@@ -52,7 +54,6 @@ class Reports extends React.Component {
                                 )
                             )}
                         </table>
-                    </div>
                     </div>
                 </div>
             </div>

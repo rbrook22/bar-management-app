@@ -69,12 +69,15 @@ class AreaPage extends React.Component {
 
     render() {
         return (
-            <div className='area'>
+            <div className='container'>
                 <div className='navBar'>
                 < NavBar barClickHandler={this.props.barClickHandler} />
                 </div>
-                <div className='areaHeader cardH'>
-                    <h2>{this.state.label}</h2>
+                <div className='wrapper'>
+                <div className="company-info">
+                        <h1 className="foundTitle"><span>Bev</span>Simply</h1>
+                        <h3>{this.state.label}</h3>
+                    </div>
                         <ul className='center'>
                             {this.state.sections.map(section => (
                                 <li className='place' key={section.id}>{section.label}>
@@ -98,7 +101,7 @@ class AreaPage extends React.Component {
                                 </li>
                             ))}
                         </ul>
-                        <Link to={`/area/${this.state.id}/addsection`} style={{ textDecoration: 'none' }}><p>Add Sections</p></Link>
+                        <Link to={`/area/${this.state.id}/addsection`} style={{ textDecoration: 'none' }}><p>Add Section</p></Link>
                 </div>
             </div>
         );

@@ -48,13 +48,15 @@ class DashBoard extends React.Component {
 
     render() {
         return (
-            <div className='dashBoard'>
+            <div className='container'>
                 <div className='navBar'>
                      < NavBar barClickHandler={this.props.barClickHandler} />
                 </div>
-                <div className='overview'>
-                    <div className='cardD'>
-                    <h2>Dashboard</h2>
+                <div className='wrapper'>
+                    <div className="company-info">
+                        <h1 className="foundTitle"><span>Bev</span>Simply</h1>
+                        <h3>Dashboard</h3>
+                    </div>
                     <p>An overview of your venue</p>
                     {/* <div className='inventoryOverview'>
                         <div className='beerOverview'>
@@ -103,7 +105,6 @@ class DashBoard extends React.Component {
                         
                         <div className='snapShots'>
                             <Link to="/reporting" style={{ textDecoration: 'none' }}><p>View detailed report</p></Link>
-                        </div>
                         </div>
                     {/* </div> */}
             </div>
