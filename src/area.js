@@ -75,7 +75,7 @@ class AreaPage extends React.Component {
                 </div>
                 <div className='areaHeader cardH'>
                     <h2>{this.state.label}</h2>
-                        <ul>
+                        <ul className='center'>
                             {this.state.sections.map(section => (
                                 <li className='place' key={section.id}>{section.label}>
                                 <input type="button" onClick={this.deleteSection} value={section.id}/>
