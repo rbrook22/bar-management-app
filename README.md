@@ -47,7 +47,7 @@
 
 ## Project Planning
 
-<img src="imgs/trello.jpg">
+<img src="imgs/trello.png">
 
 ## Minimum Viable Product
 <p>User story: User lands on the homepage with the option to either login or sign-up. Once logged in the user goes straight to their dashboard where they can see a current list of inventory in stock. User will have the option to add areas, sections within areas, and adding beverages within a section. This makes it totally customizable to each venue and their needs.  </p>
