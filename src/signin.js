@@ -38,21 +38,27 @@ constructor(){
 
     render() {
         return (
-            <div className='signInForm cardS'>
-                <h1>BevSimply</h1>
-                <p>Sign-In</p>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Username:
-                        <input type="text" name="Email" onChange={this.handleEmail} value={this.state.email}/>
-                    </label>
-                    <label>
-                        Password:
-                        <input type="text" name="Password" onChange={this.handlePassword} value={this.state.password}/>
-                    </label>
-                    <input type="submit" value="Submit" />
-                </form>
-                <p>Don't have an account? Click <Link to="/signup">here</Link> to create one!</p>
+            <div className="container">
+                <div className="wrapper">
+                    <div className="company-info">
+                        <h1 className="foundTitle"><span>Bev</span>Simply</h1>
+                        <h3>Sign-In</h3>
+                    </div>
+                    <div className='signInForm contact'>
+                        <form onSubmit={this.handleSubmit}>
+                            <label>
+                                Username:
+                                <input type="text" name="Email" onChange={this.handleEmail} value={this.state.email}/>
+                            </label>
+                            <label>
+                                Password:
+                                <input type="text" name="Password" onChange={this.handlePassword} value={this.state.password}/>
+                            </label>
+                            <input className="full" type="submit" value="Submit" />
+                        </form>
+                        <p>Don't have an account? Click <Link to="/signup"> here</Link> to create one!</p>
+                    </div>
+                </div>
             </div>
         );
     }

@@ -82,7 +82,7 @@ class SignUp extends React.Component {
                 <div className="wrapper">
                     <div className="company-info">
                         <h1 className="foundTitle"><span>Bev</span>Simply</h1>
-                        <p>Sign-Up</p>
+                        <h3>Sign-Up</h3>
                     </div>
                     <div className='signUpForm contact'>
                         <form onSubmit={this.handleSubmit}>
