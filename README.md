@@ -44,9 +44,16 @@
 
 
 ## Project Planning
-
+<img src="/imgs/trello.jpg">
 ## Minimum Viable Product
+<p>User story: User lands on the homepage with the option to either login or sign-up. Once logged in the user goes straight to their dashboard where they can see a current list of inventory in stock. User will have the option to add areas, sections within areas, and adding beverages within a section. This makes it totally customizable </p>
 
+<p>Round description: After a user selects a deck, they play a round. We have specific requirements for what should happen when a user plays a round.</p>
+
+The user plays every card in the deck.
+For each card, the user is shown a question to consider.
+After flipping the card, the user is shown the correct answer.
+The round continues until each card is reviewed
 
 ## Obstacles & Breakthroughs
 
