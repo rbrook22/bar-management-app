@@ -23,7 +23,7 @@ class NavBar extends React.Component {
                 <div className='navbar_toggle-button'>
                     <ToggleButton click={this.props.barClickHandler}/>
                 </div>
-                <div className='navbar_logo'><a>The Logo</a></div>
+                <div className='navbar_logo'><a><span className="bev">Bev</span>Simply</a></div>
                 <div className='spacer'></div>
                 <div className='navbar_navigation-items'>
                     <ul className='btn'>

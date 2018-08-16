@@ -26,21 +26,25 @@ class Personnel extends React.Component {
                 <div className='navBar'>
                     < NavBar barClickHandler={this.props.barClickHandler} />
                 </div>
-                <div className='overview'>
-                    <div className='cardD'>
-                    <h2>Personnel</h2>
-                    {/* <div className='inviteUser'> */}
-                        {/* <Link><input type="button" className="btn" value="Invite User"/></Link> */}
-                    {/* </div> */}
-                    <div className='personnelOverview'>
-                        {this.state.users.map(user => 
-                            <div key={user.id} className='pcard'>
-                                {user.firstname}  {user.lastname}
-                                <br/>
-                                {user.email}
+                <div className="container">
+                    <div className="wrapper">
+                        <div className='overview'>
+                            <div className='cardD'>
+                            <h2>Personnel</h2>
+                            {/* <div className='inviteUser'> */}
+                                {/* <Link><input type="button" className="btn" value="Invite User"/></Link> */}
+                            {/* </div> */}
+                            <div className='personnelOverview'>
+                                {this.state.users.map(user => 
+                                    <div key={user.id} className='pcard'>
+                                        {user.firstname}  {user.lastname}
+                                        <br/>
+                                        {user.email}
+                                    </div>
+                                )}
                             </div>
-                        )}
-                    </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
