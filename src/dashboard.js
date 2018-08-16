@@ -52,7 +52,7 @@ class DashBoard extends React.Component {
                 <div className='navBar'>
                      < NavBar barClickHandler={this.props.barClickHandler} />
                 </div>
-                <div className='wrapper'>
+                <div className='wrapper Card'>
                     <div className="company-info">
                         <h1 className="foundTitle">Dashboard</h1>
                         <p>An overview of your venue</p>

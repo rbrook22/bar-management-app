@@ -12,10 +12,6 @@ body {
   background-repeat: no-repeat;
 }
 
-.center {
-  border: 1px solid black;
-}
-
 .Grid {
   display: grid;
 }
@@ -26,7 +22,7 @@ body {
 
 .Card li {
   display: grid;
-  background-color: rgba(242, 242, 242, 0.795);
+  background-color: rgba(242, 242, 242, 0.616);
   border-radius: 5px;
   margin-top: 2rem;
 }
@@ -52,7 +48,7 @@ table, th, td {
 }
 
 .addArea {
-  background-color: rgb(5, 7, 5); /* Green */
+  background-color: rgb(5, 7, 5);
   border: none;
   color: rgb(5, 4, 4);
   text-align: center;
@@ -68,7 +64,7 @@ table, th, td {
 }
 
 .areaDel {
-  background-color: rgb(5, 7, 5); /* Green */
+  background-color: rgb(5, 7, 5);
   border: none;
   color: white;
   text-align: center;
@@ -320,7 +316,7 @@ ul .btn {
 }
 
 .deleteInventoryButton {
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .overview, .venue {
