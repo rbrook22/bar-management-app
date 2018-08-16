@@ -28,8 +28,7 @@ class Personnel extends React.Component {
                 </div>
                     <div className="wrapper">
                     <div className="company-info">
-                        <h1 className="foundTitle"><span>Bev</span>Simply</h1>
-                        <h3>Personnel</h3>
+                        <h1 className="foundTitle">Personnel</h1>
                     </div>
                             {/* <div className='inviteUser'> */}
                                 {/* <Link><input type="button" className="btn" value="Invite User"/></Link> */}
