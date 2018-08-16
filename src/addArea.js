@@ -34,8 +34,12 @@ class AddArea extends React.Component {
     }
     render() {
         return (
-            <div className='addArea cardD'>
-                <h3>Add Area</h3>
+            <div className='container'>
+            <div className='wrapper'>
+                <div className="company-info">
+                        <h1 className="foundTitle"><span>Bev</span>Simply</h1>
+                        <h3>Add Area</h3>
+                    </div>
                 <p>Enter Name of Area</p>
                 <form onSubmit={this.handleEntry}>
                     <label>
@@ -44,6 +48,7 @@ class AddArea extends React.Component {
                     </label>
                     <input type="submit" value="Confirm" />
                 </form>
+            </div>
             </div>
         );
     }

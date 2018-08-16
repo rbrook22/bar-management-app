@@ -37,13 +37,15 @@ class Venue extends React.Component {
 
     render() {
         return (
-            <div className='venue'>
+            <div className='container'>
                 <div className='navBar'>
                     < NavBar barClickHandler={this.props.barClickHandler} />
                 </div>
-                <div className='venueOverview'>
-                    <div className='cardV'>
-                    <h2>Venue</h2>
+                <div className='wrapper'>
+                    <div className="company-info">
+                        <h1 className="foundTitle"><span>Bev</span>Simply</h1>
+                        <h3>Venue</h3>
+                    </div>
                     <p>Real time look at areas, sections, and bottles</p>
                     <Link to={`/addarea`} style={{ textDecoration: 'none' }}><p>Add Area</p></Link>
                     {/* <Link><input type="button" className="btn" value="Run Inventory"/></Link>  */}
@@ -58,7 +60,6 @@ class Venue extends React.Component {
                                 ))}
                             </ul>   
                         </div>
-                    </div>
                     </div>
                 </div>
             </div>

@@ -34,8 +34,12 @@ class AddSection extends React.Component {
     }
     render() {
         return (
-            <div className='addSection cardD'>
-                <h3>Create Section</h3>
+            <div className='container'>
+            <div className='wrapper'>
+                <div className="company-info">
+                        <h1 className="foundTitle"><span>Bev</span>Simply</h1>
+                        <h3>Add Section</h3>
+                    </div>
                 <p>Enter new Section name</p>
                 <form onSubmit={this.handleEntry}>
                     <label>
@@ -44,6 +48,7 @@ class AddSection extends React.Component {
                     </label>
                     <input type="submit" value="Confirm" />
                 </form>
+            </div>
             </div>
         );
     }

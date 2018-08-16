@@ -38,8 +38,12 @@ class UpdateQuantity extends React.Component {
 
     render() {
         return (
-            <div className='updateQuantity'>
-                <h3>Update Quantity</h3>
+            <div className='container'>
+            <div className='wrapper'>
+                <div className="company-info">
+                        <h1 className="foundTitle"><span>Bev</span>Simply</h1>
+                        <h3>Update Quantity</h3>
+                    </div>
                 <p>Enter new amount</p>
                 <form onSubmit={(event) => {event.preventDefault()}}>
                     <label>
@@ -48,6 +52,7 @@ class UpdateQuantity extends React.Component {
                     </label>
                     <input type="submit" value="Confirm" onClick={this.handleClick}/>
                 </form>
+            </div>
             </div>
         );
     }
