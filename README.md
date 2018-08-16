@@ -36,30 +36,35 @@
 * API: Google Places
 * Node.js
 * Express
+* Axios
 * PostgreSQL
 * Postico
 * Postman
+* VS LiveShare
 
 
 
 
 ## Project Planning
 
-<img src="/imgs/trello.jpg">
+<img src="imgs/trello.jpg">
 
 ## Minimum Viable Product
-<p>User story: User lands on the homepage with the option to either login or sign-up. Once logged in the user goes straight to their dashboard where they can see a current list of inventory in stock. User will have the option to add areas, sections within areas, and adding beverages within a section. This makes it totally customizable </p>
+<p>User story: User lands on the homepage with the option to either login or sign-up. Once logged in the user goes straight to their dashboard where they can see a current list of inventory in stock. User will have the option to add areas, sections within areas, and adding beverages within a section. This makes it totally customizable to each venue and their needs.  </p>
 
-<p>Round description: After a user selects a deck, they play a round. We have specific requirements for what should happen when a user plays a round.</p>
+<p>Adding a beverage: After a user creates both an area and a section it's time to add beverages to your section. Again making it unique to your setup and adding beverages from left to right. Once added you can simply click to udpate your inventory.</p>
 
-The user plays every card in the deck.
-For each card, the user is shown a question to consider.
-After flipping the card, the user is shown the correct answer.
-The round continues until each card is reviewed
+
 
 ## Obstacles & Breakthroughs
 
 
 ## Phase 2 Features
+<p> Currently our application only allows for one user to be tied to one specific venue. In the future we will be adding it so that users can have multiple venues that they can check in and update inventory for. Perfect for franchises or multiple locations for business owners. </p>
+
+<p>We will also be implementing a slider functionality to make running inventory even easier. Taking into account when the user drops the slider down it does the math for you and add its remaining volume size to your reporting page. Currently our reporting page only shows the most recent and up to date reporting that has been ran. In the near future we will be adding so that you can see which user ran the report & when along with all previously ran inventory reports for the past X time.</p>
+
+<p>We will aslso be adding unique images for each beverage added, making it simple to determine which bottle you are doing inventory on.</p>
+
 
 
