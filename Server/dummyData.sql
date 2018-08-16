@@ -1,16 +1,4 @@
--- Alcohol Table
-INSERT INTO "public"."alcohol"("bevtype") VALUES('Beer') RETURNING "id", "bevtype";
-INSERT INTO "public"."alcohol"("bevtype") VALUES('Wine') RETURNING "id", "bevtype";
-INSERT INTO "public"."alcohol"("bevtype") VALUES('Liquor') RETURNING "id", "bevtype";
-INSERT INTO "public"."alcohol"("bevtype") VALUES('Mixers') RETURNING "id", "bevtype";
 
-
--- BeverageList Table
-COPY beveragelist (bevtype, bevname, alcoholid, volumesize, price, quantity, img) 
-    FROM '/tmp/beverageListTable.csv' 
-    DELIMITER ',' 
-    CSV HEADER
-;
 -- Venue Table
 INSERT INTO venue (label, venuelocation, phonenumber) VALUES ('Quizzicle', '2334 Piedmont rd NE, Atlanta, GA, 30305', '866-773-6426');
 INSERT INTO venue (label, venuelocation, phonenumber) VALUES ('Atlanta Tech', '3490 Piedmont ave NE, Atlanta, GA, 30305', '800-439-7929');
