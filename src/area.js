@@ -81,7 +81,7 @@ class AreaPage extends React.Component {
                         <ul className='center'>
                             {this.state.sections.map(section => (
                                 <li className='place' key={section.id}>{section.label}>
-                                <input type="button" onClick={this.deleteSection} value={section.id}/>
+                                <button type="button" onClick={this.deleteSection} value={section.id}>Delete</button>
                                 <br></br>
                                 <Link to={`/area/${this.state.id}/${section.id}/placement`} style={{ textDecoration: 'none' }}>Add Placement</Link>
                                 <br></br>
@@ -89,7 +89,7 @@ class AreaPage extends React.Component {
                                     if(placement.sectionid == section.id) {
                                     return (
                                         <div key={placement.id}>
-                                            <img src={placement.img} alt=""/>
+                                            <img src='{placement.img}' alt=""/>
                                             {placement.label}
                                             <Link to={`/section/placement/${placement.id}`} style={{ textDecoration: 'none' }}><p>Update Inventory</p></Link>
                                             <button class="deleteInventoryButton" type="button" onClick={this.deletePlacement} value={placement.id} name="Delete">Delete</button>
