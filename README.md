@@ -29,6 +29,8 @@
 
 ## Technologies Used
 * React
+* CSS 3
+* Bootstrap
 * JavaScript / JSX
 * API: Google Places
 * Node.js
