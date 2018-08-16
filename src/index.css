@@ -30,6 +30,7 @@ body {
 
 .areaDel{
   margin-left: 5px;
+  background-image: url('/public/imgs/trash-solid.svg');
 }
 
 .cardP {
@@ -211,6 +212,9 @@ li{
   text-decoration: none;
   font-size: 1.5rem;
   margin-right: 2rem;
+}
+.navbar_logo .bev {
+  color:rgb(231, 132, 52);
 }
 
 .spacer {
