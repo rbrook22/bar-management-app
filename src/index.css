@@ -31,6 +31,26 @@ body {
   margin-top: 2rem;
 }
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background-color:rgb(231, 132, 52);
+  color: black;
+  height: 30px;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
 .addArea {
   background-color: rgb(5, 7, 5); /* Green */
   border: none;

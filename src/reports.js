@@ -33,15 +33,12 @@ class Reports extends React.Component {
                         <h1 className="foundTitle">Reporting</h1>
                         <p>View reports and usage</p>
                     </div>
-                    <div className='usageReport'>
-                        {/* <Link><p>Run Usage Report</p></Link> */}
-                    </div>
-                    <div className='reportsOverview'>
+                    <div className='reportsOverview Card'>
                         <table>
                             <tr>
                                 <th>Beverage Name</th>
                                 <br></br>
-                                <th>Quantity</th>
+                                <th>Quantity(In Bottles)</th>
                             </tr>
 
                             {this.state.allPlacements.map(placement => (
