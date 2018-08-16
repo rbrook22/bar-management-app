@@ -12,6 +12,56 @@ body {
   background-repeat: no-repeat;
 }
 
+.center {
+  border: 1px solid black;
+}
+
+.Grid {
+  display: grid;
+}
+
+.Grid-item {
+  display: grid;
+}
+
+.Card li {
+  display: grid;
+  background-color: rgba(242, 242, 242, 0.795);
+  border-radius: 5px;
+  margin-top: 2rem;
+}
+
+.addArea {
+  background-color: rgb(5, 7, 5); /* Green */
+  border: none;
+  color: rgb(5, 4, 4);
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700px;
+  border-radius: 12px;
+}
+
+.addArea:hover {
+  background-color: rgba(242, 242, 242, 0.795);
+  color: white;
+}
+
+.areaDel {
+  background-color: rgb(5, 7, 5); /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 10px;
+  border-radius: 12px;
+}
+
+.areaDel:hover {
+  background-color: rgba(242, 242, 242, 0.795);
+  color: white;
+}
+
 .container {
   margin: auto;
   margin-top: 17rem;

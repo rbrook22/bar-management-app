@@ -54,10 +54,9 @@ class DashBoard extends React.Component {
                 </div>
                 <div className='wrapper'>
                     <div className="company-info">
-                        <h1 className="foundTitle"><span>Bev</span>Simply</h1>
-                        <h3>Dashboard</h3>
+                        <h1 className="foundTitle">Dashboard</h1>
+                        <p>An overview of your venue</p>
                     </div>
-                    <p>An overview of your venue</p>
                     {/* <div className='inventoryOverview'>
                         <div className='beerOverview'>
                             <div className='beerList'> */}

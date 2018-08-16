@@ -30,10 +30,9 @@ class Reports extends React.Component {
                 </div>
                 <div className='wrapper'>
                 <div className="company-info">
-                        <h1 className="foundTitle"><span>Bev</span>Simply</h1>
-                        <h3>Reporting</h3>
+                        <h1 className="foundTitle">Reporting</h1>
+                        <p>View reports and usage</p>
                     </div>
-                    <p>View reports and usage</p>
                     <div className='usageReport'>
                         {/* <Link><p>Run Usage Report</p></Link> */}
                     </div>

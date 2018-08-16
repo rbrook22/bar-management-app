@@ -28,8 +28,7 @@ class VenueSettings extends React.Component {
                 </div>
                 <div className='wrapper'>
                 <div className="company-info">
-                        <h1 className="foundTitle"><span>Bev</span>Simply</h1>
-                        <h3>Settings</h3>
+                        <h1 className="foundTitle">Settings</h1>
                     </div>
                     <div className='venueInfo'>
                         <div className='accountInfo'>
