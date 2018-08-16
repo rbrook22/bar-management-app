@@ -78,46 +78,51 @@ class SignUp extends React.Component {
     }
     render() {
         return (
-            <div className='signUpForm cardS'>
-                <h1>BevSimply</h1>
-                <p>Sign-Up</p>
-                
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        First Name:
-                        <input type="text" name="firstName" onChange={this.handleFirstName} value={this.state.firstname}/>
-                    </label>
-                    <label>
-                        Last Name:
-                        <input type="text" name="lastName" onChange={this.handleLastName} value={this.state.lastname}/>
-                    </label>
-                    <label>
-                        Phone Number:
-                        <input type="text" name="phoneNumber" onChange={this.handlePhoneNumber} value={this.state.phonenumber}/>
-                    </label>
-                    <label>
-                        Email:
-                        <input type="text" name="email" onChange={this.handleEmail} value={this.state.email}/>
-                    </label>
-                    <label>
-                        Password:
-                        <input type="text" name="password" onChange={this.handlePassword} value={this.state.password}/>
-                    </label>
-                    <label>
-                        Password 2: 
-                        <input type="text" name="Password 2" onChange={this.handlePassword2} value={this.state.password2}/>
-                    </label>
-                    <label>
-                        Venue Search:
-                        <LocationSearchInput onChange={this.handleSearch} value={this.state.venue} handleChoice={this.handleAddressChoice}/>
-                    </label>
-                    <label>
-                        Position/Title:
-                        <input type="text" onChange={this.handlePosition} value={this.state.position}/>
-                    </label>
-                </form>
-                <div className='sub'>
-                    <input className='button' type="submit" value="Submit" />
+            <div className="container">
+                <div className="wrapper">
+                    <div className="company-info">
+                        <h1 className="foundTitle"><span>Bev</span>Simply</h1>
+                        <p>Sign-Up</p>
+                    </div>
+                    <div className='signUpForm contact'>
+                        <form onSubmit={this.handleSubmit}>
+                            <label>
+                                First Name:
+                                <input type="text" name="firstName" onChange={this.handleFirstName} value={this.state.firstname}/>
+                            </label>
+                            <label>
+                                Last Name:
+                                <input type="text" name="lastName" onChange={this.handleLastName} value={this.state.lastname}/>
+                            </label>
+                            <label>
+                                Phone Number:
+                                <input type="text" name="phoneNumber" onChange={this.handlePhoneNumber} value={this.state.phonenumber}/>
+                            </label>
+                            <label>
+                                Email:
+                                <input type="text" name="email" onChange={this.handleEmail} value={this.state.email}/>
+                            </label>
+                            <label>
+                                Password:
+                                <input type="text" name="password" onChange={this.handlePassword} value={this.state.password}/>
+                            </label>
+                            <label>
+                                Password 2: 
+                                <input type="text" name="Password 2" onChange={this.handlePassword2} value={this.state.password2}/>
+                            </label>
+                            <label>
+                                Venue Search:
+                                <LocationSearchInput onChange={this.handleSearch} value={this.state.venue} handleChoice={this.handleAddressChoice}/>
+                            </label>
+                            <label>
+                                Position/Title:
+                                <input type="text" onChange={this.handlePosition} value={this.state.position}/>
+                            </label>
+                        </form>
+                        <div className='sub'>
+                            <input className='button foundSubmit' type="submit" value="Submit" />
+                        </div>
+                    </div>
                 </div>
             </div>
         );
