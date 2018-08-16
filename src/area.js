@@ -82,7 +82,7 @@ class AreaPage extends React.Component {
                         <ul>
                             {this.state.sections.map(section => (
 
-                                <li className='place' key={section.id}>{section.label}>
+                                <li className='place' key={section.id}>{section.label}
                                 <button type="button" className="delArea" onClick={this.deleteSection} value={section.id}>Delete</button>
                                 <br></br>
                                 <Link to={`/area/${this.state.id}/${section.id}/placement`} style={{ textDecoration: 'none' }}>Add Placement</Link>

@@ -54,7 +54,7 @@ constructor(){
                                 Password:
                                 <input type="text" name="Password" onChange={this.handlePassword} value={this.state.password}/>
                             </label>
-                            <input className="full" type="submit" value="Submit" />
+                            <input className="button foundSubmit" type="submit" value="Submit" />
                         </form>
                         <p>Don't have an account? Click <Link to="/signup"> here</Link> to create one!</p>
                     </div>

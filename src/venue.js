@@ -53,9 +53,9 @@ class Venue extends React.Component {
                             <Link className='addArea' to={`/addarea`} style={{ textDecoration: 'none' }}><p>Add Area</p></Link>
                             <ul>
                                 {this.state.areas.map(area => (
-                                    <li key={area.id}><Link to={`/area/${area.id}/` } style={{ textDecoration: 'none' }}>{area.label}</Link>
+                                    <li className='place' key={area.id}><Link to={`/area/${area.id}/` } style={{ textDecoration: 'none' }}>{area.label}</Link>
                                     <br></br>
-                                        <button className='areaDel' type="button" value={area.id} onClick={this.deleteArea}>Delete</button>
+                                        <button className='delArea' type="button" value={area.id} onClick={this.deleteArea}>Delete</button>
                                     </li>
                                 ))}
                             </ul>
