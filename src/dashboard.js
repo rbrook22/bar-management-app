@@ -64,7 +64,7 @@ class DashBoard extends React.Component {
                                 <div>
                                 <ul>
                                     {this.state.placements.map(placements => (
-                                        <li key={placements.id}>{placements.label}</li>
+                                        <li  className ='place' key={placements.id}>{placements.label}</li>
                                     ))}
                                 </ul>
                                 </div>
