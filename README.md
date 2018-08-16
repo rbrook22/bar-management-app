@@ -1,7 +1,7 @@
 # BevSimply
 
 
-## <a href="#"> Live Demo <a>
+## <a href="http://bevsimply.com/"> Live Demo <a>
 
 ## Overview
 <p>BevSimply is where business owners and entrepreneurs go to make beverage inventory a breeze! Simply login to the app, and add areas, sections, and beverages for your business. With a few clicks your inventory is done giving you the option to view the most recent data. BevSimply, where all your vendor management needs are met. </p>
@@ -57,7 +57,17 @@
 
 
 ## Obstacles & Breakthroughs
+<p>Obstacle - Initially our plan was to use MongoDb for our database and Strapi api builder, however we quickly realised the inadequacies that it would present. Given the fact that we had so many relational tables that would be in the database it wouldn't support the functionality needed. Using Strapi came out to be more work than it was for the return effort and we ran in to compiled errors and weren't able to utilize it efficiently.</p>
 
+<p>Breakthrough - Despite the initial hurdles we quickly recovered and decided to use postgreSQL since it works well with relational tables and would be adequate in supporting all functional needs for the app. Since we went this route we also decided to build out our API using express to handle everything needed.</p>
+
+<img src="imgs/schema.png">
+
+<p>Obstacle - Probably the biggest struggle we had with the development of BevSimply was regarding the components of venue, area, & section. Not only with figuring out unique routing on the backend but also doing all of the axios calls/post and making sure we were pulling all information unique to that area.</p>
+
+<p>Breakthrough - Once we restructered a few things in our database and had a plan of how this should look the rest was just writing the code. Ultimately we wrote several helper functions to make sure we were posting and getting the right data for the specific area id. From there it was adding some delete functions to let the user truly customer their venue & dashboard to their needs.</p>
+
+<img src="imgs/placement.png">
 
 ## Phase 2 Features
 <p> Currently our application only allows for one user to be tied to one specific venue. In the future, we will be adding a feature so users can register multiple venues and are able to check in and update inventory for each venue. Perfect for franchises or multiple locations for business owners. </p>

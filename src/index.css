@@ -431,6 +431,7 @@ ul .btn {
   transition: background-color 1s ease-out;
 }
 
+
 @media (max-width: 768px) {
   .navbar_navigation-items {
     display: none;
