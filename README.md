@@ -60,7 +60,7 @@
 
 
 ## Phase 2 Features
-<p> Currently our application only allows for one user to be tied to one specific venue. In the future we will be adding it so that users can have multiple venues that they can check in and update inventory for. Perfect for franchises or multiple locations for business owners. </p>
+<p> Currently our application only allows for one user to be tied to one specific venue. In the future, we will be adding a feature so users can register multiple venues and are able to check in and update inventory for each venue. Perfect for franchises or multiple locations for business owners. </p>
 
 <p>We will also be implementing a slider functionality to make running inventory even easier. Taking into account when the user drops the slider down it does the math for you and add its remaining volume size to your reporting page. Currently our reporting page only shows the most recent and up to date reporting that has been ran. In the near future we will be adding so that you can see which user ran the report & when along with all previously ran inventory reports for the past X time.</p>
 
