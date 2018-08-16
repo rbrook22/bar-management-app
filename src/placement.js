@@ -65,7 +65,8 @@ class AddPlacement extends React.Component {
                         <h3>Add Placement</h3>
                     </div>
                 <p>Enter new bottle</p>
-                <form onSubmit={(event) => {event.preventDefault()}}>
+                <form  className='contact' onSubmit={(event) => {event.preventDefault()}}>
+                    <div className='Card'>
                     <label>
                         Bottle:
                         <input type="text" name="placementName" onChange={this.handleChange}/>
@@ -78,6 +79,7 @@ class AddPlacement extends React.Component {
                         {this.state.filteredBevs.map(b => (<option key={b.id} value={b.id}>{b.bevname}</option>))}
                     </select>
                     <input type="submit" value="Confirm" onClick={this.handleClick}/>
+                    </div>
                 </form>
                     
             </div>

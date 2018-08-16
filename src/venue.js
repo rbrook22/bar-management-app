@@ -43,14 +43,14 @@ class Venue extends React.Component {
                 </div>
                 <div className='wrapper'>
                     <div className="company-info">
-                        <h1 className="foundTitle"><span>Bev</span>Simply</h1>
-                        <h3>Venue</h3>
+                        <h1 className="foundTitle">Venue</h1>
+                        <p>Real time look at areas, sections, and bottles</p> 
                     </div>
-                    <p>Real time look at areas, sections, and bottles</p>
-                    <Link to={`/addarea`} style={{ textDecoration: 'none' }}><p>Add Area</p></Link>
                     {/* <Link><input type="button" className="btn" value="Run Inventory"/></Link>  */}
-                    <div className='areaOverview'>
-                        <div className='areaList'>
+                    <div className='Grid'>
+                        <div className='Grid-item'>
+                            <div className='Card'>
+                            <Link className='addArea' to={`/addarea`} style={{ textDecoration: 'none' }}><p>Add Area</p></Link>
                             <ul>
                                 {this.state.areas.map(area => (
                                     <li key={area.id}><Link to={`/area/${area.id}/` } style={{ textDecoration: 'none' }}>{area.label}</Link>
@@ -58,7 +58,8 @@ class Venue extends React.Component {
                                         <button className='areaDel' type="button" value={area.id} onClick={this.deleteArea}>Delete</button>
                                     </li>
                                 ))}
-                            </ul>   
+                            </ul>
+                            </div>   
                         </div>
                     </div>
                 </div>

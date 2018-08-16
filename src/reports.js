@@ -30,19 +30,15 @@ class Reports extends React.Component {
                 </div>
                 <div className='wrapper'>
                 <div className="company-info">
-                        <h1 className="foundTitle"><span>Bev</span>Simply</h1>
-                        <h3>Reporting</h3>
+                        <h1 className="foundTitle">Reporting</h1>
+                        <p>View reports and usage</p>
                     </div>
-                    <p>View reports and usage</p>
-                    <div className='usageReport'>
-                        {/* <Link><p>Run Usage Report</p></Link> */}
-                    </div>
-                    <div className='reportsOverview'>
+                    <div className='reportsOverview Card'>
                         <table>
                             <tr>
                                 <th>Beverage Name</th>
                                 <br></br>
-                                <th>Quantity</th>
+                                <th>Quantity(In Bottles)</th>
                             </tr>
 
                             {this.state.allPlacements.map(placement => (
