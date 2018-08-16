@@ -55,7 +55,7 @@ class Venue extends React.Component {
                                 {this.state.areas.map(area => (
                                     <li key={area.id}><Link to={`/area/${area.id}/` } style={{ textDecoration: 'none' }}>{area.label}</Link>
                                     <br></br>
-                                        <input className='areaDel' type="button" value={area.id} onClick={this.deleteArea}/>
+                                        <button className='areaDel' type="button" value={area.id} onClick={this.deleteArea}>Delete</button>
                                     </li>
                                 ))}
                             </ul>   
