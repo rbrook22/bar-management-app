@@ -7,7 +7,9 @@
 <p>BevSimply is where business owners and entrepreneurs go to make beverage inventory a breeze! Simply login to the app, and add areas, sections, and beverages for your business. With a few clicks your inventory is done giving you the option to view the most recent data. BevSimply, where all your vendor management needs are met. </p>
 
 ## About
-
+<p>Create your own custom areas & sections uniquely tailoring to your business layout. Add different drinks to each section within an area to make inventory a breeze! Simply update your quantity/amount and click save. Then, see your updated inventory on the reporting page
+Our mission is to help new and experienced vendors/business owners - make inventory reporting quick and painless freeing you up to manage all other business needs. Time is a precious commodity and one that we value at BevSimply. Sign-up with us today and leave the hard stuff to us!
+</p>
 
 
 ## Built By
