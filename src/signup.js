@@ -118,9 +118,10 @@ class SignUp extends React.Component {
                                 Position/Title:
                                 <input type="text" onChange={this.handlePosition} value={this.state.position}/>
                             </label>
+                            <input className='button foundSubmit' type="submit" value="Submit" />
                         </form>
                         <div className='sub'>
-                            <input className='button foundSubmit' type="submit" value="Submit" />
+                            
                         </div>
                     </div>
                 </div>
