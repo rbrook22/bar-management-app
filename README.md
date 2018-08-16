@@ -57,7 +57,7 @@
 
 
 ## Obstacles & Breakthroughs
-
+Obstacle - Initially our plan was to use 
 
 ## Phase 2 Features
 <p> Currently our application only allows for one user to be tied to one specific venue. In the future, we will be adding a feature so users can register multiple venues and are able to check in and update inventory for each venue. Perfect for franchises or multiple locations for business owners. </p>
