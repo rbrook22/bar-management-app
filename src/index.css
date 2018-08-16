@@ -258,6 +258,10 @@ ul .btn {
   color: rgb(231, 132, 52);
 }
 
+.deleteInventoryButton {
+  color: black;
+}
+
 .overview, .venue {
   margin-top: 100px;
   width: 100%;
