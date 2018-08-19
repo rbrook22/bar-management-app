@@ -52,7 +52,7 @@ constructor(){
                             </label>
                             <label>
                                 Password:
-                                <input type="text" name="Password" onChange={this.handlePassword} value={this.state.password}/>
+                                <input type="password" name="Password" onChange={this.handlePassword} value={this.state.password}/>
                             </label>
                             <input className="button foundSubmit" type="submit" value="Submit" />
                         </form>
