@@ -11,7 +11,7 @@ class VenueSettings extends React.Component {
     }
 
     componentDidMount(){
-        axios.get('/venueSettings/2')
+        axios.get('/venueSettings/1')
             .then( response => {
                 console.log(response);
                 this.setState ({
