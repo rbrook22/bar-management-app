@@ -1,13 +1,17 @@
 const express = require('express');
 const app = express();
 const alcohol = require('./db');
+
 const static = express.static;
 app.use(static("public"));
+
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
 const session = require('express-session');
 app.use(session({
     key: 'user_sid',
