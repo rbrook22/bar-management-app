@@ -104,11 +104,11 @@ class SignUp extends React.Component {
                             </label>
                             <label>
                                 Password:
-                                <input type="text" name="password" onChange={this.handlePassword} value={this.state.password}/>
+                                <input type="password" name="password" onChange={this.handlePassword} value={this.state.password}/>
                             </label>
                             <label>
                                 Password 2: 
-                                <input type="text" name="Password 2" onChange={this.handlePassword2} value={this.state.password2}/>
+                                <input type="password" name="Password 2" onChange={this.handlePassword2} value={this.state.password2}/>
                             </label>
                             <label>
                                 Venue Search:
